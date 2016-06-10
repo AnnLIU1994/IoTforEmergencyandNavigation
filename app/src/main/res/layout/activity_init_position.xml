@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/init_position"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_sfumato"
+    tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.InitPositionActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/init_pos"
+        android:id="@+id/txtInsPosIniz"
+        android:layout_marginTop="27dp"
+        android:textSize="40sp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="#ffffff"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manual_sel"
+        android:id="@+id/btnManSel"
+        android:layout_marginTop="41dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="showFragment"
+        android:width="300dp"
+        android:height="60dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_sel"
+        android:id="@+id/btnMenSel"
+        android:layout_marginTop="52dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="showFragment"
+        android:width="300dp"
+        android:height="60dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qrcode_scan"
+        android:id="@+id/btnQrCodeScan"
+        android:layout_marginTop="58dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="showFragment"
+        android:width="300dp"
+        android:height="60dp"/>
+</LinearLayout>

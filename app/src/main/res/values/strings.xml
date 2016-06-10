@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">IoTforEmergencyandNavigation</string>
+    <string name="app_name">IoT for Navigation and Emergency</string>
+    <string name="welcome">Welcome to IoT for navigation and emergency</string>
+    <string name="title_activity_init_position">InitPositionActivity</string>
+    <string name="init_pos">Insert starting position</string>
+    <string name="manual_sel">Manual Selection</string>
+    <string name="menu_sel">Menu Selection</string>
+    <string name="qrcode_scan">QrCode Scan</string>
+    <string name="guest_username">Guest Username or E-mail</string>
+    <string name="password">Password</string>
+    <string name="guest_autentication">Guest    Autentication</string>
+    <string name="login">Login</string>
+    <string name="iotforen">IoT for Navigation and Emergency</string>
+    <string name="floor_choise">Floor choise</string>
+
 </resources>

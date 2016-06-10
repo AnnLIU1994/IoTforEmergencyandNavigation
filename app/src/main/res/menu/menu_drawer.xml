@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_updates"
+            android:icon="@drawable/ic_check_updates"
+            android:title="Check updates" />
+        <item
+            android:id="@+id/nav_guest"
+            android:icon="@drawable/ic_guest_login"
+            android:title="Guest" />
+    </group>
+
+</menu>
