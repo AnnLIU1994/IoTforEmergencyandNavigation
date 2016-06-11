@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/background_sfumato"
-    tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ManualFragment">
+    tools:context=".ChoosePlanActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/floor_choise"
         android:id="@+id/txtFloorChoise"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="43dp"
         android:textSize="40sp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Q155"
         android:id="@+id/btn155"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="70dp"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
         android:height="60dp"/>

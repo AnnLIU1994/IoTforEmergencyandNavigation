@@ -30,8 +30,8 @@
         android:text="@string/manual_sel"
         android:id="@+id/btnManSel"
         android:layout_marginTop="41dp"
+        android:onClick="goManualSel"
         android:layout_gravity="center_horizontal"
-        android:onClick="showFragment"
         android:width="300dp"
         android:height="60dp"/>
 
@@ -41,8 +41,8 @@
         android:text="@string/menu_sel"
         android:id="@+id/btnMenSel"
         android:layout_marginTop="52dp"
+        android:onClick="goMenuSel"
         android:layout_gravity="center_horizontal"
-        android:onClick="showFragment"
         android:width="300dp"
         android:height="60dp"/>
 
@@ -52,8 +52,8 @@
         android:text="@string/qrcode_scan"
         android:id="@+id/btnQrCodeScan"
         android:layout_marginTop="58dp"
+        android:onClick="goQrScan"
         android:layout_gravity="center_horizontal"
-        android:onClick="showFragment"
         android:width="300dp"
         android:height="60dp"/>
 </LinearLayout>

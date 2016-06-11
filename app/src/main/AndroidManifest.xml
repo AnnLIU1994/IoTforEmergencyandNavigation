@@ -13,7 +13,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,38 +22,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".InitPositionActivity"
             android:label="@string/title_activity_init_position"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChoosePlanActivity"
+            android:label="@string/title_activity_manual"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListActivity"
+            android:label="@string/title_activity_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QrActivity"
+            android:label="@string/title_activity_qr"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RegistrationActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ModActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".GuestActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ModActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GuestActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

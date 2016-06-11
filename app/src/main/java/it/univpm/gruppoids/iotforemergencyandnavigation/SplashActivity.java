@@ -30,7 +30,7 @@ public class SplashActivity extends Activity {
                     long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
                     if (elapsedTime >= MIN_WAIT_INTERVAL && !mIsDone) {
                         mIsDone = true;
-                        goMain();
+                        goInitPos();
                     }
                     break;
                 /*case NO_REG_WHAT:
@@ -62,11 +62,11 @@ public class SplashActivity extends Activity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        goMain(); // Al restart non viene visualizzata la SplashActivity
+        goInitPos(); // Al restart non viene visualizzata la SplashActivity
     }
 
-    private void goMain() { // Lancia l'intent verso l'InitPositionActivity
-        final Intent intent = new Intent(this, MainActivity.class);
+    private void goInitPos() { // Lancia l'intent verso l'InitPositionActivity
+        final Intent intent = new Intent(this, InitPositionActivity.class);
         startActivity(intent);
         finish();
     }

@@ -12,5 +12,12 @@
     <string name="login">Login</string>
     <string name="iotforen">IoT for Navigation and Emergency</string>
     <string name="floor_choise">Floor choise</string>
+    <string name="place_choise">Place choise</string>
+    <string name="qr_scanning">QrCode scan</string>
+
+
+    <string name="title_activity_manual">ManualActivity</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_qr">QrActivity</string>
 
 </resources>

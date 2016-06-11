@@ -1,20 +1,14 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
-import android.widget.Toast;
-
-import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ManualFragment;
+import android.view.View;
 
 public class InitPositionActivity extends AppCompatActivity {
 
     private static final String TAG = InitPositionActivity.class.getName();
-
-    Button btnManSel = (Button) findViewById(R.id.btnManSel);
-    Button btnMenSel = (Button) findViewById(R.id.btnMenSel);
-    Button qrCodeScan = (Button) findViewById(R.id.btnQrCodeScan);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,46 +16,18 @@ public class InitPositionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_init_position);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+    public void goManualSel(View view) { // Lancia l'intent verso l'InitPositionActivity
+        final Intent intent = new Intent(this, ChoosePlanActivity.class);
+        startActivity(intent);
     }
 
-    public void showFragment(final Button button) {
-        final android.support.v4.app.Fragment nextFragment;
-        final String buttonString = (String) button.getText();
-        switch (buttonString) {
-            case "btnManSel":
-                /*nextFragment = new ManualFragment();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main, nextFragment)
-                        .commit();*/
-                Toast.makeText(this, "manSel", Toast.LENGTH_SHORT).show();
-                break;
-            case "btnMenSel":
-                /*nextFragment =
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main, nextFragment)
-                        .commit();*/
-                Toast.makeText(this, "menSel", Toast.LENGTH_SHORT).show();
-                break;
-            case "btnQrCodeScan":
-                /*nextFragment =
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main, nextFragment)
-                        .commit();*/
-                Toast.makeText(this, "qrCode", Toast.LENGTH_SHORT).show();
-                break;
-        }
+    public void goMenuSel(View view) { // Lancia l'intent verso l'InitPositionActivity
+        final Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
     }
 
-    //android.support.v4.app.Fragment nextFragment;
-
-    /*public void showManSel() {
-        nextFragment = new ManualFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.init_position, nextFragment)
-                .commit();
-    }*/
-
+    public void goQrScan(View view) { // Lancia l'intent verso l'InitPositionActivity
+        final Intent intent = new Intent(this, QrActivity.class);
+        startActivity(intent);
+    }
 }
