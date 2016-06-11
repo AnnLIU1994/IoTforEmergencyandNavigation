@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#FFC0000B</color>
     <color name="colorAccent">#FF0700E1</color>
     <color name="colorDrawerHeader">#6c007c</color>
+    <color name="redDark">#910008</color>
+    <color name="blueDark">#FF040089</color>
 </resources>

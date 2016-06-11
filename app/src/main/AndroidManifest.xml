@@ -33,7 +33,7 @@
         <activity
             android:name=".MapActivity"
             android:label="@string/title_activity_map"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ListActivity"
             android:label="@string/title_activity_list"
@@ -52,6 +52,24 @@
         <activity
             android:name=".GuestActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".EmergencyActivity"
+            android:label="@string/title_activity_emergency"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FinalPositionActivity"
+            android:label="@string/title_activity_final_position"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ChooseFinalPlanActivity"
+            android:label="@string/title_activity_choose_final_plan"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
