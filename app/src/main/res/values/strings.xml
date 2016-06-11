@@ -17,10 +17,15 @@
     <string name="iot_for">IoT for...</string>
     <string name="iotForNav">...Navigation</string>
     <string name="iotForEm">...Emergency</string>
+    <string name="floor_pos">Floor ...</string>
+    <!-- TODO Inserire numero piano che cambia in modo dinamico a seconda del piano scelto -->
+    <string name="floor_pos2">Tap on the map</string>
+    <string name="insert_pos">Insert position</string>
 
 
     <string name="title_activity_manual">ManualActivity</string>
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_qr">QrActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 
 </resources>

@@ -2,19 +2,22 @@ package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ChoosePlanActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_plan);
+        setContentView(R.layout.activity_map);
     }
 
-    public void goMap(View view) { // Lancia l'intent verso l'InitPositionActivity
-        final Intent intent = new Intent(this, MapActivity.class);
+    public void goMod(View view) {
+        Intent intent = new Intent(this, ModActivity.class);
         startActivity(intent);
     }
 

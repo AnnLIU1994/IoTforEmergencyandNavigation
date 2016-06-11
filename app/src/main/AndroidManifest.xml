@@ -31,13 +31,17 @@
             android:label="@string/title_activity_manual"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".ListActivity"
             android:label="@string/title_activity_list"
             android:screenOrientation="portrait" />
         <activity
             android:name=".QrActivity"
             android:label="@string/title_activity_qr"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ModActivity"
             android:screenOrientation="portrait" />

@@ -4,56 +4,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/manual_sel"
+    android:id="@+id/mapactivity"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/background_sfumato"
-    tools:context=".ChoosePlanActivity">
+    tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/floor_choise"
-        android:id="@+id/txtFloorChoise"
-        android:layout_marginTop="43dp"
+        android:text="@string/floor_pos"
+        android:id="@+id/txtMapActivity"
+        android:layout_marginTop="27dp"
         android:textSize="40sp"
-        android:onClick="goMap"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/floor_pos2"
+        android:id="@+id/txtMapActivity2"
+        android:layout_marginTop="27dp"
+        android:textSize="25sp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:textColor="#ffffff"/>
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Q155"
-        android:id="@+id/btn155"
-        android:layout_marginTop="70dp"
-        android:layout_gravity="center_horizontal"
-        android:width="300dp"
-        android:height="60dp"/>
+        android:id="@+id/mapFloor"
+        android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Q150"
-        android:id="@+id/btn150"
-        android:layout_marginTop="52dp"
-        android:onClick="goMap"
-        android:layout_gravity="center_horizontal"
-        android:width="300dp"
-        android:height="60dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Q145"
-        android:id="@+id/btn145"
-        android:layout_marginTop="58dp"
-        android:onClick="goMap"
-        android:layout_gravity="center_horizontal"
-        android:width="300dp"
-        android:height="60dp"/>
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="@string/insert_pos"
+        android:id="@+id/insert_pos"
+        android:onClick="goMod"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
