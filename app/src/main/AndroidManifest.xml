@@ -39,12 +39,12 @@
             android:label="@string/title_activity_qr"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".ModActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".RegistrationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ModActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".GuestActivity"
             android:screenOrientation="portrait" />

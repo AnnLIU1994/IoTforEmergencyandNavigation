@@ -10,6 +10,4 @@ public class ModActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod);
     }
-
-    // TODO iniziare
 }
