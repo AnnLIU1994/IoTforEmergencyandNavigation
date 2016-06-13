@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#db000c</color>
     <color name="colorPrimaryDark">#FFC0000B</color>
-    <color name="colorAccent">#FF0700E1</color>
-    <color name="colorDrawerHeader">#6c007c</color>
+    <color name="colorBlue">#FF0700E1</color>
+    <color name="colorAccent">#ffffff</color>
     <color name="redDark">#910008</color>
     <color name="blueDark">#FF040089</color>
 </resources>

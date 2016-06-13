@@ -13,12 +13,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class ChooseFinalPlanActivity extends AppCompatActivity {
+public class MapFinalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_final_plan);
+        setContentView(R.layout.activity_map_final);
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -49,8 +49,8 @@ public class ChooseFinalPlanActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goFinalMap(View view) { // Lancia l'intent verso l'InitPositionActivity
-        final Intent intent = new Intent(this, MapFinalActivity.class);
+    public void goNavigation(View view) {
+        Intent intent = new Intent(this, NavigationActivity.class);
         startActivity(intent);
     }
 

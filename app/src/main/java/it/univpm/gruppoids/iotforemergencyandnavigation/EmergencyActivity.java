@@ -33,9 +33,9 @@ public class EmergencyActivity extends AppCompatActivity {
 
     public void goInitPos(View view) {
         Intent intent = new Intent(this, InitPositionActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        // TODO fare in modo che una volta terminata l'emergenza, l'utente non può più tornare nelle schermate precedenti tramite tasto back
-        //finish();
+        finish();
     }
 
 }

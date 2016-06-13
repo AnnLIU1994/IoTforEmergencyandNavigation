@@ -24,23 +24,22 @@
         </activity>
         <activity
             android:name=".InitPositionActivity"
-            android:label="@string/title_activity_init_position"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ChoosePlanActivity"
-            android:label="@string/title_activity_manual"
+            android:parentActivityName=".InitPositionActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MapActivity"
-            android:label="@string/title_activity_map"
+            android:parentActivityName=".ChoosePlanActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ListActivity"
-            android:label="@string/title_activity_list"
+            android:parentActivityName=".InitPositionActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".QrActivity"
-            android:label="@string/title_activity_qr"
+            android:parentActivityName=".InitPositionActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ModActivity"
@@ -52,27 +51,33 @@
         <activity
             android:name=".GuestActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEmNoAction"/>
+            android:theme="@style/AppThemeEmNoAction" />
         <activity
             android:name=".EmergencyActivity"
-            android:label="@string/title_activity_emergency"
-            android:theme="@style/AppThemeEmNoAction"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEmNoAction" />
         <activity
             android:name=".FinalPositionActivity"
-            android:label="@string/title_activity_final_position"
-            android:theme="@style/AppThemeNav"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".ModActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNav" />
         <activity
             android:name=".NavigationActivity"
-            android:label="@string/title_activity_navigation"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNavNoAction" />
         <activity
             android:name=".ChooseFinalPlanActivity"
-            android:label="@string/title_activity_choose_final_plan"
+            android:parentActivityName=".FinalPositionActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNav"/>
+            android:theme="@style/AppThemeNav" />
+        <activity
+            android:name=".MapFinalActivity"
+            android:parentActivityName=".ChooseFinalPlanActivity"
+            android:theme="@style/AppThemeNav" />
+        <activity
+            android:name=".ListFinalActivity"
+            android:theme="@style/AppThemeNav"
+            android:parentActivityName=".FinalPositionActivity"/>
     </application>
 
 </manifest>

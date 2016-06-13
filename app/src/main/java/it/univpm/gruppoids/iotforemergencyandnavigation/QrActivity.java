@@ -2,6 +2,8 @@ package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +16,9 @@ public class QrActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -24,18 +29,21 @@ public class QrActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String selectedItem = (String) item.getTitle();
-        switch (selectedItem) {
-            case "Guest":
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.guest:
                 Intent intent = new Intent(this, GuestActivity.class);
                 startActivity(intent);
                 break;
-            case "Check updates":
+            case R.id.updates:
                 Toast.makeText(this, "Check updates clicked", Toast.LENGTH_SHORT).show();
                 break;
+            case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
 
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     public void goMod(View view) {

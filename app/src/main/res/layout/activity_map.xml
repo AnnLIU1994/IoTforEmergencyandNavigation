@@ -44,7 +44,7 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="@string/insert_pos"
+        android:text="@string/insert_init_pos"
         android:id="@+id/insert_pos"
         android:onClick="goMod"
         android:layout_gravity="center_horizontal" />

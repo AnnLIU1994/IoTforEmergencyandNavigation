@@ -30,7 +30,7 @@
         android:text="@string/manual_sel"
         android:id="@+id/btnManSel"
         android:layout_marginTop="91dp"
-        android:onClick="goManualSel"
+        android:onClick="goFinalManualSel"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
         android:height="60dp"/>
@@ -41,7 +41,7 @@
         android:text="@string/menu_sel"
         android:id="@+id/btnMenSel"
         android:layout_marginTop="110dp"
-        android:onClick="goMenuSel"
+        android:onClick="goFinalMenuSel"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
         android:height="60dp"/>

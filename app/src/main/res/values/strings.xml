@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IoT for Navigation and Emergency</string>
+    <string name="app_name">IoT: Navigation &#38; Emergency</string>
     <string name="welcome">Welcome to IoT for navigation and emergency</string>
     <string name="title_activity_init_position">InitPositionActivity</string>
     <string name="init_pos">Insert starting position</string>
@@ -21,22 +21,14 @@
     <string name="floor_pos">Floor ...</string>
     <!-- TODO Inserire numero piano che cambia in modo dinamico a seconda del piano scelto -->
     <string name="floor_pos2">Tap on the map</string>
-    <string name="insert_pos">Insert position</string>
+    <string name="insert_init_pos">Insert initial position</string>
+    <string name="insert_final_pos">Insert final position</string>
     <string name="keep_calm">Keep calm</string>
-    <string name="tap_map">and tap on the map</string>
-    <string name="update_pos">Update position</string>
+    <string name="and_tap_map">and tap on the map</string>
+    <string name="update_pos">Update your position</string>
     <string name="terminate_emer">TERMINATE EMERGENCY</string>
+    <string name="navigation">Navigation</string>
+    <string name="tap_map">Tap on the map</string>
     <string name="terminate_nav">TERMINATE NAVIGATION</string>
     <string name="updates_action">Check updates</string>
-
-
-    <string name="title_activity_manual">ManualActivity</string>
-    <string name="title_activity_list">ListActivity</string>
-    <string name="title_activity_qr">QrActivity</string>
-    <string name="title_activity_map">MapActivity</string>
-    <string name="title_activity_emergency">EmergencyActivity</string>
-    <string name="title_activity_final_position">FinalPositionActivity</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
-    <string name="title_activity_choose_final_plan">ChooseFinalPlanActivity</string>
-
 </resources>

@@ -29,6 +29,8 @@ public class NavigationActivity extends AppCompatActivity {
 
     public void goInitPos(View view) {
         Intent intent = new Intent(this, InitPositionActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
     }
 }
