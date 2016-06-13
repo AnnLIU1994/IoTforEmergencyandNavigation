@@ -20,18 +20,22 @@ public class EmergencyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_emergency);
 
         final Button updateButton = (Button) findViewById(R.id.updatePos);
-        updateButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(getApplicationContext(), "Position is updated", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+        if (updateButton != null) {
+            updateButton.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    Toast.makeText(getApplicationContext(), "Position is updated", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            });
+        }
     }
 
     public void goInitPos(View view) {
         Intent intent = new Intent(this, InitPositionActivity.class);
         startActivity(intent);
+        // TODO fare in modo che una volta terminata l'emergenza, l'utente non può più tornare nelle schermate precedenti tramite tasto back
+        //finish();
     }
 
 }

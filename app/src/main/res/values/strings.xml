@@ -27,6 +27,7 @@
     <string name="update_pos">Update position</string>
     <string name="terminate_emer">TERMINATE EMERGENCY</string>
     <string name="terminate_nav">TERMINATE NAVIGATION</string>
+    <string name="updates_action">Check updates</string>
 
 
     <string name="title_activity_manual">ManualActivity</string>
