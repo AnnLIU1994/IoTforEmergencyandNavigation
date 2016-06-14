@@ -19,40 +19,15 @@ public class InitPositionActivity extends AppCompatActivity {
 
     private static final String TAG = InitPositionActivity.class.getName();
 
-    Button qrCode;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init_position);
-
-        qrCode = (Button) findViewById(R.id.btnQrCodeScan);
-        qrCode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-                intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intent, 0);
             }
-        });
-    }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        if (requestCode == 0) {
-            if (resultCode == RESULT_OK) {
 
-                String contents = intent.getStringExtra("SCAN_RESULT");
-                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-                Toast.makeText(this, contents, Toast.LENGTH_SHORT);
-
-                // Handle successful scan
-
-            } else if (resultCode == RESULT_CANCELED) {
-                // Handle cancel
-                Log.i(TAG,"Scan unsuccessful");
-            }
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
