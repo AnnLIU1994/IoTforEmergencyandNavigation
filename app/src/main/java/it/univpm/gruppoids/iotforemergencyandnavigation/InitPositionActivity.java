@@ -36,7 +36,7 @@ public class InitPositionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 IntentIntegrator integrator = new IntentIntegrator(activity);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
                 integrator.setPrompt("...Scanning...");
                 integrator.setCameraId(0);
                 integrator.setBeepEnabled(false);
@@ -56,7 +56,7 @@ public class InitPositionActivity extends AppCompatActivity {
             } else {
                 Log.d(TAG, "Scanned");
                 Toast.makeText(this, R.string.scanned_qr_code + " " + result.getContents(), Toast.LENGTH_LONG).show();
-                goMod();
+                goMod(result.getContents());
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
@@ -95,8 +95,9 @@ public class InitPositionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goMod() {
+    public void goMod(String resultString) {
         Intent intent = new Intent(this, ModActivity.class);
+        intent.putExtra("initPos", resultString);
         startActivity(intent);
     }
 }

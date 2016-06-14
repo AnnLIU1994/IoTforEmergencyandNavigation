@@ -19,6 +19,12 @@ public class ModActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        final Intent inputIntent = getIntent();
+        if (inputIntent != null) {
+            String initPos = inputIntent.getStringExtra("initPos");
+            //TODO inserire la posizione passata dal qrCode nella formula di Dikstra
+        }
     }
 
     @Override
