@@ -49,8 +49,22 @@ public class ChooseFinalPlanActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private int getFinalFloorSelected(View button) {
+        switch (button.getId()) {
+            case R.id.btn145:
+                return 145;
+            case R.id.btn150:
+                return 150;
+            case R.id.btn155:
+                return 155;
+            default:
+                return 0;
+        }
+    }
+
     public void goFinalMap(View view) { // Lancia l'intent verso l'InitPositionActivity
         final Intent intent = new Intent(this, MapFinalActivity.class);
+        intent.putExtra("floor", getFinalFloorSelected(view));
         startActivity(intent);
     }
 

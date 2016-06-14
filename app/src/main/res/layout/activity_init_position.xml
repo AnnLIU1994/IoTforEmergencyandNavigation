@@ -52,7 +52,6 @@
         android:text="@string/qrcode_scan"
         android:id="@+id/btnQrCodeScan"
         android:layout_marginTop="58dp"
-        android:onClick="goQrScan"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
         android:height="60dp"/>

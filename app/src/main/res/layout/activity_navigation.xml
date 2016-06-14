@@ -52,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="@string/terminate_nav"
+        android:textColor="@color/colorAccent"
         android:id="@+id/terminate_navig"
         android:onClick="goInitPos"
         android:layout_gravity="bottom|center_horizontal"

@@ -11,9 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MapFinalActivity extends AppCompatActivity {
+
+    TextView floor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,16 @@ public class MapFinalActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        final Intent inputIntent = getIntent();
+        if (inputIntent != null) {
+            final int floorExtra = inputIntent.getIntExtra("floor", 0);
+            final String floorString = Integer.toString(floorExtra);
+            floor = (TextView) findViewById(R.id.txtMapActivity);
+            if (!floorString.equals(0)) {
+                floor.append(" " + floorString);
+            }
+        }
     }
 
     @Override

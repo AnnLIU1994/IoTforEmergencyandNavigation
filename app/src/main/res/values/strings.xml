@@ -18,8 +18,7 @@
     <string name="iot_for">IoT for...</string>
     <string name="iotForNav">...Navigation</string>
     <string name="iotForEm">...Emergency</string>
-    <string name="floor_pos">Floor ...</string>
-    <!-- TODO Inserire numero piano che cambia in modo dinamico a seconda del piano scelto -->
+    <string name="floor_pos">Floor </string>
     <string name="floor_pos2">Tap on the map</string>
     <string name="insert_init_pos">Insert initial position</string>
     <string name="insert_final_pos">Insert final position</string>
@@ -31,4 +30,5 @@
     <string name="tap_map">Tap on the map</string>
     <string name="terminate_nav">TERMINATE NAVIGATION</string>
     <string name="updates_action">Check updates</string>
+    <string name="iot_nav">IoT: Navigation</string>
 </resources>

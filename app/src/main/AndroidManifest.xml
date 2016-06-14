@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -42,6 +43,17 @@
             android:parentActivityName=".InitPositionActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ModActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -60,6 +72,7 @@
             android:name=".FinalPositionActivity"
             android:parentActivityName=".ModActivity"
             android:screenOrientation="portrait"
+            android:label="@string/iot_nav"
             android:theme="@style/AppThemeNav" />
         <activity
             android:name=".NavigationActivity"
@@ -69,14 +82,17 @@
             android:name=".ChooseFinalPlanActivity"
             android:parentActivityName=".FinalPositionActivity"
             android:screenOrientation="portrait"
+            android:label="@string/iot_nav"
             android:theme="@style/AppThemeNav" />
         <activity
             android:name=".MapFinalActivity"
             android:parentActivityName=".ChooseFinalPlanActivity"
+            android:label="@string/iot_nav"
             android:theme="@style/AppThemeNav" />
         <activity
             android:name=".ListFinalActivity"
             android:theme="@style/AppThemeNav"
+            android:label="@string/iot_nav"
             android:parentActivityName=".FinalPositionActivity"/>
     </application>
 

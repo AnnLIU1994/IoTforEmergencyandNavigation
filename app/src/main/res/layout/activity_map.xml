@@ -48,4 +48,5 @@
         android:id="@+id/insert_pos"
         android:onClick="goMod"
         android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
