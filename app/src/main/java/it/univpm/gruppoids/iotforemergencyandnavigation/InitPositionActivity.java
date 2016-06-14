@@ -55,7 +55,7 @@ public class InitPositionActivity extends AppCompatActivity {
                 Toast.makeText(this, R.string.cancelled_qr_code, Toast.LENGTH_LONG).show();
             } else {
                 Log.d(TAG, "Scanned");
-                Toast.makeText(this, R.string.scanned_qr_code + " " + result.getContents(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Scanned" + " " + result.getContents(), Toast.LENGTH_LONG).show();
                 goMod(result.getContents());
             }
         } else {
