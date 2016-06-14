@@ -47,6 +47,8 @@
         android:text="@string/insert_init_pos"
         android:id="@+id/insert_pos"
         android:onClick="goMod"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp"
+        android:background="@drawable/background_button"/>
 
 </LinearLayout>

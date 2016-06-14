@@ -33,7 +33,9 @@
         android:onClick="goFinalManualSel"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
-        android:height="60dp"/>
+        android:height="60dp"
+        android:padding="20dp"
+        android:background="@drawable/background_button"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -44,5 +46,7 @@
         android:onClick="goFinalMenuSel"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
-        android:height="60dp"/>
+        android:height="60dp"
+        android:padding="20dp"
+        android:background="@drawable/background_button"/>
 </LinearLayout>
