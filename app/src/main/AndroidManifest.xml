@@ -39,10 +39,6 @@
             android:parentActivityName=".InitPositionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".QrActivity"
-            android:parentActivityName=".InitPositionActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ModActivity"
             android:screenOrientation="portrait" />
         <activity
