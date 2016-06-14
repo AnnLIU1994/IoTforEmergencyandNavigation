@@ -15,9 +15,9 @@
     <string name="floor_choise">Floor choise</string>
     <string name="place_choise">Place choise</string>
     <string name="qr_scanning">QrCode scan</string>
-    <string name="iot_for">IoT for...</string>
-    <string name="iotForNav">...Navigation</string>
-    <string name="iotForEm">...Emergency</string>
+    <string name="iot_for">IoT for&#8230;</string>
+    <string name="iotForNav">&#8230;Navigation</string>
+    <string name="iotForEm">&#8230;Emergency</string>
     <string name="floor_pos">Floor </string>
     <string name="floor_pos2">Tap on the map</string>
     <string name="insert_init_pos">Insert initial position</string>
@@ -32,5 +32,4 @@
     <string name="updates_action">Check updates</string>
     <string name="iot_nav">IoT: Navigation</string>
     <string name="cancelled_qr_code">Cancelled</string>
-    <string name="scanned_qr_code">Scanned:</string>
 </resources>

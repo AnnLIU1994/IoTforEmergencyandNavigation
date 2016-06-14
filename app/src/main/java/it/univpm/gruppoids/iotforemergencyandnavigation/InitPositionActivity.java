@@ -52,15 +52,21 @@ public class InitPositionActivity extends AppCompatActivity {
         if (result != null) {
             if (result.getContents() == null) {
                 Log.d(TAG, "Cancelled scan");
-                Toast.makeText(this, R.string.cancelled_qr_code, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Log.d(TAG, "Scanned");
-                Toast.makeText(this, R.string.scanned_qr_code + " " + result.getContents(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                 goMod(result.getContents());
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 
     @Override
