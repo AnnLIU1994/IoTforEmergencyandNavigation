@@ -1,5 +1,6 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,19 +16,52 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 public class InitPositionActivity extends AppCompatActivity {
 
     private static final String TAG = InitPositionActivity.class.getName();
 
-
+    private Button buttonQr;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init_position);
+
+        buttonQr = (Button) this.findViewById(R.id.btnQrCodeScan);
+        final Activity activity = this;
+        buttonQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentIntegrator integrator = new IntentIntegrator(activity);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("...Scanning...");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
             }
+        });
+    }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                Log.d(TAG, "Cancelled scan");
+                Toast.makeText(this, R.string.cancelled_qr_code, Toast.LENGTH_LONG).show();
+            } else {
+                Log.d(TAG, "Scanned");
+                Toast.makeText(this, R.string.scanned_qr_code + " " + result.getContents(), Toast.LENGTH_LONG).show();
+                goMod();
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,8 +95,8 @@ public class InitPositionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goQrScan(View view) { // Lancia l'intent verso l'InitPositionActivity
-        final Intent intent = new Intent(this, QrActivity.class);
+    public void goMod() {
+        Intent intent = new Intent(this, ModActivity.class);
         startActivity(intent);
     }
 }
