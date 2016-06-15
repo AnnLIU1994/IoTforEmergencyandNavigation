@@ -76,17 +76,9 @@ public class InitPositionActivity extends AppCompatActivity implements ExitDialo
         showExitDialog();
     }
 
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
-    }
-
     @Override
     public void yesPressed() {
-        onPause();
+        finish();
     }
 
     @Override

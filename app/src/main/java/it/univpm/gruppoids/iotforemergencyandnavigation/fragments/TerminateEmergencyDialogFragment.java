@@ -22,7 +22,8 @@ public class TerminateEmergencyDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.exit_dialog)
+        builder.setTitle(R.string.caution)
+                .setMessage(R.string.terminate_emerg_dialog)
                 .setPositiveButton(R.string.yes_label, mOnClickListener)
                 .setNegativeButton(R.string.no_label, mOnClickListener);
         return builder.create();
