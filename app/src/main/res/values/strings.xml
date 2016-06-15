@@ -32,4 +32,9 @@
     <string name="updates_action">Check updates</string>
     <string name="iot_nav">IoT: Navigation</string>
     <string name="cancelled_qr_code">Cancelled</string>
+    <string name="loading_text">Checking updates&#8230;</string>
+
+    <string name="exit_dialog">Do you really want to quit the application?</string>
+    <string name="yes_label">Yes</string>
+    <string name="no_label">No</string>
 </resources>
