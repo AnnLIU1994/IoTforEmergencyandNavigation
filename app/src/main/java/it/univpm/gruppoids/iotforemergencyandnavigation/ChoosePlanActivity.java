@@ -28,6 +28,12 @@ public class ChoosePlanActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override // se non sovrascrivevo onBackPressed, mi chiudeva l'app
+    public void onBackPressed() {
+        goInit();
+        ChoosePlanActivity.this.finish();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
@@ -40,7 +46,8 @@ public class ChoosePlanActivity extends AppCompatActivity {
                 Toast.makeText(this, "Check updates clicked", Toast.LENGTH_SHORT).show();
                 break;
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
-                NavUtils.navigateUpFromSameTask(this);
+                goInit();
+                ChoosePlanActivity.this.finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -62,6 +69,11 @@ public class ChoosePlanActivity extends AppCompatActivity {
     public void goMap(View view) { // Lancia l'intent verso l'InitPositionActivity
         final Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("floor", getFloorSelected(view));
+        startActivity(intent);
+    }
+
+    public void goInit() {
+        Intent intent = new Intent(this, InitPositionActivity.class);
         startActivity(intent);
     }
 

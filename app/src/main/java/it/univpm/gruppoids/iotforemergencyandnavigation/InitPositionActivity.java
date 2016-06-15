@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,9 +17,14 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class InitPositionActivity extends AppCompatActivity {
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ExitDialogFragment;
+
+public class InitPositionActivity extends AppCompatActivity implements ExitDialogFragment.AlertDialogListener {
 
     private static final String TAG = InitPositionActivity.class.getName();
+
+    private static final String EXIT_DIALOG_TAG = "EXIT_DIALOG";
+
 
     private Button buttonQr;
 
@@ -60,9 +66,31 @@ public class InitPositionActivity extends AppCompatActivity {
         }
     }
 
+    public void showExitDialog() {
+        ExitDialogFragment alertDialog = new ExitDialogFragment();
+        alertDialog.show(getSupportFragmentManager(), EXIT_DIALOG_TAG);
+    }
+
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        showExitDialog();
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    public void yesPressed() {
+        onPause();
+    }
+
+    @Override
+    public void noPressed() {
 
     }
 

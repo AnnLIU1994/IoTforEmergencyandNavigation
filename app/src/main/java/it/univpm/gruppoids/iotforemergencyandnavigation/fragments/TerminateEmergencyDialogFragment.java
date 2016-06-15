@@ -9,7 +9,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import it.univpm.gruppoids.iotforemergencyandnavigation.R;
 
-public class ExitDialogFragment extends DialogFragment {
+public class TerminateEmergencyDialogFragment extends DialogFragment {
 
     public interface AlertDialogListener {
         void yesPressed();
@@ -52,3 +52,4 @@ public class ExitDialogFragment extends DialogFragment {
         }
     }
 }
+

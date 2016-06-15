@@ -59,11 +59,11 @@ public class SplashActivity extends Activity {
         mHandler.sendMessageAtTime(goMainMessage, mStartTime + MAX_WAIT_INTERVAL);
     }
 
-    @Override
+    /*@Override
     protected void onRestart() {
         super.onRestart();
         goInitPos(); // Al restart non viene visualizzata la SplashActivity
-    }
+    }*/
 
     private void goInitPos() { // Lancia l'intent verso l'InitPositionActivity
         final Intent intent = new Intent(this, InitPositionActivity.class);
