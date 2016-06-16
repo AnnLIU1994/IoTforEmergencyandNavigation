@@ -11,7 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class NavigationActivity extends AppCompatActivity {
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.TerminateNavigationDialogFragment;
+
+public class NavigationActivity extends AppCompatActivity implements TerminateNavigationDialogFragment.AlertDialogListener {
+
+    private static final String TERMINATE_NAV_DIALOG_TAG = "TERMINATE_NAV_DIALOG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +31,25 @@ public class NavigationActivity extends AppCompatActivity {
         });
     }
 
-    public void goInitPos(View view) {
+    private void goInitPos() {
         Intent intent = new Intent(this, InitPositionActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
+    }
+
+    public void showTerminateNavDialog(View view) {
+        TerminateNavigationDialogFragment alertDialog = new TerminateNavigationDialogFragment();
+        alertDialog.show(getSupportFragmentManager(), TERMINATE_NAV_DIALOG_TAG);
+    }
+
+    @Override
+    public void yesPressed() {
+        goInitPos();
+    }
+
+    @Override
+    public void noPressed() {
+
     }
 }

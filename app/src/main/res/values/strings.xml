@@ -37,6 +37,8 @@
     <string name="exit_dialog">Do you really want to quit the application?</string>
     <string name="caution">Caution!</string>
     <string name="terminate_emerg_dialog">Is the emergency really terminated?</string>
+    <string name="are_sure">Are you sure?</string>
+    <string name="terminate_nav_dialog">Terminate navigation?</string>
     <string name="yes_label">Yes</string>
     <string name="no_label">No</string>
 </resources>
