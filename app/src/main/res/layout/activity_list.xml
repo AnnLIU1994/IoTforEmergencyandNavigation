@@ -25,6 +25,17 @@
         android:textAlignment="center"
         android:textColor="#ffffff"/>
 
+    <ListView
+        android:layout_width="340dp"
+        android:layout_height="400dp"
+        android:id="@+id/listViewPlace"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:dividerHeight="1dp"
+        android:divider="@color/black"
+        android:background="@color/white"/>
+
     <ScrollView
         android:layout_width="300dp"
         android:layout_height="match_parent"
@@ -32,10 +43,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="61dp" >
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/listView" />
     </ScrollView>
 
 </LinearLayout>

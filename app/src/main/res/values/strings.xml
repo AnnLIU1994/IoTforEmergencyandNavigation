@@ -32,4 +32,6 @@
     <string name="updates_action">Check updates</string>
     <string name="iot_nav">IoT: Navigation</string>
     <string name="cancelled_qr_code">Cancelled</string>
+    <string name="Portineria"></string>
+
 </resources>
