@@ -11,7 +11,7 @@ import android.view.KeyEvent;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.R;
 
-public class CheckUpdatesProgressFragment extends DialogFragment{
+public class CheckUpdatesProgressFragment extends DialogFragment {
 
     public interface OnProgressDialogListener {
 
@@ -47,7 +47,6 @@ public class CheckUpdatesProgressFragment extends DialogFragment{
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
-        //progressDialog.set
         progressDialog.setOnKeyListener(mOnKeyListener);
         return progressDialog;
     }

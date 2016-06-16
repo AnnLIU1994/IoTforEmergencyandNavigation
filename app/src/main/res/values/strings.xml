@@ -41,4 +41,9 @@
     <string name="no_label">No</string>
 
     <string name="check_updates">Checking updates&#8230;</string>
+    <string name="updated">IoT is updated!</string>
+    <string name="ok_label">Ok</string>
+
+    <string name="obsolete_data">Obsolete data</string>
+    <string name="question_update_data">Update data?</string>
 </resources>
