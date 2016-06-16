@@ -29,7 +29,7 @@ public class ModActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_option, menu);
+        getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
     }
 
@@ -37,16 +37,15 @@ public class ModActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         switch (itemId) {
-            case R.id.guest:
-                Intent intent = new Intent(this, GuestActivity.class);
+            case R.id.firstPage:
+                Intent intent = new Intent(this, InitPositionActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                break;
-            case R.id.updates:
-                Toast.makeText(this, "Check updates clicked", Toast.LENGTH_SHORT).show();
+                ModActivity.this.finish();
                 break;
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
-                finish();
-                break;
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
 
         }
         return super.onOptionsItemSelected(item);

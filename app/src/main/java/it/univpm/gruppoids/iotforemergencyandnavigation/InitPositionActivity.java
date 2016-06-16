@@ -3,15 +3,16 @@ package it.univpm.gruppoids.iotforemergencyandnavigation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
-import android.support.v4.app.NavUtils;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.ActionBar;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,9 +20,34 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class InitPositionActivity extends AppCompatActivity {
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CheckUpdatesProgressFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.DoUpdatesDialogFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ExitDialogFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatedDialogFragment;
+
+public class InitPositionActivity extends AppCompatActivity
+        implements ExitDialogFragment.AlertDialogListener, CheckUpdatesProgressFragment.OnProgressDialogListener, UpdatedDialogFragment.AlertDialogListener, DoUpdatesDialogFragment.AlertDialogListener {
 
     private static final String TAG = InitPositionActivity.class.getName();
+
+    private static final String EXIT_DIALOG_TAG = "EXIT_DIALOG";
+
+    private static final String CHECK_UPDATES_PROGRESS_TAG = "CHECK_UPDATES_PROGRESS";
+
+    private static final String UPDATED_DIALOG_TAG = "UPDATED_DIALOG";
+
+    private static final String DO_UPDATES_DIALOG_TAG = "DO_UPDATES_DIALOG";
+
+    private static final int SI_UPDATES_WHAT = 1;
+    private static final int NO_UPDATES_WHAT = 2;
+    private static final long WAIT_INTERVAL = 3000L;
+
+    private long mStartTime;
+
+    public boolean lookCheckUpdate;
+
+    private CheckUpdatesProgressFragment progressCheckDialog;
+
 
     private Button buttonQr;
 
@@ -29,6 +55,8 @@ public class InitPositionActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init_position);
+
+        lookCheckUpdate = false;
 
         buttonQr = (Button) this.findViewById(R.id.btnQrCodeScan);
         final Activity activity = this;
@@ -52,15 +80,99 @@ public class InitPositionActivity extends AppCompatActivity {
         if (result != null) {
             if (result.getContents() == null) {
                 Log.d(TAG, "Cancelled scan");
-                Toast.makeText(this, R.string.cancelled_qr_code, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Log.d(TAG, "Scanned");
-                Toast.makeText(this, "Scanned" + " " + result.getContents(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                 goMod(result.getContents());
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    public void showExitDialog() {
+        ExitDialogFragment alertExitDialog = new ExitDialogFragment();
+        alertExitDialog.show(getSupportFragmentManager(), EXIT_DIALOG_TAG);
+    }
+
+    @Override
+    public void onBackPressed() {
+        showExitDialog();
+    }
+
+    @Override
+    public void yesPressed() {
+        finish();
+    }
+
+    @Override
+    public void noPressed() {
+
+    }
+
+    public void showCheckUpdatesProgressFragment() {
+        lookCheckUpdate = true;
+        mStartTime = SystemClock.uptimeMillis();
+        progressCheckDialog = new CheckUpdatesProgressFragment();
+        progressCheckDialog.show(getSupportFragmentManager(), CHECK_UPDATES_PROGRESS_TAG);
+        // TODO vedere se c'è da modificare qualcosa
+        final Message goMainMessage = mHandler.obtainMessage(NO_UPDATES_WHAT);
+        mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL);
+
+    }
+
+    @Override
+    public void taskCancelled() {
+        lookCheckUpdate = false;
+        // TODO fare in modo che il DoUpdatesDialogFragment non venga visualizzato all'uscita dal progress dialog
+    }
+
+    private Handler mHandler = new Handler() { // Permette la gestione dell'activity
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case NO_UPDATES_WHAT:
+                    long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
+                    if (lookCheckUpdate && elapsedTime >= WAIT_INTERVAL) { // && !mIsDone TODO Aggiungere mIsDone per controllare la presenza di aggiornamenti
+                        //mIsDone = true;
+                        showDoUpdatesDialogFragment();
+                        progressCheckDialog.dismiss();
+                    }
+                    break;
+                /*case NO_REG_WHAT:
+                    // TODO inserire condizione per passare alla registration activity
+                    goRegistration();
+                    break;*/
+            }
+        }
+    };
+
+    public void showUpdatedDialogFragment() {
+        UpdatedDialogFragment alertUpdatedDialog = new UpdatedDialogFragment();
+        alertUpdatedDialog.show(getSupportFragmentManager(), UPDATED_DIALOG_TAG);
+    }
+
+    @Override
+    public void okPressed() {
+
+    }
+
+    public void showDoUpdatesDialogFragment() {
+        DoUpdatesDialogFragment alertDoUpdatesDialog = new DoUpdatesDialogFragment();
+        alertDoUpdatesDialog.show(getSupportFragmentManager(), DO_UPDATES_DIALOG_TAG);
+    }
+
+    @Override
+    public void yesDoUpdtPressed() {
+
+    }
+
+    @Override
+    public void noDoUpdtPressed() {
+
     }
 
     @Override
@@ -78,7 +190,7 @@ public class InitPositionActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.updates:
-                Toast.makeText(this, "Check updates clicked", Toast.LENGTH_SHORT).show();
+                showCheckUpdatesProgressFragment();
                 break;
 
         }

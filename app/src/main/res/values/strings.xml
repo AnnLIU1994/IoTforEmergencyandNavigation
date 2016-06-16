@@ -15,9 +15,9 @@
     <string name="floor_choise">Floor choise</string>
     <string name="place_choise">Place choise</string>
     <string name="qr_scanning">QrCode scan</string>
-    <string name="iot_for">IoT for...</string>
-    <string name="iotForNav">...Navigation</string>
-    <string name="iotForEm">...Emergency</string>
+    <string name="iot_for">IoT for&#8230;</string>
+    <string name="iotForNav">&#8230;Navigation</string>
+    <string name="iotForEm">&#8230;Emergency</string>
     <string name="floor_pos">Floor </string>
     <string name="floor_pos2">Tap on the map</string>
     <string name="insert_init_pos">Insert initial position</string>
@@ -32,6 +32,18 @@
     <string name="updates_action">Check updates</string>
     <string name="iot_nav">IoT: Navigation</string>
     <string name="cancelled_qr_code">Cancelled</string>
-    <string name="Portineria"></string>
 
+    <string name="exit_dialog">Do you really want to quit the application?</string>
+    <string name="caution">Caution!</string>
+    <string name="terminate_emerg_dialog">Is the emergency really terminated?</string>
+    <string name="terminate_nav_dialog">Terminate navigation?</string>
+    <string name="yes_label">Yes</string>
+    <string name="no_label">No</string>
+
+    <string name="check_updates">Checking updates&#8230;</string>
+    <string name="updated">IoT is updated!</string>
+    <string name="ok_label">Ok</string>
+
+    <string name="obsolete_data">Obsolete data</string>
+    <string name="question_update_data">Update data?</string>
 </resources>
