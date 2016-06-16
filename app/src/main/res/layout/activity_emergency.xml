@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="@string/terminate_emer"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAccent2"
         android:id="@+id/terminate_emer"
         android:onClick="showTerminateEmergDialog"
         android:layout_gravity="bottom|center_horizontal"

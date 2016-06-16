@@ -25,7 +25,7 @@
         </activity>
         <activity
             android:name=".InitPositionActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ChoosePlanActivity"
             android:parentActivityName=".InitPositionActivity"

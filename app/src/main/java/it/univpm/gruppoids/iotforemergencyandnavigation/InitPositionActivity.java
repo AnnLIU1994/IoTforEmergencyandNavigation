@@ -17,13 +17,16 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CheckUpdatesProgressFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ExitDialogFragment;
 
-public class InitPositionActivity extends AppCompatActivity implements ExitDialogFragment.AlertDialogListener {
+public class InitPositionActivity extends AppCompatActivity implements ExitDialogFragment.AlertDialogListener, CheckUpdatesProgressFragment.OnProgressDialogListener {
 
     private static final String TAG = InitPositionActivity.class.getName();
 
     private static final String EXIT_DIALOG_TAG = "EXIT_DIALOG";
+
+    private static final String CHECK_UPDATES_PROGRESS_TAG = "CHECK_UPDATES_PROGRESS_TAG";
 
 
     private Button buttonQr;
@@ -86,6 +89,16 @@ public class InitPositionActivity extends AppCompatActivity implements ExitDialo
 
     }
 
+    public void showCheckUpdatesProgressFragment() {
+        CheckUpdatesProgressFragment alertDialog = new CheckUpdatesProgressFragment();
+        alertDialog.show(getSupportFragmentManager(), CHECK_UPDATES_PROGRESS_TAG);
+    }
+
+    @Override
+    public void taskCancelled() {
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_option, menu);
@@ -101,7 +114,7 @@ public class InitPositionActivity extends AppCompatActivity implements ExitDialo
                 startActivity(intent);
                 break;
             case R.id.updates:
-                Toast.makeText(this, "Check updates clicked", Toast.LENGTH_SHORT).show();
+                showCheckUpdatesProgressFragment();
                 break;
 
         }
