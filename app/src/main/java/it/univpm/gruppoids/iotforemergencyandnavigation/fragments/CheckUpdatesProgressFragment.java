@@ -32,6 +32,7 @@ public class CheckUpdatesProgressFragment extends DialogFragment {
                         listener.taskCancelled();
                         dialog.dismiss();
                         return true;
+
                     }
                     return false;
                 }

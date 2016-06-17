@@ -55,7 +55,6 @@
         android:layout_height="wrap_content"
         android:text="@string/qrcode_scan"
         android:textAllCaps="false"
-        android:drawable="@drawable/button_shape_normal"
         android:id="@+id/btnQrCodeScan"
         android:layout_marginTop="58dp"
         android:layout_gravity="center_horizontal"

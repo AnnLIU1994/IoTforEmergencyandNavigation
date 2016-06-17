@@ -58,5 +58,5 @@
         android:id="@+id/terminate_emer"
         android:onClick="showTerminateEmergDialog"
         android:layout_gravity="bottom|center_horizontal"
-        android:background="@drawable/terminate_emergency_sfumato" />
+        android:background="@drawable/emercency_total" />
 </LinearLayout>
