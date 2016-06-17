@@ -50,6 +50,7 @@
     <string name="updating">Updating&#8230;</string>
     <!-- <string name="loading">&#8230;loading&#8230;</string> -->
     <string name="cancel_label">Cancel</string>
+    <string-array name="place">"Portineria", "Aula Magna", "Polifunzionale", "Anfiteatro", "Biblioteca", "Centro copie", "Aula Studio"</string-array>
 
     <string name="updates_failed_dialog">Update failed!</string>
     <string name="try_again_label">Try again</string>

@@ -11,14 +11,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ListActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    ListView listView;
-    String [] nome_luogo_interesse;
-
+    ListView l;
+    String [] place = {"Portineria", "Aula Magna", "Polifunzionale", "Anfiteatro", "Biblioteca", "Centro copie", "Aula Studio"};
 
 
 
@@ -26,6 +28,11 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        l= (ListView) findViewById(R.id.listView);
+        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,R.layout.simple_list_item_1 , place);
+        l.setAdapter(adapter);
+        l.setOnItemClickListener(this);
+
 
 
         ActionBar ab = getSupportActionBar();
@@ -43,4 +50,11 @@ public class ListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            TextView temp = (TextView) view;
+            Toast.makeText(this,temp.getText()+""+i,Toast.LENGTH_SHORT).show();
+    }
 }
+
+

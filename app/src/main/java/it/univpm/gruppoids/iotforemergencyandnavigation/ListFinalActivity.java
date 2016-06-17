@@ -11,17 +11,35 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ListFinalActivity extends AppCompatActivity {
+public class ListFinalActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+    ListView l;
+    String [] place = {"Portineria", "Aula Magna", "Polifunzionale", "Anfiteatro", "Biblioteca", "Centro copie", "Aula Studio"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_final);
+        l= (ListView) findViewById(R.id.listView1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.simple_list_item_1, place);
+        l.setAdapter(adapter);
+        l.setOnItemClickListener(this);
+
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        TextView temp = (TextView) view;
+        Toast.makeText(this,temp.getText()+""+i,Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -52,5 +70,7 @@ public class ListFinalActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NavigationActivity.class);
         startActivity(intent);
     }
+
+
 
 }
