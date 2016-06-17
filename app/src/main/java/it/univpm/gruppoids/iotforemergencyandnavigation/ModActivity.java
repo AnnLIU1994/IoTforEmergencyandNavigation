@@ -44,7 +44,7 @@ public class ModActivity extends AppCompatActivity {
                 ModActivity.this.finish();
                 break;
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
                 return true;
 
         }

@@ -12,11 +12,10 @@ import android.widget.Button;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.R;
 
-public class ExitDialogFragment extends DialogFragment {
+public class UpdatingDialogFragment extends DialogFragment {
 
-    public interface AlertDialogListener {
-        void yesPressed();
-        void noPressed();
+    public interface UpdatingDialogListener {
+        void cancelUpdatingPressed();
     }
 
     private DialogInterface.OnClickListener mOnClickListener;
@@ -25,15 +24,12 @@ public class ExitDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.exit_dialog)
-                .setPositiveButton(R.string.yes_label, mOnClickListener)
-                .setNegativeButton(R.string.no_label, mOnClickListener);
+        builder.setView(R.layout.dialog_loading)
+                .setCancelable(false)
+                .setNegativeButton(R.string.cancel_label, mOnClickListener);
         AlertDialog alertDialog = builder.create();
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
-
-        Button buttonPositive = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        buttonPositive.setTextColor(Color.argb(225, 122, 0, 111));
 
         Button buttonNegative = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
         buttonNegative.setTextColor(Color.argb(225, 122, 0, 111));
@@ -43,18 +39,15 @@ public class ExitDialogFragment extends DialogFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof AlertDialogListener) {
-            final AlertDialogListener listener = (AlertDialogListener) activity;
+        if (activity instanceof UpdatingDialogListener) {
+            final UpdatingDialogListener listener = (UpdatingDialogListener) activity;
             mOnClickListener = new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
-                        case Dialog.BUTTON_POSITIVE:
-                            listener.yesPressed();
-                            break;
                         case Dialog.BUTTON_NEGATIVE:
-                            listener.noPressed();
+                            listener.cancelUpdatingPressed();
                             break;
                         default:
                             break;
