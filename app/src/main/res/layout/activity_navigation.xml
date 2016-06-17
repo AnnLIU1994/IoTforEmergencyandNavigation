@@ -54,11 +54,12 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="@string/terminate_nav"
-        android:textColor="@color/colorAccent2"
+        android:textColor="@color/white"
         android:id="@+id/terminate_navig"
         android:padding="20dp"
         android:drawable="@drawable/navigation_shape_normal"
         android:onClick="showTerminateNavDialog"
         android:layout_gravity="bottom|center_horizontal"
-        android:background="@drawable/navigation_total" />
+        android:background="@drawable/navigation_total"
+        android:layout_marginTop="5dp" />
 </LinearLayout>
