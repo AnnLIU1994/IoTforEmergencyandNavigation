@@ -76,4 +76,10 @@ public class SplashActivity extends Activity {
         startActivity(intent);
         finish();
     }*/
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mHandler.removeCallbacksAndMessages(null); // Serve per bloccare la visualizzazione della InitPositionActivity una volta chiusa la splash
+    }
 }

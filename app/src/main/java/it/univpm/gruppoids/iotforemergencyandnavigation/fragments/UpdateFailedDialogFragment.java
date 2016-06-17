@@ -12,11 +12,11 @@ import android.widget.Button;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.R;
 
-public class ExitDialogFragment extends DialogFragment {
+public class UpdateFailedDialogFragment extends DialogFragment {
 
-    public interface AlertDialogListener {
-        void yesPressed();
-        void noPressed();
+    public interface UpdatesFailedDialogListener {
+        void cancelPressed();
+        void tryAgainPressed();
     }
 
     private DialogInterface.OnClickListener mOnClickListener;
@@ -25,9 +25,10 @@ public class ExitDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.exit_dialog)
-                .setPositiveButton(R.string.yes_label, mOnClickListener)
-                .setNegativeButton(R.string.no_label, mOnClickListener);
+        builder.setTitle(R.string.caution)
+                .setMessage(R.string.updates_failed_dialog)
+                .setPositiveButton(R.string.try_again_label, mOnClickListener)
+                .setNegativeButton(R.string.cancel_label, mOnClickListener);
         AlertDialog alertDialog = builder.create();
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
@@ -43,18 +44,18 @@ public class ExitDialogFragment extends DialogFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof AlertDialogListener) {
-            final AlertDialogListener listener = (AlertDialogListener) activity;
+        if (activity instanceof UpdatesFailedDialogListener) {
+            final UpdatesFailedDialogListener listener = (UpdatesFailedDialogListener) activity;
             mOnClickListener = new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
                         case Dialog.BUTTON_POSITIVE:
-                            listener.yesPressed();
+                            listener.tryAgainPressed();
                             break;
                         case Dialog.BUTTON_NEGATIVE:
-                            listener.noPressed();
+                            listener.cancelPressed();
                             break;
                         default:
                             break;

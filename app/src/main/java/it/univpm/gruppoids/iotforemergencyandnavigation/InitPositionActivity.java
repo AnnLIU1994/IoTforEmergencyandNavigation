@@ -7,8 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -24,9 +22,12 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CheckUpdatesPr
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.DoUpdatesDialogFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ExitDialogFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatedDialogFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdateFailedDialogFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatingDialogFragment;
 
 public class InitPositionActivity extends AppCompatActivity
-        implements ExitDialogFragment.AlertDialogListener, CheckUpdatesProgressFragment.OnProgressDialogListener, UpdatedDialogFragment.AlertDialogListener, DoUpdatesDialogFragment.AlertDialogListener {
+        implements ExitDialogFragment.AlertDialogListener, CheckUpdatesProgressFragment.OnProgressDialogListener,
+        UpdatedDialogFragment.AlertDialogListener, DoUpdatesDialogFragment.AlertDialogListener, UpdatingDialogFragment.UpdatingDialogListener, UpdateFailedDialogFragment.UpdatesFailedDialogListener {
 
     private static final String TAG = InitPositionActivity.class.getName();
 
@@ -38,13 +39,15 @@ public class InitPositionActivity extends AppCompatActivity
 
     private static final String DO_UPDATES_DIALOG_TAG = "DO_UPDATES_DIALOG";
 
+    private static final String UPDATING_DIALOG_TAG = "UPDATING_DIALOG";
+
+    private static final String UPDATE_FAILED_DIALOG_TAG = "UPDATE_FAILED_DIALOG";
+
     private static final int SI_UPDATES_WHAT = 1;
     private static final int NO_UPDATES_WHAT = 2;
     private static final long WAIT_INTERVAL = 3000L;
 
     private long mStartTime;
-
-    public boolean lookCheckUpdate;
 
     private CheckUpdatesProgressFragment progressCheckDialog;
 
@@ -55,8 +58,6 @@ public class InitPositionActivity extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init_position);
-
-        lookCheckUpdate = false;
 
         buttonQr = (Button) this.findViewById(R.id.btnQrCodeScan);
         final Activity activity = this;
@@ -112,11 +113,10 @@ public class InitPositionActivity extends AppCompatActivity
     }
 
     public void showCheckUpdatesProgressFragment() {
-        lookCheckUpdate = true;
         mStartTime = SystemClock.uptimeMillis();
         progressCheckDialog = new CheckUpdatesProgressFragment();
         progressCheckDialog.show(getSupportFragmentManager(), CHECK_UPDATES_PROGRESS_TAG);
-        // TODO vedere se c'è da modificare qualcosa
+        // TODO impostare l'invio del messaggio dopo aver controllato la presenza degli aggiornamenti
         final Message goMainMessage = mHandler.obtainMessage(NO_UPDATES_WHAT);
         mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL);
 
@@ -124,7 +124,6 @@ public class InitPositionActivity extends AppCompatActivity
 
     @Override
     public void taskCancelled() {
-        lookCheckUpdate = false;
         // TODO fare in modo che il DoUpdatesDialogFragment non venga visualizzato all'uscita dal progress dialog
     }
 
@@ -136,21 +135,17 @@ public class InitPositionActivity extends AppCompatActivity
             switch (msg.what) {
                 case NO_UPDATES_WHAT:
                     long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
-                    if (lookCheckUpdate && elapsedTime >= WAIT_INTERVAL) { // && !mIsDone TODO Aggiungere mIsDone per controllare la presenza di aggiornamenti
+                    if (elapsedTime >= WAIT_INTERVAL) { // && !mIsDone TODO Aggiungere mIsDone per controllare la presenza di aggiornamenti
                         //mIsDone = true;
                         showDoUpdatesDialogFragment();
                         progressCheckDialog.dismiss();
                     }
                     break;
-                /*case NO_REG_WHAT:
-                    // TODO inserire condizione per passare alla registration activity
-                    goRegistration();
-                    break;*/
             }
         }
     };
 
-    public void showUpdatedDialogFragment() {
+    public void showUpdatedDialogFragment() { // TODO visualizzare quando l'app è aggiornata
         UpdatedDialogFragment alertUpdatedDialog = new UpdatedDialogFragment();
         alertUpdatedDialog.show(getSupportFragmentManager(), UPDATED_DIALOG_TAG);
     }
@@ -167,12 +162,37 @@ public class InitPositionActivity extends AppCompatActivity
 
     @Override
     public void yesDoUpdtPressed() {
-
+        showUpdatingDialogFragment();
     }
 
     @Override
     public void noDoUpdtPressed() {
 
+    }
+
+    public void showUpdatingDialogFragment() {
+        UpdatingDialogFragment alertUpdatingDialog = new UpdatingDialogFragment();
+        alertUpdatingDialog.show(getSupportFragmentManager(), UPDATING_DIALOG_TAG);
+    }
+
+    @Override
+    public void cancelUpdatingPressed() {
+        showUpdateFailedDialogFragment();
+    }
+
+    public void showUpdateFailedDialogFragment() {
+        UpdateFailedDialogFragment alertUpdateFailedDialog = new UpdateFailedDialogFragment();
+        alertUpdateFailedDialog.show(getSupportFragmentManager(), UPDATE_FAILED_DIALOG_TAG);
+    }
+
+    @Override
+    public void cancelPressed() {
+
+    }
+
+    @Override
+    public void tryAgainPressed() {
+        showUpdatingDialogFragment();
     }
 
     @Override

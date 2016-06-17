@@ -27,6 +27,7 @@ public class UpdatedDialogFragment extends DialogFragment {
         builder.setMessage(R.string.updated)
                 .setPositiveButton(R.string.ok_label, mOnClickListener);
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
 
         Button buttonPositive = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);

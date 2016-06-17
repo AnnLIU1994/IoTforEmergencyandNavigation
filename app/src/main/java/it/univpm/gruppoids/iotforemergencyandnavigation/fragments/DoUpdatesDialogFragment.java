@@ -30,6 +30,7 @@ public class DoUpdatesDialogFragment extends DialogFragment {
                 .setPositiveButton(R.string.yes_label, mOnClickListener)
                 .setNegativeButton(R.string.no_label, mOnClickListener);
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
 
         Button buttonPositive = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
