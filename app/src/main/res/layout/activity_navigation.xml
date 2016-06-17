@@ -58,5 +58,6 @@
         android:id="@+id/terminate_navig"
         android:onClick="showTerminateNavDialog"
         android:layout_gravity="bottom|center_horizontal"
-        android:background="@drawable/terminate_navigation_sfumato" />
+        android:background="@drawable/navigation_background_button"
+        android:layout_marginTop="5dp" />
 </LinearLayout>

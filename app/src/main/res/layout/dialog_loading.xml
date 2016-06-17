@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:paddingTop="20dp"
+        android:paddingBottom="15dp"
         android:text="@string/updating"
         android:id="@+id/updating"
         android:layout_gravity="center_horizontal" />

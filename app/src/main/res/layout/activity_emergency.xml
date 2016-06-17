@@ -47,7 +47,7 @@
         android:text="@string/update_pos"
         android:id="@+id/updatePos"
         android:layout_gravity="center_horizontal"
-        android:padding="20dp"
+        android:padding="15dp"
         android:background="@drawable/background_button"/>
 
     <Button
@@ -58,5 +58,6 @@
         android:id="@+id/terminate_emer"
         android:onClick="showTerminateEmergDialog"
         android:layout_gravity="bottom|center_horizontal"
-        android:background="@drawable/terminate_emergency_sfumato" />
+        android:background="@drawable/emergency_background_button"
+        android:layout_marginTop="5dp" />
 </LinearLayout>
