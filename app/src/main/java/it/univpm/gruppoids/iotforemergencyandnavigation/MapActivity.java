@@ -23,6 +23,17 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        ImageView imageView = (ImageView) findViewById(R.id.mapFloor);
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    String text = "You click at x = " + event.getX() + " and y = " + event.getY();
+                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();}
+                return false;
+            }
+        });
+
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
@@ -60,6 +71,8 @@ public class MapActivity extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_home, menu);
@@ -83,6 +96,7 @@ public class MapActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     public void goMod(View view) {
         Intent intent = new Intent(this, ModActivity.class);

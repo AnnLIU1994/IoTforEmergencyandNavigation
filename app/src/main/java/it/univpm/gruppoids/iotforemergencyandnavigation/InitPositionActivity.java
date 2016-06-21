@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -232,4 +233,7 @@ public class InitPositionActivity extends AppCompatActivity
         intent.putExtra("initPos", resultString);
         startActivity(intent);
     }
+
+
+
 }
