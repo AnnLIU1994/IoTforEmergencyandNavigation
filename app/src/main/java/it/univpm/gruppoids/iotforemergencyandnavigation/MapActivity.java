@@ -8,12 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+//import com.polites.android.GestureImageView;
 
 public class MapActivity extends AppCompatActivity {
 
     private TextView floor;
+    private ImageView mapImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,20 @@ public class MapActivity extends AppCompatActivity {
             final int floorExtra = inputIntent.getIntExtra("floor", 0);
             final String floorString = Integer.toString(floorExtra);
             floor = (TextView) findViewById(R.id.txtMapActivity);
+            mapImage = (ImageView) findViewById(R.id.mapFloor);
             if (!floorString.equals(0)) {
                 floor.append(" " + floorString);
+            }
+            switch (floorString) {
+                case "145":
+                    mapImage.setImageResource(R.drawable.q145);
+                    break;
+                case "150":
+                    mapImage.setImageResource(R.drawable.q150);
+                    break;
+                case "155":
+                    mapImage.setImageResource(R.drawable.q155);
+                    break;
             }
         }
     }
@@ -62,5 +76,4 @@ public class MapActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ModActivity.class);
         startActivity(intent);
     }
-
 }
