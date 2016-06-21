@@ -55,7 +55,7 @@ public class MapActivity extends AppCompatActivity {
                     String text = "You click at x = " + event.getX() + " and y = " + event.getY();
                     Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
                 }
-                return false;
+                return true;
             }
         });
     }
