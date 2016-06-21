@@ -1,7 +1,6 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -9,10 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,16 +19,13 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.interfaces.TouchImageVie
 public class MapActivity extends AppCompatActivity {
 
     private TextView floor;
-    private ImageView mapImage;
+    private TouchImageView mapImage;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        TouchImageView fullImageView = (TouchImageView)findViewById(R.id.mapFloor);
-        fullImageView.setMaxZoom(4f);
-
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -41,7 +35,8 @@ public class MapActivity extends AppCompatActivity {
             final int floorExtra = inputIntent.getIntExtra("floor", 0);
             final String floorString = Integer.toString(floorExtra);
             floor = (TextView) findViewById(R.id.txtMapActivity);
-            mapImage = (ImageView) findViewById(R.id.mapFloor);
+            mapImage = (TouchImageView) findViewById(R.id.mapFloor);
+            mapImage.setMaxZoom(4f);
             if (!floorString.equals(0)) {
                 floor.append(" " + floorString);
             }
@@ -68,9 +63,20 @@ public class MapActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        // NON FUNZIONAAAAAA PORCO DIOOOOO
+        /*mapImage.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int height = mapImage.getHeight();
+                int width = mapImage.getWidth();
+                int x = mapImage.getLeft();
+                int y = mapImage.getTop();
+
+                mapImage.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });*/
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -96,11 +102,8 @@ public class MapActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     public void goMod(View view) {
         Intent intent = new Intent(this, ModActivity.class);
         startActivity(intent);
     }
-
-
 }
