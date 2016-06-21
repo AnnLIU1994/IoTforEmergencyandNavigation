@@ -63,19 +63,6 @@ public class MapActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        // NON FUNZIONAAAAAA PORCO DIOOOOO
-        /*mapImage.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                int height = mapImage.getHeight();
-                int width = mapImage.getWidth();
-                int x = mapImage.getLeft();
-                int y = mapImage.getTop();
-
-                mapImage.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
-        });*/
     }
 
     @Override
