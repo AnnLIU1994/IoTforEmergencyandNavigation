@@ -39,7 +39,8 @@
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="179dp">
-        <ImageView
+
+        <it.univpm.gruppoids.iotforemergencyandnavigation.interfaces.TouchImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mapFloor"

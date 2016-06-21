@@ -1,6 +1,7 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,28 +17,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import it.univpm.gruppoids.iotforemergencyandnavigation.interfaces.TouchImageView;
+
 public class MapActivity extends AppCompatActivity {
 
     private TextView floor;
     private ImageView mapImage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        TouchImageView fullImageView = (TouchImageView)findViewById(R.id.mapFloor);
+        fullImageView.setMaxZoom(4f);
 
-
-
-        final ImageView imageView = (ImageView) findViewById(R.id.mapFloor);
-        imageView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    String text = "You click at x = " + event.getX() + " and y = " + event.getY();
-                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();}
-                return false;
-            }
-        });
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -106,4 +101,6 @@ public class MapActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ModActivity.class);
         startActivity(intent);
     }
+
+
 }
