@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-//import com.polites.android.GestureImageView;
 
 public class MapActivity extends AppCompatActivity {
 
