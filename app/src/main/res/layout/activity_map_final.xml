@@ -12,29 +12,6 @@
     android:background="@drawable/terminate_navigation_sfumato"
     tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.MapFinalActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/floor_pos"
-        android:id="@+id/txtMapActivity"
-        android:layout_marginTop="27dp"
-        android:textSize="40sp"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textColor="#ffffff"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/floor_pos2"
-        android:id="@+id/txtMapActivity2"
-        android:layout_marginTop="27dp"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textColor="#ffffff"/>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

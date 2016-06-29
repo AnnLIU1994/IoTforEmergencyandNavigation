@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,8 +19,8 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.interfaces.TouchImageVie
 
 public class MapActivity extends AppCompatActivity {
 
-    private TextView floor;
-    private TouchImageView mapImage;
+    private ImageView mapImage;
+    private Button insertPos;
 
 
     @Override
@@ -34,11 +35,10 @@ public class MapActivity extends AppCompatActivity {
         if (inputIntent != null) {
             final int floorExtra = inputIntent.getIntExtra("floor", 0);
             final String floorString = Integer.toString(floorExtra);
-            floor = (TextView) findViewById(R.id.txtMapActivity);
-            mapImage = (TouchImageView) findViewById(R.id.mapFloor);
-            mapImage.setMaxZoom(4f);
+            mapImage = (ImageView) findViewById(R.id.mapFloor);
+
             if (!floorString.equals(0)) {
-                floor.append(" " + floorString);
+                getSupportActionBar().setTitle(getResources().getString(R.string.floor_pos) + " " + floorString);
             }
             switch (floorString) {
                 case "145":
@@ -57,12 +57,20 @@ public class MapActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    insertPos = (Button) findViewById(R.id.insert_pos);
+                    insertPos.setVisibility(View.VISIBLE);
                     String text = "You click at x = " + event.getX() + " and y = " + event.getY();
                     Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        insertPos.setVisibility(View.INVISIBLE);
     }
 
     @Override

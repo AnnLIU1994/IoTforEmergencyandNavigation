@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 public class MapFinalActivity extends AppCompatActivity {
 
-    TextView floor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +29,7 @@ public class MapFinalActivity extends AppCompatActivity {
         if (inputIntent != null) {
             final int floorExtra = inputIntent.getIntExtra("floor", 0);
             final String floorString = Integer.toString(floorExtra);
-            floor = (TextView) findViewById(R.id.txtMapActivity);
             if (!floorString.equals(0)) {
-                floor.append(" " + floorString);
             }
         }
     }

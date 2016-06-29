@@ -12,43 +12,14 @@
     android:background="@drawable/background_sfumato"
     tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/floor_pos"
-        android:id="@+id/txtMapActivity"
-        android:layout_marginTop="27dp"
-        android:textSize="40sp"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textColor="#ffffff"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/floor_pos2"
-        android:id="@+id/txtMapActivity2"
-        android:layout_marginTop="27dp"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textColor="#ffffff"/>
-    <FrameLayout
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="179dp">
-
-        <it.univpm.gruppoids.iotforemergencyandnavigation.interfaces.TouchImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mapFloor"
-            android:layout_gravity="center_horizontal" />
-    </FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mapFloor"
+        android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="-75dp"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:text="@string/insert_init_pos"
@@ -56,7 +27,7 @@
         android:onClick="goMod"
         android:layout_gravity="center_horizontal"
         android:padding="20dp"
-        android:background="@drawable/background_button"/>
-
+        android:background="@drawable/background_button"
+        android:visibility="invisible" />
 
 </LinearLayout>
