@@ -9,15 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import it.univpm.gruppoids.iotforemergencyandnavigation.interfaces.TouchImageView;
-
 public class MapActivity extends AppCompatActivity {
+
 
     private ImageView mapImage;
     private Button insertPos;
@@ -31,6 +28,8 @@ public class MapActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
+        insertPos = (Button) findViewById(R.id.insert_pos);
+
         final Intent inputIntent = getIntent();
         if (inputIntent != null) {
             final int floorExtra = inputIntent.getIntExtra("floor", 0);
@@ -43,6 +42,38 @@ public class MapActivity extends AppCompatActivity {
             switch (floorString) {
                 case "145":
                     mapImage.setImageResource(R.drawable.q145);
+
+                    final ImageView dicea = (ImageView) findViewById(R.id.dicea);
+                    dicea.setX(585f);
+                    dicea.setY(332f);
+                    dicea.setVisibility(View.VISIBLE);
+
+                    dicea.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dicea.setImageResource(R.drawable.ic_node_selected);
+                            dicea.setX(608f);
+                            dicea.setY(309f);
+                            insertPos.setVisibility(View.VISIBLE);
+                        }
+                    });
+
+                    final ImageView s1 = (ImageView) findViewById(R.id.s1);
+                    s1.setX(585f);
+                    s1.setY(706f);
+                    s1.setVisibility(View.VISIBLE);
+
+                    s1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            s1.setImageResource(R.drawable.ic_node_selected);
+                            s1.setX(608f);
+                            s1.setY(706f - 23f);
+                            insertPos.setVisibility(View.VISIBLE);
+                            dicea.setImageResource(R.drawable.ic_node_unselected);
+                        }
+                    });
+
                     break;
                 case "150":
                     mapImage.setImageResource(R.drawable.q150);
@@ -57,10 +88,8 @@ public class MapActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    insertPos = (Button) findViewById(R.id.insert_pos);
-                    insertPos.setVisibility(View.VISIBLE);
                     String text = "You click at x = " + event.getX() + " and y = " + event.getY();
-                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
@@ -72,6 +101,14 @@ public class MapActivity extends AppCompatActivity {
         super.onRestart();
         insertPos.setVisibility(View.INVISIBLE);
     }
+
+    /*@Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.mapView.destroyAll();
+        AndroidGraphicFactory.clearResourceMemoryCache();
+        super.onDestroy();
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

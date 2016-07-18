@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="8"
     android:background="@drawable/terminate_navigation_sfumato"
     tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.FinalPositionActivity">
 
@@ -20,6 +21,7 @@
         android:id="@+id/txtInsPosFinal"
         android:layout_marginTop="27dp"
         android:textSize="40sp"
+        android:layout_weight="2"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:textColor="#ffffff"/>
@@ -29,12 +31,13 @@
         android:layout_height="wrap_content"
         android:text="@string/manual_sel"
         android:id="@+id/btnManSel"
-        android:layout_marginTop="91dp"
+        android:layout_marginTop="75dp"
         android:onClick="goFinalManualSel"
         android:layout_gravity="center_horizontal"
         android:width="300dp"
         android:height="60dp"
         android:padding="20dp"
+        android:layout_weight="1"
         android:background="@drawable/background_button"/>
 
     <Button
@@ -48,5 +51,6 @@
         android:width="300dp"
         android:height="60dp"
         android:padding="20dp"
+        android:layout_weight="1"
         android:background="@drawable/background_button"/>
 </LinearLayout>
