@@ -1,6 +1,13 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -9,7 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,7 +26,7 @@ public class MapActivity extends AppCompatActivity {
 
 
     private ImageView mapImage;
-    private Button insertPos;
+    public static Button insertPos;
 
 
     @Override
@@ -43,34 +52,24 @@ public class MapActivity extends AppCompatActivity {
                 case "145":
                     mapImage.setImageResource(R.drawable.q145);
 
-                    final ImageView dicea = (ImageView) findViewById(R.id.dicea);
-                    dicea.setX(585f);
-                    dicea.setY(332f);
-                    dicea.setVisibility(View.VISIBLE);
-
-                    dicea.setOnClickListener(new View.OnClickListener() {
+                    final ImageView q145dicea = (ImageView) findViewById(R.id.q145dicea);
+                    Nodes.positioningNode(q145dicea);
+                    q145dicea.setOnTouchListener(new View.OnTouchListener() {
                         @Override
-                        public void onClick(View v) {
-                            dicea.setImageResource(R.drawable.ic_node_selected);
-                            dicea.setX(608f);
-                            dicea.setY(309f);
-                            insertPos.setVisibility(View.VISIBLE);
+                        public boolean onTouch(View v, MotionEvent event) {
+                            Nodes.onTouchNode(q145dicea);
+                            return false;
                         }
                     });
 
-                    final ImageView s1 = (ImageView) findViewById(R.id.s1);
-                    s1.setX(585f);
-                    s1.setY(706f);
-                    s1.setVisibility(View.VISIBLE);
+                    final ImageView q145s1 = (ImageView) findViewById(R.id.q145s1);
+                    Nodes.positioningNode(q145s1);
 
-                    s1.setOnClickListener(new View.OnClickListener() {
+                    q145s1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            s1.setImageResource(R.drawable.ic_node_selected);
-                            s1.setX(608f);
-                            s1.setY(706f - 23f);
-                            insertPos.setVisibility(View.VISIBLE);
-                            dicea.setImageResource(R.drawable.ic_node_unselected);
+                            Nodes.onTouchNode(q145s1);
+                            Nodes.positioningNode(q145dicea);
                         }
                     });
 
@@ -101,14 +100,6 @@ public class MapActivity extends AppCompatActivity {
         super.onRestart();
         insertPos.setVisibility(View.INVISIBLE);
     }
-
-    /*@Override
-    protected void onDestroy() {
-        super.onDestroy();
-        this.mapView.destroyAll();
-        AndroidGraphicFactory.clearResourceMemoryCache();
-        super.onDestroy();
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -26,7 +26,7 @@
 
     <Button
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="@string/iotForEm"
         android:id="@+id/iotForEm"
         android:onClick="goEmerg"
@@ -38,7 +38,7 @@
 
     <Button
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="@string/iotForNav"
         android:id="@+id/iotForNav"
         android:onClick="goFinalPos"
