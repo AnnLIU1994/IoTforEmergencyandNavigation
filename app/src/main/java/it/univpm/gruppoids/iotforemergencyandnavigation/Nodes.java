@@ -38,6 +38,34 @@ public class Nodes {
                 coordsPercent[0] = 413;
                 coordsPercent[1] = 288;
                 break;
+            case R.id.q145r3:
+                coordsPercent[0] = 413;
+                coordsPercent[1] = 405;
+                break;
+            case R.id.q145r1:
+                coordsPercent[0] = 413;
+                coordsPercent[1] = 562;
+                break;
+            case R.id.q145wc1:
+                coordsPercent[0] = 413;
+                coordsPercent[1] = 688;
+                break;
+            case R.id.q145s2:
+                coordsPercent[0] = 510;
+                coordsPercent[1] = 688;
+                break;
+            case R.id.q145s3:
+                coordsPercent[0] = 510;
+                coordsPercent[1] = 790;
+                break;
+            case R.id.q145rg2:
+                coordsPercent[0] = 625;
+                coordsPercent[1] = 688;
+                break;
+            case R.id.q145rg1:
+                coordsPercent[0] = 625;
+                coordsPercent[1] = 318;
+                break;
         }
         return coordsPercent;
     }
@@ -69,35 +97,17 @@ public class Nodes {
         return traslationPosition;
     }
 
-    public static void onTouchNode(ImageView vertexTouched) {
+    public static void selectedNode(ImageView vertexTouched) {
         vertexTouched.setImageResource(R.drawable.ic_node_selected);
         vertexTouched.setTranslationX(getTraslationPosition(vertexTouched.getId())[0]);
         vertexTouched.setTranslationY(getTraslationPosition(vertexTouched.getId())[1]);
-        MapActivity.insertPos.setVisibility(View.VISIBLE);
+        MapActivity.firstPage.setVisible(false);
+        MapActivity.forward.setVisible(true);
     }
 
-    public static int getXTranslatePosition(String id) {
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        int x = 0;
-        switch (id) {
-            case "q145dicea":
-                x = 395;
-                break;
-        }
-        float xPerc = (width * x)/1000;
-        return MathUtils.round(xPerc);
+    public static void unselectedNode(ImageView vertexUntouched) {
+        vertexUntouched.setImageResource(R.drawable.ic_node_unselected);
+        vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0]);
+        vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
     }
-
-    public static int getYTranslatePosition(String id) {
-        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
-        int y = 0;
-        switch (id) {
-            case "q145dicea":
-                y = 113;
-                break;
-        }
-        float yPerc = (height * y)/1000;
-        return MathUtils.round(yPerc);
-    }
-
 }

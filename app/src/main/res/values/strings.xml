@@ -53,4 +53,6 @@
 
     <string name="updates_failed_dialog">Update failed!</string>
     <string name="try_again_label">Try again</string>
+
+    <string name="posit_selected">Position selected</string>
 </resources>
