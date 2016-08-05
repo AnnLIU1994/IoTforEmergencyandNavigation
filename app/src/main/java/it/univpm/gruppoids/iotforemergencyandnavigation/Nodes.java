@@ -2,6 +2,7 @@ package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.res.Resources;
 import android.provider.ContactsContract;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -12,7 +13,7 @@ import com.google.zxing.common.detector.MathUtils;
  */
 public class Nodes {
 
-    private String id;
+    private static String id;
     private float x;
     private float y;
     private float width;
@@ -30,7 +31,7 @@ public class Nodes {
     private static int[] getCoordsPercent(int id) {
         int[] coordsPercent = {0, 0};
         switch (id) {
-            case R.id.q145dicea:
+            case R.id.q145dicea: //TODO: da sostituire con db
                 coordsPercent[0] = 413;
                 coordsPercent[1] = 142;
                 break;
@@ -72,10 +73,20 @@ public class Nodes {
 
     private static int[] getPosition(int id) {
         int[] position = {0, 0};
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
-        position[0] = MathUtils.round((width * getCoordsPercent(id)[0])/1000);
-        position[1] = MathUtils.round((height * getCoordsPercent(id)[1])/1000);
+        int x;
+        int y;
+        int widthScreen = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int heightScreen = Resources.getSystem().getDisplayMetrics().heightPixels;
+        if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+            x = getCoordsPercent(id)[0] - 8;
+            y = getCoordsPercent(id)[1] - 28;
+        } else {
+            x = getCoordsPercent(id)[0];
+            y = getCoordsPercent(id)[1];
+        }
+        position[0] = MathUtils.round((widthScreen * x)/1000);
+        position[1] = MathUtils.round((heightScreen * y)/1000);
         return position;
     }
 
@@ -88,12 +99,20 @@ public class Nodes {
 
     private static int[] getTraslationPosition(int id) {
         int[] traslationPosition = {0, 0};
-        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
-        int height = Resources.getSystem().getDisplayMetrics().heightPixels;
-        int xTrasl = getCoordsPercent(id)[0] - 25;
-        int yTrasl = getCoordsPercent(id)[1] - 37;
-        traslationPosition[0] = MathUtils.round((width * xTrasl)/1000);
-        traslationPosition[1] = MathUtils.round((height * yTrasl)/1000);
+        int xTrasl;
+        int yTrasl;
+        int widthScreen = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int heightScreen = Resources.getSystem().getDisplayMetrics().heightPixels;
+        if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+            xTrasl = getCoordsPercent(id)[0] - 33; // 8 + 25
+            yTrasl = getCoordsPercent(id)[1] - 65; // 28 + 37
+        } else {
+            xTrasl = getCoordsPercent(id)[0] - 25;
+            yTrasl = getCoordsPercent(id)[1] - 37;
+        }
+        traslationPosition[0] = MathUtils.round((widthScreen * xTrasl)/1000);
+        traslationPosition[1] = MathUtils.round((heightScreen * yTrasl)/1000);
         return traslationPosition;
     }
 
@@ -109,5 +128,38 @@ public class Nodes {
         vertexUntouched.setImageResource(R.drawable.ic_node_unselected);
         vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0]);
         vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+    }
+
+    public static String getNameOfNode(ImageView vertexTouched) {
+        switch (vertexTouched.getId()) {
+            case R.id.q145dicea: //TODO: da sostituire con db
+                id = "q145dicea";
+                break;
+            case R.id.q145s1:
+                id = "q145s1";
+                break;
+            case R.id.q145r3:
+                id = "q145r3";
+                break;
+            case R.id.q145r1:
+                id = "q145r1";
+                break;
+            case R.id.q145wc1:
+                id = "q145wc1";
+                break;
+            case R.id.q145s2:
+                id = "q145s2";
+                break;
+            case R.id.q145s3:
+                id = "q145s3";
+                break;
+            case R.id.q145rg2:
+                id = "q145rg2";
+                break;
+            case R.id.q145rg1:
+                id = "q145rg1";
+                break;
+        }
+        return id;
     }
 }

@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MapActivity extends AppCompatActivity {
 
@@ -18,8 +17,19 @@ public class MapActivity extends AppCompatActivity {
     public static ImageView mapImage;
     public static MenuItem forward;
     public static MenuItem firstPage;
-    private int width = 0;
-    private int height = 0;
+
+    private ImageView q145dicea;
+    private ImageView q145s1;
+    private ImageView q145r3;
+    private ImageView q145r1;
+    private ImageView q145wc1;
+    private ImageView q145s2;
+    private ImageView q145s3;
+    private ImageView q145rg2;
+    private ImageView q145rg1;
+
+    private String nodeSelected;
+
 
 
     @Override
@@ -30,50 +40,64 @@ public class MapActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        final Intent inputIntent = getIntent();
-        final int floorExtra = inputIntent.getIntExtra("floor", 0);
-        final String floorString = Integer.toString(floorExtra);
+        Intent inputIntent = getIntent();
+        int floorExtra = inputIntent.getIntExtra("floor", 0);
+        String floorString = Integer.toString(floorExtra);
+
         mapImage = (ImageView) findViewById(R.id.mapFloor);
 
-        if (!floorString.equals(0)) {
+        if (floorExtra != 0) {
             getSupportActionBar().setTitle(getResources().getString(R.string.floor_pos) + " " + floorString);
         }
         switch (floorString) {
             case "145":
                 mapImage.setImageResource(R.drawable.q145);
 
-                final ImageView q145dicea = (ImageView) findViewById(R.id.q145dicea);
+
+                q145dicea = (ImageView) findViewById(R.id.q145dicea);
+
+                q145s1 = (ImageView) findViewById(R.id.q145s1);
+
+                q145r3 = (ImageView) findViewById(R.id.q145r3);
+
+                q145r1 = (ImageView) findViewById(R.id.q145r1);
+
+                q145wc1 = (ImageView) findViewById(R.id.q145wc1);
+
+                q145s2 = (ImageView) findViewById(R.id.q145s2);
+
+                q145s3 = (ImageView) findViewById(R.id.q145s3);
+
+                q145rg2 = (ImageView) findViewById(R.id.q145rg2);
+
+                q145rg1 = (ImageView) findViewById(R.id.q145rg1);
+
+
                 Nodes.positioningNode(q145dicea);
 
-                final ImageView q145s1 = (ImageView) findViewById(R.id.q145s1);
                 Nodes.positioningNode(q145s1);
 
-                final ImageView q145r3 = (ImageView) findViewById(R.id.q145r3);
                 Nodes.positioningNode(q145r3);
 
-                final ImageView q145r1 = (ImageView) findViewById(R.id.q145r1);
                 Nodes.positioningNode(q145r1);
 
-                final ImageView q145wc1 = (ImageView) findViewById(R.id.q145wc1);
                 Nodes.positioningNode(q145wc1);
 
-                final ImageView q145s2 = (ImageView) findViewById(R.id.q145s2);
                 Nodes.positioningNode(q145s2);
 
-                final ImageView q145s3 = (ImageView) findViewById(R.id.q145s3);
                 Nodes.positioningNode(q145s3);
 
-                final ImageView q145rg2 = (ImageView) findViewById(R.id.q145rg2);
                 Nodes.positioningNode(q145rg2);
 
-                final ImageView q145rg1 = (ImageView) findViewById(R.id.q145rg1);
                 Nodes.positioningNode(q145rg1);
 
+
                 q145dicea.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145dicea);
+                            nodeSelected = Nodes.getNameOfNode(q145dicea);
 
                             // unselected
                             Nodes.unselectedNode(q145s1);
@@ -86,14 +110,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145s1.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145s1);
+                            nodeSelected = Nodes.getNameOfNode(q145s1);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -106,14 +131,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145r3.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145r3);
+                            nodeSelected = Nodes.getNameOfNode(q145r3);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -126,14 +152,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145r1.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145r1);
+                            nodeSelected = Nodes.getNameOfNode(q145r1);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -146,14 +173,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145wc1.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145wc1);
+                            nodeSelected = Nodes.getNameOfNode(q145wc1);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -166,14 +194,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145s2.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145s2);
+                            nodeSelected = Nodes.getNameOfNode(q145s2);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -186,14 +215,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145s3.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145s3);
+                            nodeSelected = Nodes.getNameOfNode(q145s3);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -206,14 +236,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145rg2.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145rg2);
+                            nodeSelected = Nodes.getNameOfNode(q145rg2);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -226,14 +257,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg1);
                         }
                         return false;
-                        }
+                    }
                 });
 
                 q145rg1.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             Nodes.selectedNode(q145rg1);
+                            nodeSelected = Nodes.getNameOfNode(q145rg1);
 
                             // unselected
                             Nodes.unselectedNode(q145dicea);
@@ -246,10 +278,8 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145rg2);
                         }
                         return false;
-                        }
+                    }
                 });
-
-
                 break;
             case "150":
                 mapImage.setImageResource(R.drawable.q150);
@@ -258,17 +288,6 @@ public class MapActivity extends AppCompatActivity {
                 mapImage.setImageResource(R.drawable.q155);
                 break;
         }
-
-        mapImage.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    String text = "You click at x = " + event.getX() + " and y = " + event.getY();
-                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            }
-        });
     }
 
     @Override
@@ -291,6 +310,7 @@ public class MapActivity extends AppCompatActivity {
                 break;
             case R.id.forward:
                 Intent nextPage = new Intent(this, ModActivity.class);
+                nextPage.putExtra("initPos", nodeSelected);
                 startActivity(nextPage);
                 break;
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente

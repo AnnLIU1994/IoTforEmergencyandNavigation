@@ -23,6 +23,7 @@ public class ModActivity extends AppCompatActivity {
         final Intent inputIntent = getIntent();
         if (inputIntent != null) {
             String initPos = inputIntent.getStringExtra("initPos");
+            Toast.makeText(getApplicationContext(), "The initial position is " + initPos, Toast.LENGTH_SHORT).show();
             //TODO inserire la posizione passata dal qrCode nella formula di Dikstra
         }
     }
