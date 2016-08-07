@@ -19,6 +19,13 @@ public class EmergencyActivity extends AppCompatActivity implements TerminateEme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
 
+        final Intent inputIntent = getIntent();
+        if (inputIntent != null) {
+            String initPos = inputIntent.getStringExtra("initPosEm");
+            Toast.makeText(getApplicationContext(), "The initial position is " + initPos, Toast.LENGTH_SHORT).show();
+            //TODO inserire la posizione passata dal qrCode nella formula di Dikstra
+        }
+
         final Button updateButton = (Button) findViewById(R.id.updatePos);
         if (updateButton != null) {
             updateButton.setOnTouchListener(new View.OnTouchListener() {

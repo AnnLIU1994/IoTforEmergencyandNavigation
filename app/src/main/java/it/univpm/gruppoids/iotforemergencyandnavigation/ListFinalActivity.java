@@ -22,14 +22,25 @@ public class ListFinalActivity extends AppCompatActivity implements AdapterView.
     ListView l;
     String [] place = {"Portineria", "Aula Magna", "Polifunzionale", "Anfiteatro", "Biblioteca", "Centro copie", "Aula Studio"};
 
+    String initPos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_final);
+
+        final Intent inputIntent = getIntent();
+        if (inputIntent != null) {
+            initPos = inputIntent.getStringExtra("initPosMenu");
+            Toast.makeText(getApplicationContext(), "The initial position is " + initPos, Toast.LENGTH_SHORT).show();
+            //TODO inserire la posizione passata dal qrCode nella formula di Dikstra
+        }
+
         l= (ListView) findViewById(R.id.listView1);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.simple_list_item_1, place);
         l.setAdapter(adapter);
         l.setOnItemClickListener(this);
+        //TODO: inserire putExtra intent nel passaggio schermata successiva
 
 
         ActionBar ab = getSupportActionBar();
@@ -70,7 +81,4 @@ public class ListFinalActivity extends AppCompatActivity implements AdapterView.
         Intent intent = new Intent(this, NavigationActivity.class);
         startActivity(intent);
     }
-
-
-
 }

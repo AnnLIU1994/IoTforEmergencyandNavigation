@@ -18,6 +18,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+
         final Button updateButton = (Button) findViewById(R.id.updatePos);
         updateButton.setOnTouchListener(new View.OnTouchListener() {
             @Override

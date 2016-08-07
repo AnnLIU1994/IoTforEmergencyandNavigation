@@ -15,10 +15,19 @@ import android.widget.Toast;
 
 public class FinalPositionActivity extends AppCompatActivity {
 
+    String initPos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_position);
+
+        final Intent inputIntent = getIntent();
+        if (inputIntent != null) {
+            initPos = inputIntent.getStringExtra("initPosNav");
+            Toast.makeText(getApplicationContext(), "The initial position is " + initPos, Toast.LENGTH_SHORT).show();
+            //TODO inserire la posizione passata dal qrCode nella formula di Dikstra
+        }
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -50,11 +59,13 @@ public class FinalPositionActivity extends AppCompatActivity {
 
     public void goFinalManualSel(View view) { // Lancia l'intent verso l'InitPositionActivity
         final Intent intent = new Intent(this, ChooseFinalPlanActivity.class);
+        intent.putExtra("initPosManual", initPos);
         startActivity(intent);
     }
 
     public void goFinalMenuSel(View view) { // Lancia l'intent verso l'InitPositionActivity
         final Intent intent = new Intent(this, ListFinalActivity.class);
+        intent.putExtra("initPosMenu", initPos);
         startActivity(intent);
     }
 

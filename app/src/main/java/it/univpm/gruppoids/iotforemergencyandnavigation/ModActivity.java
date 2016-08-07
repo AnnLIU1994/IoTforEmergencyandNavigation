@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 public class ModActivity extends AppCompatActivity {
 
+    String initPos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,7 @@ public class ModActivity extends AppCompatActivity {
 
         final Intent inputIntent = getIntent();
         if (inputIntent != null) {
-            String initPos = inputIntent.getStringExtra("initPos");
+            initPos = inputIntent.getStringExtra("initPos");
             Toast.makeText(getApplicationContext(), "The initial position is " + initPos, Toast.LENGTH_SHORT).show();
             //TODO inserire la posizione passata dal qrCode nella formula di Dikstra
         }
@@ -54,11 +56,13 @@ public class ModActivity extends AppCompatActivity {
 
     public void goEmerg(View view) {
         Intent intent = new Intent(this, EmergencyActivity.class);
+        intent.putExtra("initPosEm", initPos);
         startActivity(intent);
     }
 
     public void goFinalPos(View view) {
         Intent intent = new Intent(this, FinalPositionActivity.class);
+        intent.putExtra("initPosNav", initPos);
         startActivity(intent);
     }
 }
