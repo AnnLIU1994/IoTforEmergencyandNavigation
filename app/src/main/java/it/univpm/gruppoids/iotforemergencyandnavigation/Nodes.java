@@ -64,6 +64,26 @@ public class Nodes {
                 coordsPercent[0] = 625;
                 coordsPercent[1] = 318;
                 break;
+            case R.id.q145ema7:
+                coordsPercent[0] = 413;
+                coordsPercent[1] = 76;
+                break;
+            case R.id.q145em1:
+                coordsPercent[0] = 260;
+                coordsPercent[1] = 268;
+                break;
+            case R.id.q145u1:
+                coordsPercent[0] = 661;
+                coordsPercent[1] = 283;
+                break;
+            case R.id.q145emg1:
+                coordsPercent[0] = 661;
+                coordsPercent[1] = 472;
+                break;
+            case R.id.q145emg2:
+                coordsPercent[0] = 661;
+                coordsPercent[1] = 518;
+                break;
 
             case R.id.q150dicea1: //TODO: da sostituire con db
                 coordsPercent[0] = 346;
@@ -210,17 +230,85 @@ public class Nodes {
     }
 
     public static void positioningNode(ImageView vertex) {
-        vertex.setImageResource(R.drawable.ic_node_unselected);
+        switch (vertex.getId()) {
+            case R.id.q155wc2:
+            case R.id.q155wc1:
+            case R.id.q150wc1:
+            case R.id.q145wc1:
+                vertex.setImageResource(R.drawable.ic_wc_unselected);
+                vertex.setX(getPosition(vertex.getId())[0] - 18);
+                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                break;
+            case R.id.q145ema7:
+            case R.id.q150bib:
+            case R.id.q150emrl:
+            case R.id.q150emr1:
+            case R.id.q155up:
+            case R.id.q155em3:
+            case R.id.q155em2:
+            case R.id.q155u1:
+            case R.id.q155em1:
+            case R.id.q145ram:
+            case R.id.q145u3:
+            case R.id.q145ema3:
+            case R.id.q145u2:
+            case R.id.q145emg2:
+            case R.id.q145emg1:
+            case R.id.q145u1:
+            case R.id.q145ea5:
+            case R.id.q145em1:
+            case R.id.q150em1:
+                vertex.setImageResource(R.drawable.ic_exit_unselected);
+                vertex.setX(getPosition(vertex.getId())[0] - 18);
+                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                break;
+            default:
+                vertex.setImageResource(R.drawable.ic_node_unselected);
+                vertex.setX(getPosition(vertex.getId())[0]);
+                vertex.setY(getPosition(vertex.getId())[1]);
+        }
         vertex.setVisibility(View.VISIBLE);
-        vertex.setX(getPosition(vertex.getId())[0]);
-        vertex.setY(getPosition(vertex.getId())[1]);
     }
 
     public static void positioningNodeNav(ImageView vertex) {
-        vertex.setImageResource(R.drawable.ic_node_unselected_nav);
+        switch (vertex.getId()) {
+            case R.id.q155wc2:
+            case R.id.q155wc1:
+            case R.id.q150wc1:
+            case R.id.q145wc1:
+                vertex.setImageResource(R.drawable.ic_wc_unselected_nav);
+                vertex.setX(getPosition(vertex.getId())[0] - 18);
+                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                break;
+            case R.id.q145ema7:
+            case R.id.q150bib:
+            case R.id.q150emrl:
+            case R.id.q150emr1:
+            case R.id.q155up:
+            case R.id.q155em3:
+            case R.id.q155em2:
+            case R.id.q155u1:
+            case R.id.q155em1:
+            case R.id.q145ram:
+            case R.id.q145u3:
+            case R.id.q145ema3:
+            case R.id.q145u2:
+            case R.id.q145emg2:
+            case R.id.q145emg1:
+            case R.id.q145u1:
+            case R.id.q145ea5:
+            case R.id.q145em1:
+            case R.id.q150em1:
+                vertex.setImageResource(R.drawable.ic_exit_unselected_nav);
+                vertex.setX(getPosition(vertex.getId())[0] - 18);
+                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                break;
+            default:
+                vertex.setImageResource(R.drawable.ic_node_unselected_nav);
+                vertex.setX(getPosition(vertex.getId())[0]);
+                vertex.setY(getPosition(vertex.getId())[1]);
+        }
         vertex.setVisibility(View.VISIBLE);
-        vertex.setX(getPosition(vertex.getId())[0]);
-        vertex.setY(getPosition(vertex.getId())[1]);
     }
 
     private static int[] getTraslationPosition(int id) {
@@ -259,15 +347,83 @@ public class Nodes {
     }
 
     public static void unselectedNode(ImageView vertexUntouched) {
-        vertexUntouched.setImageResource(R.drawable.ic_node_unselected);
-        vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0]);
-        vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+        switch (vertexUntouched.getId()) {
+            case R.id.q155wc2:
+            case R.id.q155wc1:
+            case R.id.q150wc1:
+            case R.id.q145wc1:
+                vertexUntouched.setImageResource(R.drawable.ic_wc_unselected);
+                vertexUntouched.setX(getPosition(vertexUntouched.getId())[0] - 18);
+                vertexUntouched.setY(getPosition(vertexUntouched.getId())[1] - 18);
+                break;
+            case R.id.q145ema7:
+            case R.id.q150bib:
+            case R.id.q150emrl:
+            case R.id.q150emr1:
+            case R.id.q155up:
+            case R.id.q155em3:
+            case R.id.q155em2:
+            case R.id.q155u1:
+            case R.id.q155em1:
+            case R.id.q145ram:
+            case R.id.q145u3:
+            case R.id.q145ema3:
+            case R.id.q145u2:
+            case R.id.q145emg2:
+            case R.id.q145emg1:
+            case R.id.q145u1:
+            case R.id.q145ea5:
+            case R.id.q145em1:
+            case R.id.q150em1:
+                vertexUntouched.setImageResource(R.drawable.ic_exit_unselected);
+                vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
+                vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                break;
+            default:
+                vertexUntouched.setImageResource(R.drawable.ic_node_unselected);
+                vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0]);
+                vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+        }
     }
 
     public static void unselectedNodeNav(ImageView vertexUntouched) {
-        vertexUntouched.setImageResource(R.drawable.ic_node_unselected_nav);
-        vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0]);
-        vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+        switch (vertexUntouched.getId()) {
+            case R.id.q155wc2:
+            case R.id.q155wc1:
+            case R.id.q150wc1:
+            case R.id.q145wc1:
+                vertexUntouched.setImageResource(R.drawable.ic_wc_unselected_nav);
+                vertexUntouched.setX(getPosition(vertexUntouched.getId())[0] - 18);
+                vertexUntouched.setY(getPosition(vertexUntouched.getId())[1] - 18);
+                break;
+            case R.id.q145ema7:
+            case R.id.q150bib:
+            case R.id.q150emrl:
+            case R.id.q150emr1:
+            case R.id.q155up:
+            case R.id.q155em3:
+            case R.id.q155em2:
+            case R.id.q155u1:
+            case R.id.q155em1:
+            case R.id.q145ram:
+            case R.id.q145u3:
+            case R.id.q145ema3:
+            case R.id.q145u2:
+            case R.id.q145emg2:
+            case R.id.q145emg1:
+            case R.id.q145u1:
+            case R.id.q145ea5:
+            case R.id.q145em1:
+            case R.id.q150em1:
+                vertexUntouched.setImageResource(R.drawable.ic_exit_unselected_nav);
+                vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
+                vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                break;
+            default:
+                vertexUntouched.setImageResource(R.drawable.ic_node_unselected_nav);
+                vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0]);
+                vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+        }
     }
 
     public static String getNameOfNode(ImageView vertexTouched) {

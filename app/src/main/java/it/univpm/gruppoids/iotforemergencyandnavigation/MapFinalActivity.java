@@ -33,6 +33,18 @@ public class MapFinalActivity extends AppCompatActivity {
     private ImageView q145s3;
     private ImageView q145rg2;
     private ImageView q145rg1;
+    private ImageView q145ema7;
+    private ImageView q145em1;
+    private ImageView q145u1;
+    private ImageView q145ea5;
+    private ImageView q145a5;
+    private ImageView q145emg1;
+    private ImageView q145emg2;
+    private ImageView q145u2;
+    private ImageView q145a3;
+    private ImageView q145ema3;
+    private ImageView q145u3;
+    private ImageView q145ram;
 
     private ImageView q150dicea1;
     private ImageView q150g1;
@@ -349,52 +361,52 @@ public class MapFinalActivity extends AppCompatActivity {
 
                 q150rl = (ImageView) findViewById(R.id.q150rl);
 
-                Nodes.positioningNode(q150dicea1);
+                Nodes.positioningNodeNav(q150dicea1);
 
-                Nodes.positioningNode(q150g1);
+                Nodes.positioningNodeNav(q150g1);
 
-                Nodes.positioningNode(q150dicea);
+                Nodes.positioningNodeNav(q150dicea);
 
-                Nodes.positioningNode(q150strade);
+                Nodes.positioningNodeNav(q150strade);
 
-                Nodes.positioningNode(q150em1);
+                Nodes.positioningNodeNav(q150em1);
 
-                Nodes.positioningNode(q150wc1);
+                Nodes.positioningNodeNav(q150wc1);
 
-                Nodes.positioningNode(q150ram);
+                Nodes.positioningNodeNav(q150ram);
 
-                Nodes.positioningNode(q150g1g2);
+                Nodes.positioningNodeNav(q150g1g2);
 
-                Nodes.positioningNode(q150g2);
+                Nodes.positioningNodeNav(q150g2);
 
-                Nodes.positioningNode(q150r2);
+                Nodes.positioningNodeNav(q150r2);
 
-                Nodes.positioningNode(q150s1);
+                Nodes.positioningNodeNav(q150s1);
 
-                Nodes.positioningNode(q150r1);
+                Nodes.positioningNodeNav(q150r1);
 
-                Nodes.positioningNode(q150rl);
+                Nodes.positioningNodeNav(q150rl);
 
                 q150dicea1.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150dicea1);
+                            Nodes.selectedNodeNav(q150dicea1);
                             nodeSelected = Nodes.getNameOfNode(q150dicea1);
 
                             // unselected
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -404,22 +416,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150g1);
+                            Nodes.selectedNodeNav(q150g1);
                             nodeSelected = Nodes.getNameOfNode(q150g1);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -429,22 +441,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150dicea);
+                            Nodes.selectedNodeNav(q150dicea);
                             nodeSelected = Nodes.getNameOfNode(q150dicea);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -454,22 +466,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150strade);
+                            Nodes.selectedNodeNav(q150strade);
                             nodeSelected = Nodes.getNameOfNode(q150strade);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -479,22 +491,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150em1);
+                            Nodes.selectedNodeNav(q150em1);
                             nodeSelected = Nodes.getNameOfNode(q150em1);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -504,22 +516,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150wc1);
+                            Nodes.selectedNodeNav(q150wc1);
                             nodeSelected = Nodes.getNameOfNode(q150wc1);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -529,22 +541,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150ram);
+                            Nodes.selectedNodeNav(q150ram);
                             nodeSelected = Nodes.getNameOfNode(q150ram);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -554,22 +566,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150g1g2);
+                            Nodes.selectedNodeNav(q150g1g2);
                             nodeSelected = Nodes.getNameOfNode(q150g1g2);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -579,22 +591,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150g2);
+                            Nodes.selectedNodeNav(q150g2);
                             nodeSelected = Nodes.getNameOfNode(q150g2);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -604,22 +616,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150r2);
+                            Nodes.selectedNodeNav(q150r2);
                             nodeSelected = Nodes.getNameOfNode(q150r2);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -629,22 +641,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150s1);
+                            Nodes.selectedNodeNav(q150s1);
                             nodeSelected = Nodes.getNameOfNode(q150s1);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150r1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150r1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -654,22 +666,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150r1);
+                            Nodes.selectedNodeNav(q150r1);
                             nodeSelected = Nodes.getNameOfNode(q150r1);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150rl);
                         }
                         return false;
                     }
@@ -679,22 +691,22 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q150rl);
+                            Nodes.selectedNodeNav(q150rl);
                             nodeSelected = Nodes.getNameOfNode(q150rl);
 
                             // unselected
-                            Nodes.unselectedNode(q150dicea1);
-                            Nodes.unselectedNode(q150g1);
-                            Nodes.unselectedNode(q150dicea);
-                            Nodes.unselectedNode(q150strade);
-                            Nodes.unselectedNode(q150em1);
-                            Nodes.unselectedNode(q150wc1);
-                            Nodes.unselectedNode(q150ram);
-                            Nodes.unselectedNode(q150g1g2);
-                            Nodes.unselectedNode(q150g2);
-                            Nodes.unselectedNode(q150r2);
-                            Nodes.unselectedNode(q150s1);
-                            Nodes.unselectedNode(q150r1);
+                            Nodes.unselectedNodeNav(q150dicea1);
+                            Nodes.unselectedNodeNav(q150g1);
+                            Nodes.unselectedNodeNav(q150dicea);
+                            Nodes.unselectedNodeNav(q150strade);
+                            Nodes.unselectedNodeNav(q150em1);
+                            Nodes.unselectedNodeNav(q150wc1);
+                            Nodes.unselectedNodeNav(q150ram);
+                            Nodes.unselectedNodeNav(q150g1g2);
+                            Nodes.unselectedNodeNav(q150g2);
+                            Nodes.unselectedNodeNav(q150r2);
+                            Nodes.unselectedNodeNav(q150s1);
+                            Nodes.unselectedNodeNav(q150r1);
                         }
                         return false;
                     }
@@ -737,64 +749,64 @@ public class MapFinalActivity extends AppCompatActivity {
 
                 q155bar = (ImageView) findViewById(R.id.q155bar);
 
-                Nodes.positioningNode(q155dicea);
+                Nodes.positioningNodeNav(q155dicea);
 
-                Nodes.positioningNode(q155r567);
+                Nodes.positioningNodeNav(q155r567);
 
-                Nodes.positioningNode(q155r4);
+                Nodes.positioningNodeNav(q155r4);
 
-                Nodes.positioningNode(q155r4d3);
+                Nodes.positioningNodeNav(q155r4d3);
 
-                Nodes.positioningNode(q155r23d2);
+                Nodes.positioningNodeNav(q155r23d2);
 
-                Nodes.positioningNode(q155rd1);
+                Nodes.positioningNodeNav(q155rd1);
 
-                Nodes.positioningNode(q155wc1);
+                Nodes.positioningNodeNav(q155wc1);
 
-                Nodes.positioningNode(q155u1);
+                Nodes.positioningNodeNav(q155u1);
 
-                Nodes.positioningNode(q155ecdl);
+                Nodes.positioningNodeNav(q155ecdl);
 
-                Nodes.positioningNode(q155s1);
+                Nodes.positioningNodeNav(q155s1);
 
-                Nodes.positioningNode(q155wc2);
+                Nodes.positioningNodeNav(q155wc2);
 
-                Nodes.positioningNode(q155em2);
+                Nodes.positioningNodeNav(q155em2);
 
-                Nodes.positioningNode(q155acq);
+                Nodes.positioningNodeNav(q155acq);
 
-                Nodes.positioningNode(q155em3);
+                Nodes.positioningNodeNav(q155em3);
 
-                Nodes.positioningNode(q155up);
+                Nodes.positioningNodeNav(q155up);
 
-                Nodes.positioningNode(q155cesmi);
+                Nodes.positioningNodeNav(q155cesmi);
 
-                Nodes.positioningNode(q155bar);
+                Nodes.positioningNodeNav(q155bar);
 
                 q155dicea.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155dicea);
+                            Nodes.selectedNodeNav(q155dicea);
                             nodeSelected = Nodes.getNameOfNode(q155dicea);
 
                             // unselected
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -804,26 +816,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155r567);
+                            Nodes.selectedNodeNav(q155r567);
                             nodeSelected = Nodes.getNameOfNode(q155r567);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -833,26 +845,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155r4);
+                            Nodes.selectedNodeNav(q155r4);
                             nodeSelected = Nodes.getNameOfNode(q155r4);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -862,26 +874,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155r4d3);
+                            Nodes.selectedNodeNav(q155r4d3);
                             nodeSelected = Nodes.getNameOfNode(q155r4d3);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -891,26 +903,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155r23d2);
+                            Nodes.selectedNodeNav(q155r23d2);
                             nodeSelected = Nodes.getNameOfNode(q155r23d2);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -920,26 +932,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155rd1);
+                            Nodes.selectedNodeNav(q155rd1);
                             nodeSelected = Nodes.getNameOfNode(q155rd1);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -949,26 +961,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155wc1);
+                            Nodes.selectedNodeNav(q155wc1);
                             nodeSelected = Nodes.getNameOfNode(q155wc1);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -978,26 +990,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155u1);
+                            Nodes.selectedNodeNav(q155u1);
                             nodeSelected = Nodes.getNameOfNode(q155u1);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1007,27 +1019,27 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155ecdl);
+                            Nodes.selectedNodeNav(q155ecdl);
                             nodeSelected = Nodes.getNameOfNode(q155ecdl);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1037,26 +1049,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155s1);
+                            Nodes.selectedNodeNav(q155s1);
                             nodeSelected = Nodes.getNameOfNode(q155s1);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1066,26 +1078,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155wc2);
+                            Nodes.selectedNodeNav(q155wc2);
                             nodeSelected = Nodes.getNameOfNode(q155wc2);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1095,26 +1107,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155em2);
+                            Nodes.selectedNodeNav(q155em2);
                             nodeSelected = Nodes.getNameOfNode(q155em2);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1124,26 +1136,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155acq);
+                            Nodes.selectedNodeNav(q155acq);
                             nodeSelected = Nodes.getNameOfNode(q155acq);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1153,26 +1165,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155em3);
+                            Nodes.selectedNodeNav(q155em3);
                             nodeSelected = Nodes.getNameOfNode(q155em3);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1182,26 +1194,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155up);
+                            Nodes.selectedNodeNav(q155up);
                             nodeSelected = Nodes.getNameOfNode(q155up);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155cesmi);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155cesmi);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1211,26 +1223,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155cesmi);
+                            Nodes.selectedNodeNav(q155cesmi);
                             nodeSelected = Nodes.getNameOfNode(q155cesmi);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155bar);
                         }
                         return false;
                     }
@@ -1240,26 +1252,26 @@ public class MapFinalActivity extends AppCompatActivity {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            Nodes.selectedNode(q155bar);
+                            Nodes.selectedNodeNav(q155bar);
                             nodeSelected = Nodes.getNameOfNode(q155bar);
 
                             // unselected
-                            Nodes.unselectedNode(q155dicea);
-                            Nodes.unselectedNode(q155r567);
-                            Nodes.unselectedNode(q155r4);
-                            Nodes.unselectedNode(q155r4d3);
-                            Nodes.unselectedNode(q155r23d2);
-                            Nodes.unselectedNode(q155rd1);
-                            Nodes.unselectedNode(q155wc1);
-                            Nodes.unselectedNode(q155u1);
-                            Nodes.unselectedNode(q155ecdl);
-                            Nodes.unselectedNode(q155s1);
-                            Nodes.unselectedNode(q155wc2);
-                            Nodes.unselectedNode(q155em2);
-                            Nodes.unselectedNode(q155acq);
-                            Nodes.unselectedNode(q155em3);
-                            Nodes.unselectedNode(q155up);
-                            Nodes.unselectedNode(q155cesmi);
+                            Nodes.unselectedNodeNav(q155dicea);
+                            Nodes.unselectedNodeNav(q155r567);
+                            Nodes.unselectedNodeNav(q155r4);
+                            Nodes.unselectedNodeNav(q155r4d3);
+                            Nodes.unselectedNodeNav(q155r23d2);
+                            Nodes.unselectedNodeNav(q155rd1);
+                            Nodes.unselectedNodeNav(q155wc1);
+                            Nodes.unselectedNodeNav(q155u1);
+                            Nodes.unselectedNodeNav(q155ecdl);
+                            Nodes.unselectedNodeNav(q155s1);
+                            Nodes.unselectedNodeNav(q155wc2);
+                            Nodes.unselectedNodeNav(q155em2);
+                            Nodes.unselectedNodeNav(q155acq);
+                            Nodes.unselectedNodeNav(q155em3);
+                            Nodes.unselectedNodeNav(q155up);
+                            Nodes.unselectedNodeNav(q155cesmi);
                         }
                         return false;
                     }

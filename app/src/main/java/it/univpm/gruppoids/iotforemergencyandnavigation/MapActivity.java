@@ -27,6 +27,18 @@ public class MapActivity extends AppCompatActivity {
     private ImageView q145s3;
     private ImageView q145rg2;
     private ImageView q145rg1;
+    private ImageView q145ema7;
+    private ImageView q145em1;
+    private ImageView q145u1;
+    private ImageView q145ea5;
+    private ImageView q145a5;
+    private ImageView q145emg1;
+    private ImageView q145emg2;
+    private ImageView q145u2;
+    private ImageView q145a3;
+    private ImageView q145ema3;
+    private ImageView q145u3;
+    private ImageView q145ram;
 
     private ImageView q150dicea1;
     private ImageView q150g1;
@@ -85,6 +97,23 @@ public class MapActivity extends AppCompatActivity {
             case "145":
                 mapImage.setImageResource(R.drawable.q145);
 
+                q145ema7 = (ImageView) findViewById(R.id.q145ema7);
+
+                q145em1 = (ImageView) findViewById(R.id.q145em1);
+
+                q145u1 = (ImageView) findViewById(R.id.q145u1);
+
+                q145emg1 = (ImageView) findViewById(R.id.q145emg1);
+
+                q145emg2 = (ImageView) findViewById(R.id.q145emg2);
+
+                q145u2 = (ImageView) findViewById(R.id.q145u2);
+
+                q145ema3 = (ImageView) findViewById(R.id.q145ema3);
+
+                q145ram = (ImageView) findViewById(R.id.q145ram);
+
+                q145u3 = (ImageView) findViewById(R.id.q145u3);
 
                 q145dicea = (ImageView) findViewById(R.id.q145dicea);
 
@@ -104,6 +133,22 @@ public class MapActivity extends AppCompatActivity {
 
                 q145rg1 = (ImageView) findViewById(R.id.q145rg1);
 
+
+                Nodes.positioningNode(q145ema7);
+
+                Nodes.positioningNode(q145em1);
+
+                Nodes.positioningNode(q145u1);
+
+                Nodes.positioningNode(q145emg1);
+
+                Nodes.positioningNode(q145emg2);
+
+                Nodes.positioningNode(q145u2);
+
+                Nodes.positioningNode(q145ema3);
+
+                Nodes.positioningNode(q145ram);
 
                 Nodes.positioningNode(q145dicea);
 
@@ -1281,7 +1326,7 @@ public class MapActivity extends AppCompatActivity {
                 break;
             case R.id.forward:
                 Intent nextPage = new Intent(this, ModActivity.class);
-                nextPage.putExtra("initPos", nodeSelected);
+                nextPage.putExtra("initPos", nodeSelected); //TODO: invece degli intent scrivere su db
                 startActivity(nextPage);
                 break;
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
