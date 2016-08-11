@@ -57,7 +57,7 @@ public class Nodes {
                 coordsPercent[1] = 790;
                 break;
             case R.id.q145rg2:
-                coordsPercent[0] = 625;
+                coordsPercent[0] = 605;
                 coordsPercent[1] = 688;
                 break;
             case R.id.q145rg1:
@@ -69,7 +69,7 @@ public class Nodes {
                 coordsPercent[1] = 76;
                 break;
             case R.id.q145em1:
-                coordsPercent[0] = 260;
+                coordsPercent[0] = 255;
                 coordsPercent[1] = 268;
                 break;
             case R.id.q145u1:
@@ -83,6 +83,22 @@ public class Nodes {
             case R.id.q145emg2:
                 coordsPercent[0] = 661;
                 coordsPercent[1] = 518;
+                break;
+            case R.id.q145u2:
+                coordsPercent[0] = 660;
+                coordsPercent[1] = 688;
+                break;
+            case R.id.q145ema3:
+                coordsPercent[0] = 565;
+                coordsPercent[1] = 797;
+                break;
+            case R.id.q145u3:
+                coordsPercent[0] = 255;
+                coordsPercent[1] = 668;
+                break;
+            case R.id.q145ram:
+                coordsPercent[0] = 255;
+                coordsPercent[1] = 716;
                 break;
 
             case R.id.q150dicea1: //TODO: da sostituire con db

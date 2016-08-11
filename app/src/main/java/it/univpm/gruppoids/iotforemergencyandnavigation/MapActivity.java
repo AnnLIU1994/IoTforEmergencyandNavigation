@@ -148,6 +148,8 @@ public class MapActivity extends AppCompatActivity {
 
                 Nodes.positioningNode(q145ema3);
 
+                Nodes.positioningNode(q145u3);
+
                 Nodes.positioningNode(q145ram);
 
                 Nodes.positioningNode(q145dicea);
@@ -169,6 +171,276 @@ public class MapActivity extends AppCompatActivity {
                 Nodes.positioningNode(q145rg1);
 
 
+                q145ema7.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145ema7);
+                            nodeSelected = Nodes.getNameOfNode(q145ema7);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145em1.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145em1);
+                            nodeSelected = Nodes.getNameOfNode(q145em1);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145u1.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145u1);
+                            nodeSelected = Nodes.getNameOfNode(q145u1);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145emg1.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145emg1);
+                            nodeSelected = Nodes.getNameOfNode(q145emg1);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145emg2.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145emg2);
+                            nodeSelected = Nodes.getNameOfNode(q145emg2);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145u2.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145u2);
+                            nodeSelected = Nodes.getNameOfNode(q145u2);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145ema3.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145ema3);
+                            nodeSelected = Nodes.getNameOfNode(q145ema3);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145u3.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145u3);
+                            nodeSelected = Nodes.getNameOfNode(q145u3);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145ram);
+                        }
+                        return false;
+                    }
+                });
+
+                q145ram.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145ram);
+                            nodeSelected = Nodes.getNameOfNode(q145ram);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145em1);
+                        }
+                        return false;
+                    }
+                });
+
                 q145dicea.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -185,6 +457,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -206,6 +487,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -227,6 +517,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -248,6 +547,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -269,6 +577,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -290,6 +607,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -311,6 +637,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s2);
                             Nodes.unselectedNode(q145rg2);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -332,6 +667,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s2);
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
@@ -353,6 +697,15 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145s2);
                             Nodes.unselectedNode(q145s3);
                             Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
                         }
                         return false;
                     }
