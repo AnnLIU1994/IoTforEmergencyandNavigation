@@ -153,6 +153,18 @@ public class Nodes {
                 coordsPercent[0] = 595;
                 coordsPercent[1] = 715;
                 break;
+            case R.id.q150bib:
+                coordsPercent[0] = 100;
+                coordsPercent[1] = 802;
+                break;
+            case R.id.q150emrl:
+                coordsPercent[0] = 782;
+                coordsPercent[1] = 658;
+                break;
+            case R.id.q150emr1:
+                coordsPercent[0] = 782;
+                coordsPercent[1] = 707;
+                break;
 
             case R.id.q155dicea: //TODO: da sostituire con db
                 coordsPercent[0] = 485;
@@ -221,6 +233,10 @@ public class Nodes {
             case R.id.q155bar:
                 coordsPercent[0] = 690;
                 coordsPercent[1] = 779;
+                break;
+            case R.id.q155em1:
+                coordsPercent[0] = 345;
+                coordsPercent[1] = 335;
                 break;
         }
         return coordsPercent;

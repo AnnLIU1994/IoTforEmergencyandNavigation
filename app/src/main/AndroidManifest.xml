@@ -88,11 +88,13 @@
         <activity
             android:name=".MapFinalActivity"
             android:parentActivityName=".ChooseFinalPlanActivity"
+            android:screenOrientation="portrait"
             android:label="@string/iot_nav"
             android:theme="@style/AppThemeNav" />
         <activity
             android:name=".ListFinalActivity"
             android:theme="@style/AppThemeNav"
+            android:screenOrientation="portrait"
             android:label="@string/iot_nav"
             android:parentActivityName=".FinalPositionActivity"/>
     </application>

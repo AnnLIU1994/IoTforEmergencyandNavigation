@@ -8,4 +8,6 @@
     <color name="blueDark">#040099</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="gold">#FFDADE1A</color>
+    <!-- FFDADE1A FFF1F108 -->
 </resources>
