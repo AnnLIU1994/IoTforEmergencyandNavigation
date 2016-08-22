@@ -100,6 +100,19 @@ public class Nodes {
                 coordsPercent[0] = 255;
                 coordsPercent[1] = 716;
                 break;
+            case R.id.q145ea5:
+                coordsPercent[0] = 741;
+                coordsPercent[1] = 306;
+                break;
+            case R.id.q145a5:
+                coordsPercent[0] = 718;
+                coordsPercent[1] = 337;
+                break;
+            case R.id.q145a3:
+                coordsPercent[0] = 554;
+                coordsPercent[1] = 752;
+                break;
+
 
             case R.id.q150dicea1: //TODO: da sostituire con db
                 coordsPercent[0] = 346;
@@ -164,6 +177,18 @@ public class Nodes {
             case R.id.q150emr1:
                 coordsPercent[0] = 782;
                 coordsPercent[1] = 707;
+                break;
+            case R.id.q150a7:
+                coordsPercent[0] = 346;
+                coordsPercent[1] = 36;
+                break;
+            case R.id.q150a5:
+                coordsPercent[0] = 595;
+                coordsPercent[1] = 278;
+                break;
+            case R.id.q150a3:
+                coordsPercent[0] = 470;
+                coordsPercent[1] = 635;
                 break;
 
             case R.id.q155dicea: //TODO: da sostituire con db
@@ -238,6 +263,18 @@ public class Nodes {
                 coordsPercent[0] = 345;
                 coordsPercent[1] = 335;
                 break;
+            case R.id.q155a7:
+                coordsPercent[0] = 483;
+                coordsPercent[1] = 25;
+                break;
+            case R.id.q155a5:
+                coordsPercent[0] = 750;
+                coordsPercent[1] = 279;
+                break;
+            case R.id.q155a3:
+                coordsPercent[0] = 613;
+                coordsPercent[1] = 648;
+                break;
         }
         return coordsPercent;
     }
@@ -268,8 +305,32 @@ public class Nodes {
             case R.id.q150wc1:
             case R.id.q145wc1:
                 vertex.setImageResource(R.drawable.ic_wc_unselected);
-                vertex.setX(getPosition(vertex.getId())[0] - 18);
-                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertex.setX(getPosition(vertex.getId())[0] - 6);
+                    vertex.setY(getPosition(vertex.getId())[1] - 3);
+                } else {
+                    vertex.setX(getPosition(vertex.getId())[0] - 18);
+                    vertex.setY(getPosition(vertex.getId())[1] - 18);
+                }
+                break;
+            case R.id.q155a5:
+            case R.id.q155a3:
+            case R.id.q155a7:
+            case R.id.q150a3:
+            case R.id.q150a5:
+            case R.id.q150a7:
+            case R.id.q145a3:
+            case R.id.q145a5:
+                vertex.setImageResource(R.drawable.ic_lift_unselected);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertex.setX(getPosition(vertex.getId())[0] - 6);
+                    vertex.setY(getPosition(vertex.getId())[1] - 3);
+                } else {
+                    vertex.setX(getPosition(vertex.getId())[0] - 29);
+                    vertex.setY(getPosition(vertex.getId())[1] - 18);
+                }
                 break;
             case R.id.q145ema7:
             case R.id.q150bib:
@@ -291,8 +352,14 @@ public class Nodes {
             case R.id.q145em1:
             case R.id.q150em1:
                 vertex.setImageResource(R.drawable.ic_exit_unselected);
-                vertex.setX(getPosition(vertex.getId())[0] - 18);
-                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertex.setX(getPosition(vertex.getId())[0] - 6);
+                    vertex.setY(getPosition(vertex.getId())[1]);
+                } else {
+                    vertex.setX(getPosition(vertex.getId())[0] - 18);
+                    vertex.setY(getPosition(vertex.getId())[1] - 18);
+                }
                 break;
             default:
                 vertex.setImageResource(R.drawable.ic_node_unselected);
@@ -309,8 +376,32 @@ public class Nodes {
             case R.id.q150wc1:
             case R.id.q145wc1:
                 vertex.setImageResource(R.drawable.ic_wc_unselected_nav);
-                vertex.setX(getPosition(vertex.getId())[0] - 18);
-                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertex.setX(getPosition(vertex.getId())[0] - 6);
+                    vertex.setY(getPosition(vertex.getId())[1] - 3);
+                } else {
+                    vertex.setX(getPosition(vertex.getId())[0] - 18);
+                    vertex.setY(getPosition(vertex.getId())[1] - 18);
+                }
+                break;
+            case R.id.q155a5:
+            case R.id.q155a3:
+            case R.id.q155a7:
+            case R.id.q150a3:
+            case R.id.q150a5:
+            case R.id.q150a7:
+            case R.id.q145a3:
+            case R.id.q145a5:
+                vertex.setImageResource(R.drawable.ic_lift_unselected_nav);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertex.setX(getPosition(vertex.getId())[0] - 6);
+                    vertex.setY(getPosition(vertex.getId())[1] - 3);
+                } else {
+                    vertex.setX(getPosition(vertex.getId())[0] - 29);
+                    vertex.setY(getPosition(vertex.getId())[1] - 18);
+                }
                 break;
             case R.id.q145ema7:
             case R.id.q150bib:
@@ -332,8 +423,14 @@ public class Nodes {
             case R.id.q145em1:
             case R.id.q150em1:
                 vertex.setImageResource(R.drawable.ic_exit_unselected_nav);
-                vertex.setX(getPosition(vertex.getId())[0] - 18);
-                vertex.setY(getPosition(vertex.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertex.setX(getPosition(vertex.getId())[0] - 6);
+                    vertex.setY(getPosition(vertex.getId())[1]);
+                } else {
+                    vertex.setX(getPosition(vertex.getId())[0] - 18);
+                    vertex.setY(getPosition(vertex.getId())[1] - 18);
+                }
                 break;
             default:
                 vertex.setImageResource(R.drawable.ic_node_unselected_nav);
@@ -385,8 +482,32 @@ public class Nodes {
             case R.id.q150wc1:
             case R.id.q145wc1:
                 vertexUntouched.setImageResource(R.drawable.ic_wc_unselected);
-                vertexUntouched.setX(getPosition(vertexUntouched.getId())[0] - 18);
-                vertexUntouched.setY(getPosition(vertexUntouched.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 6);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 3);
+                } else {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                }
+                break;
+            case R.id.q155a5:
+            case R.id.q155a3:
+            case R.id.q155a7:
+            case R.id.q150a3:
+            case R.id.q150a5:
+            case R.id.q150a7:
+            case R.id.q145a3:
+            case R.id.q145a5:
+                vertexUntouched.setImageResource(R.drawable.ic_lift_unselected);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 6);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 3);
+                } else {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 29);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                }
                 break;
             case R.id.q145ema7:
             case R.id.q150bib:
@@ -408,8 +529,14 @@ public class Nodes {
             case R.id.q145em1:
             case R.id.q150em1:
                 vertexUntouched.setImageResource(R.drawable.ic_exit_unselected);
-                vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
-                vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 6);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+                } else {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                }
                 break;
             default:
                 vertexUntouched.setImageResource(R.drawable.ic_node_unselected);
@@ -425,8 +552,32 @@ public class Nodes {
             case R.id.q150wc1:
             case R.id.q145wc1:
                 vertexUntouched.setImageResource(R.drawable.ic_wc_unselected_nav);
-                vertexUntouched.setX(getPosition(vertexUntouched.getId())[0] - 18);
-                vertexUntouched.setY(getPosition(vertexUntouched.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 6);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 3);
+                } else {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                }
+                break;
+            case R.id.q155a5:
+            case R.id.q155a3:
+            case R.id.q155a7:
+            case R.id.q150a3:
+            case R.id.q150a5:
+            case R.id.q150a7:
+            case R.id.q145a3:
+            case R.id.q145a5:
+                vertexUntouched.setImageResource(R.drawable.ic_lift_unselected_nav);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 6);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 3);
+                } else {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 29);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                }
                 break;
             case R.id.q145ema7:
             case R.id.q150bib:
@@ -448,8 +599,14 @@ public class Nodes {
             case R.id.q145em1:
             case R.id.q150em1:
                 vertexUntouched.setImageResource(R.drawable.ic_exit_unselected_nav);
-                vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
-                vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                        Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 6);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1]);
+                } else {
+                    vertexUntouched.setTranslationX(getPosition(vertexUntouched.getId())[0] - 18);
+                    vertexUntouched.setTranslationY(getPosition(vertexUntouched.getId())[1] - 18);
+                }
                 break;
             default:
                 vertexUntouched.setImageResource(R.drawable.ic_node_unselected_nav);
@@ -486,6 +643,42 @@ public class Nodes {
                 break;
             case R.id.q145rg1:
                 id = "q145rg1";
+                break;
+            case R.id.q145ema7:
+                id = "q145ema7";
+                break;
+            case R.id.q145ea5:
+                id = "q145ea5";
+                break;
+            case R.id.q145u1:
+                id = "q145u1";
+                break;
+            case R.id.q145a5:
+                id = "q145a5";
+                break;
+            case R.id.q145em1:
+                id = "q145em1";
+                break;
+            case R.id.q145emg1:
+                id = "q145emg1";
+                break;
+            case R.id.q145emg2:
+                id = "q145emg2";
+                break;
+            case R.id.q145u2:
+                id = "q145u2";
+                break;
+            case R.id.q145u3:
+                id = "q145u3";
+                break;
+            case R.id.q145ram:
+                id = "q145ram";
+                break;
+            case R.id.q145a3:
+                id = "q145a3";
+                break;
+            case R.id.q145ema3:
+                id = "q145ema3";
                 break;
 
             case R.id.q150dicea1: //TODO: da sostituire con db
@@ -526,6 +719,24 @@ public class Nodes {
                 break;
             case R.id.q150rl:
                 id = "q150rl";
+                break;
+            case R.id.q150a7:
+                id = "q150a7";
+                break;
+            case R.id.q150a5:
+                id = "q150a5";
+                break;
+            case R.id.q150a3:
+                id = "q150a3";
+                break;
+            case R.id.q150bib:
+                id = "q150bib";
+                break;
+            case R.id.q150emrl:
+                id = "q150emrl";
+                break;
+            case R.id.q150emr1:
+                id = "q150emr1";
                 break;
 
             case R.id.q155dicea: //TODO: da sostituire con db
@@ -578,6 +789,18 @@ public class Nodes {
                 break;
             case R.id.q155bar:
                 id = "q155bar";
+                break;
+            case R.id.q155a7:
+                id = "q155a7";
+                break;
+            case R.id.q155a5:
+                id = "q155a5";
+                break;
+            case R.id.q155a3:
+                id = "q155a3";
+                break;
+            case R.id.q155em1:
+                id = "q155em1";
                 break;
         }
         return id;

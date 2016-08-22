@@ -47,7 +47,7 @@ public class ChoosePlanActivity extends AppCompatActivity {
 
     public void goMap(View view) { // Lancia l'intent verso l'InitPositionActivity
         final Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra("floor", getFloorSelected(view));
+        intent.putExtra("initFloor", getFloorSelected(view));
         startActivity(intent);
     }
 

@@ -13,11 +13,21 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.TerminateNavig
 public class NavigationActivity extends AppCompatActivity implements TerminateNavigationDialogFragment.AlertDialogListener {
 
     private static final String TERMINATE_NAV_DIALOG_TAG = "TERMINATE_NAV_DIALOG";
+    String initPos, finalPos;
+    int initFloor, finalFloor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+
+        Intent inputIntent = getIntent();
+        initPos = inputIntent.getStringExtra("initPos");
+        finalPos = inputIntent.getStringExtra("finalPos");
+        initFloor = inputIntent.getIntExtra("initFloor", 0);
+        finalFloor = inputIntent.getIntExtra("finalFloor", 0);
+
+        Toast.makeText(getApplicationContext(), "The initial position is " + initPos + " at " + initFloor + ". The final position is " + finalPos + " at " + finalFloor, Toast.LENGTH_LONG).show();
 
         final Button updateButton = (Button) findViewById(R.id.updatePos);
         updateButton.setOnTouchListener(new View.OnTouchListener() {

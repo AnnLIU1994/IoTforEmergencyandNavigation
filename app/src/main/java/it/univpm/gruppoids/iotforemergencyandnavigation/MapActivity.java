@@ -1,14 +1,17 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -57,6 +60,9 @@ public class MapActivity extends AppCompatActivity {
     private ImageView q150bib;
     private ImageView q150emrl;
     private ImageView q150emr1;
+    private ImageView q150a7;
+    private ImageView q150a5;
+    private ImageView q150a3;
 
     private ImageView q155dicea;
     private ImageView q155r567;
@@ -76,8 +82,13 @@ public class MapActivity extends AppCompatActivity {
     private ImageView q155cesmi;
     private ImageView q155bar;
     private ImageView q155em1;
+    private ImageView q155a7;
+    private ImageView q155a5;
+    private ImageView q155a3;
 
     private String nodeSelected;
+
+    int initFloorExtra;
 
 
 
@@ -90,16 +101,16 @@ public class MapActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
         Intent inputIntent = getIntent();
-        int floorExtra = inputIntent.getIntExtra("floor", 0);
-        String floorString = Integer.toString(floorExtra);
+        initFloorExtra = inputIntent.getIntExtra("initFloor", 0);
+        String floorString = Integer.toString(initFloorExtra);
 
         mapImage = (ImageView) findViewById(R.id.mapFloor);
 
-        if (floorExtra != 0) {
+        if (initFloorExtra != 0) {
             getSupportActionBar().setTitle(getResources().getString(R.string.floor_pos) + " " + floorString);
         }
-        switch (floorString) {
-            case "145":
+        switch (initFloorExtra) {
+            case 145:
                 mapImage.setImageResource(R.drawable.q145);
 
                 q145ema7 = (ImageView) findViewById(R.id.q145ema7);
@@ -138,6 +149,12 @@ public class MapActivity extends AppCompatActivity {
 
                 q145rg1 = (ImageView) findViewById(R.id.q145rg1);
 
+                q145ea5 = (ImageView) findViewById(R.id.q145ea5);
+
+                q145a5 = (ImageView) findViewById(R.id.q145a5);
+
+                q145a3 = (ImageView) findViewById(R.id.q145a3);
+
 
                 Nodes.positioningNode(q145ema7);
 
@@ -175,6 +192,12 @@ public class MapActivity extends AppCompatActivity {
 
                 Nodes.positioningNode(q145rg1);
 
+                Nodes.positioningNode(q145ea5);
+
+                Nodes.positioningNode(q145a5);
+
+                Nodes.positioningNode(q145a3);
+
 
                 q145ema7.setOnTouchListener(new View.OnTouchListener() {
                     @Override
@@ -201,6 +224,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -231,6 +257,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -261,6 +290,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -291,6 +323,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -321,6 +356,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -351,6 +389,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -381,6 +422,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145em1);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -411,6 +455,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145em1);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -441,6 +488,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -471,6 +521,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -501,6 +554,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -531,6 +587,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -561,6 +620,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -591,6 +653,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -621,6 +686,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -651,6 +719,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -681,6 +752,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
                         }
                         return false;
                     }
@@ -711,12 +785,114 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q145ema3);
                             Nodes.unselectedNode(q145u3);
                             Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q145ea5.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145ea5);
+                            nodeSelected = Nodes.getNameOfNode(q145ea5);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q145a5.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145a5);
+                            nodeSelected = Nodes.getNameOfNode(q145a5);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145rg1);
+                            Nodes.unselectedNode(q145a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q145a3.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q145a3);
+                            nodeSelected = Nodes.getNameOfNode(q145a3);
+
+                            // unselected
+                            Nodes.unselectedNode(q145dicea);
+                            Nodes.unselectedNode(q145s1);
+                            Nodes.unselectedNode(q145r3);
+                            Nodes.unselectedNode(q145r1);
+                            Nodes.unselectedNode(q145wc1);
+                            Nodes.unselectedNode(q145s2);
+                            Nodes.unselectedNode(q145s3);
+                            Nodes.unselectedNode(q145rg2);
+                            Nodes.unselectedNode(q145ema7);
+                            Nodes.unselectedNode(q145em1);
+                            Nodes.unselectedNode(q145u1);
+                            Nodes.unselectedNode(q145emg1);
+                            Nodes.unselectedNode(q145emg2);
+                            Nodes.unselectedNode(q145u2);
+                            Nodes.unselectedNode(q145ema3);
+                            Nodes.unselectedNode(q145u3);
+                            Nodes.unselectedNode(q145ram);
+                            Nodes.unselectedNode(q145ea5);
+                            Nodes.unselectedNode(q145a5);
+                            Nodes.unselectedNode(q145rg1);
                         }
                         return false;
                     }
                 });
                 break;
-            case "150":
+            case 150:
                 mapImage.setImageResource(R.drawable.q150);
 
                 q150dicea1 = (ImageView) findViewById(R.id.q150dicea1);
@@ -751,6 +927,12 @@ public class MapActivity extends AppCompatActivity {
 
                 q150emr1 = (ImageView) findViewById(R.id.q150emr1);
 
+                q150a7 = (ImageView) findViewById(R.id.q150a7);
+
+                q150a5 = (ImageView) findViewById(R.id.q150a5);
+
+                q150a3 = (ImageView) findViewById(R.id.q150a3);
+
                 Nodes.positioningNode(q150dicea1);
 
                 Nodes.positioningNode(q150g1);
@@ -783,6 +965,12 @@ public class MapActivity extends AppCompatActivity {
 
                 Nodes.positioningNode(q150emr1);
 
+                Nodes.positioningNode(q150a7);
+
+                Nodes.positioningNode(q150a5);
+
+                Nodes.positioningNode(q150a3);
+
                 q150dicea1.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -806,6 +994,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -834,6 +1025,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -862,6 +1056,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -890,6 +1087,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -918,6 +1118,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -946,6 +1149,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -974,6 +1180,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1002,6 +1211,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1030,6 +1242,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1058,6 +1273,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1086,6 +1304,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1114,6 +1335,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1142,6 +1366,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1170,6 +1397,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150rl);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1198,6 +1428,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150rl);
                             Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
                         }
                         return false;
                     }
@@ -1226,12 +1459,108 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q150bib);
                             Nodes.unselectedNode(q150emrl);
                             Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q150a7.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q150a7);
+                            nodeSelected = Nodes.getNameOfNode(q150a7);
+
+                            // unselected
+                            Nodes.unselectedNode(q150dicea1);
+                            Nodes.unselectedNode(q150g1);
+                            Nodes.unselectedNode(q150dicea);
+                            Nodes.unselectedNode(q150strade);
+                            Nodes.unselectedNode(q150em1);
+                            Nodes.unselectedNode(q150wc1);
+                            Nodes.unselectedNode(q150ram);
+                            Nodes.unselectedNode(q150g1g2);
+                            Nodes.unselectedNode(q150g2);
+                            Nodes.unselectedNode(q150r2);
+                            Nodes.unselectedNode(q150s1);
+                            Nodes.unselectedNode(q150r1);
+                            Nodes.unselectedNode(q150bib);
+                            Nodes.unselectedNode(q150emrl);
+                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q150a5.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q150a5);
+                            nodeSelected = Nodes.getNameOfNode(q150a5);
+
+                            // unselected
+                            Nodes.unselectedNode(q150dicea1);
+                            Nodes.unselectedNode(q150g1);
+                            Nodes.unselectedNode(q150dicea);
+                            Nodes.unselectedNode(q150strade);
+                            Nodes.unselectedNode(q150em1);
+                            Nodes.unselectedNode(q150wc1);
+                            Nodes.unselectedNode(q150ram);
+                            Nodes.unselectedNode(q150g1g2);
+                            Nodes.unselectedNode(q150g2);
+                            Nodes.unselectedNode(q150r2);
+                            Nodes.unselectedNode(q150s1);
+                            Nodes.unselectedNode(q150r1);
+                            Nodes.unselectedNode(q150bib);
+                            Nodes.unselectedNode(q150emrl);
+                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150emr1);
+                            Nodes.unselectedNode(q150a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q150a3.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q150a3);
+                            nodeSelected = Nodes.getNameOfNode(q150a3);
+
+                            // unselected
+                            Nodes.unselectedNode(q150dicea1);
+                            Nodes.unselectedNode(q150g1);
+                            Nodes.unselectedNode(q150dicea);
+                            Nodes.unselectedNode(q150strade);
+                            Nodes.unselectedNode(q150em1);
+                            Nodes.unselectedNode(q150wc1);
+                            Nodes.unselectedNode(q150ram);
+                            Nodes.unselectedNode(q150g1g2);
+                            Nodes.unselectedNode(q150g2);
+                            Nodes.unselectedNode(q150r2);
+                            Nodes.unselectedNode(q150s1);
+                            Nodes.unselectedNode(q150r1);
+                            Nodes.unselectedNode(q150bib);
+                            Nodes.unselectedNode(q150emrl);
+                            Nodes.unselectedNode(q150rl);
+                            Nodes.unselectedNode(q150a7);
+                            Nodes.unselectedNode(q150a5);
+                            Nodes.unselectedNode(q150emr1);
                         }
                         return false;
                     }
                 });
                 break;
-            case "155":
+            case 155:
                 mapImage.setImageResource(R.drawable.q155);
 
                 q155dicea = (ImageView) findViewById(R.id.q155dicea);
@@ -1270,6 +1599,12 @@ public class MapActivity extends AppCompatActivity {
 
                 q155em1 = (ImageView) findViewById(R.id.q155em1);
 
+                q155a7 = (ImageView) findViewById(R.id.q155a7);
+
+                q155a5 = (ImageView) findViewById(R.id.q155a5);
+
+                q155a3 = (ImageView) findViewById(R.id.q155a3);
+
                 Nodes.positioningNode(q155dicea);
 
                 Nodes.positioningNode(q155r567);
@@ -1306,6 +1641,12 @@ public class MapActivity extends AppCompatActivity {
 
                 Nodes.positioningNode(q155em1);
 
+                Nodes.positioningNode(q155a7);
+
+                Nodes.positioningNode(q155a5);
+
+                Nodes.positioningNode(q155a3);
+
                 q155dicea.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -1331,6 +1672,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1361,6 +1705,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1391,6 +1738,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1421,6 +1771,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1451,6 +1804,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1481,6 +1837,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1511,6 +1870,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1541,6 +1903,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1572,6 +1937,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1602,6 +1970,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1632,6 +2003,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1662,6 +2036,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1692,6 +2069,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1722,6 +2102,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1752,6 +2135,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1782,6 +2168,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155up);
                             Nodes.unselectedNode(q155bar);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1812,6 +2201,9 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155up);
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
                         }
                         return false;
                     }
@@ -1842,6 +2234,108 @@ public class MapActivity extends AppCompatActivity {
                             Nodes.unselectedNode(q155up);
                             Nodes.unselectedNode(q155cesmi);
                             Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q155a7.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q155a7);
+                            nodeSelected = Nodes.getNameOfNode(q155a7);
+
+                            // unselected
+                            Nodes.unselectedNode(q155dicea);
+                            Nodes.unselectedNode(q155r567);
+                            Nodes.unselectedNode(q155r4);
+                            Nodes.unselectedNode(q155r4d3);
+                            Nodes.unselectedNode(q155r23d2);
+                            Nodes.unselectedNode(q155rd1);
+                            Nodes.unselectedNode(q155wc1);
+                            Nodes.unselectedNode(q155u1);
+                            Nodes.unselectedNode(q155ecdl);
+                            Nodes.unselectedNode(q155s1);
+                            Nodes.unselectedNode(q155wc2);
+                            Nodes.unselectedNode(q155em2);
+                            Nodes.unselectedNode(q155acq);
+                            Nodes.unselectedNode(q155em3);
+                            Nodes.unselectedNode(q155up);
+                            Nodes.unselectedNode(q155cesmi);
+                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q155a5.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q155a5);
+                            nodeSelected = Nodes.getNameOfNode(q155a5);
+
+                            // unselected
+                            Nodes.unselectedNode(q155dicea);
+                            Nodes.unselectedNode(q155r567);
+                            Nodes.unselectedNode(q155r4);
+                            Nodes.unselectedNode(q155r4d3);
+                            Nodes.unselectedNode(q155r23d2);
+                            Nodes.unselectedNode(q155rd1);
+                            Nodes.unselectedNode(q155wc1);
+                            Nodes.unselectedNode(q155u1);
+                            Nodes.unselectedNode(q155ecdl);
+                            Nodes.unselectedNode(q155s1);
+                            Nodes.unselectedNode(q155wc2);
+                            Nodes.unselectedNode(q155em2);
+                            Nodes.unselectedNode(q155acq);
+                            Nodes.unselectedNode(q155em3);
+                            Nodes.unselectedNode(q155up);
+                            Nodes.unselectedNode(q155cesmi);
+                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155em1);
+                            Nodes.unselectedNode(q155a3);
+                        }
+                        return false;
+                    }
+                });
+
+                q155a3.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            Nodes.selectedNode(q155a3);
+                            nodeSelected = Nodes.getNameOfNode(q155a3);
+
+                            // unselected
+                            Nodes.unselectedNode(q155dicea);
+                            Nodes.unselectedNode(q155r567);
+                            Nodes.unselectedNode(q155r4);
+                            Nodes.unselectedNode(q155r4d3);
+                            Nodes.unselectedNode(q155r23d2);
+                            Nodes.unselectedNode(q155rd1);
+                            Nodes.unselectedNode(q155wc1);
+                            Nodes.unselectedNode(q155u1);
+                            Nodes.unselectedNode(q155ecdl);
+                            Nodes.unselectedNode(q155s1);
+                            Nodes.unselectedNode(q155wc2);
+                            Nodes.unselectedNode(q155em2);
+                            Nodes.unselectedNode(q155acq);
+                            Nodes.unselectedNode(q155em3);
+                            Nodes.unselectedNode(q155up);
+                            Nodes.unselectedNode(q155cesmi);
+                            Nodes.unselectedNode(q155bar);
+                            Nodes.unselectedNode(q155a7);
+                            Nodes.unselectedNode(q155a5);
+                            Nodes.unselectedNode(q155em1);
                         }
                         return false;
                     }
@@ -1871,6 +2365,7 @@ public class MapActivity extends AppCompatActivity {
             case R.id.forward:
                 Intent nextPage = new Intent(this, ModActivity.class);
                 nextPage.putExtra("initPos", nodeSelected); //TODO: invece degli intent scrivere su db
+                nextPage.putExtra("initFloor", initFloorExtra);
                 startActivity(nextPage);
                 break;
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
