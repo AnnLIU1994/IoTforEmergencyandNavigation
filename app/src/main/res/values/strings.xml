@@ -25,8 +25,7 @@
     <string name="and_tap_map">and tap on the map</string>
     <string name="update_pos">Update your position</string>
     <string name="terminate_emer">TERMINATE EMERGENCY</string>
-    <string name="navigation">Navigation</string>
-    <string name="tap_map">Tap on the map</string>
+    <string name="tapForUpdate">Tap on map for update</string>
     <string name="terminate_nav">TERMINATE NAVIGATION</string>
     <string name="updates_action">Check updates</string>
     <string name="iot_nav">IoT: Navigation</string>
@@ -55,4 +54,7 @@
     <string name="try_again_label">Try again</string>
 
     <string name="posit_selected">Position selected</string>
+
+    <string name="updatePosition">Update position</string>
+    <string name="exit">Exit</string>
 </resources>

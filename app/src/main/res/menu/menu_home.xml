@@ -15,5 +15,19 @@
         android:icon="@drawable/ic_ok_icon"
         android:visible="false"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/updatePos"
+        android:orderInCategory="100"
+        android:title="@string/updatePosition"
+        android:icon="@drawable/ic_update_pos"
+        android:visible="false"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="100"
+        android:title="@string/exit"
+        android:icon="@drawable/ic_exit"
+        android:visible="false"
+        app:showAsAction="always"/>
 
 </menu>
