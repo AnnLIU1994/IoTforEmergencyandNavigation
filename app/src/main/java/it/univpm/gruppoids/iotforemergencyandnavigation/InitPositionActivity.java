@@ -82,7 +82,7 @@ public class InitPositionActivity extends AppCompatActivity
         if (result != null) {
             if (result.getContents() == null) {
                 Log.d(TAG, "Cancelled scan");
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Scan cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Log.d(TAG, "Scanned");
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();

@@ -805,4 +805,196 @@ public class Nodes {
         }
         return id;
     }
+
+    public static int getNodeByName(String nameOfNode) {
+        int idNode = 0;
+        switch (nameOfNode) {
+            case "q145dicea": //TODO: da sostituire con db
+                idNode = R.id.q145dicea;
+                break;
+            case "q145s1":
+                idNode = R.id.q145s1;
+                break;
+            case "q145r3":
+                idNode = R.id.q145r3;
+                break;
+            case "q145r1":
+                idNode = R.id.q145r1;
+                break;
+            case "q145wc1":
+                idNode = R.id.q145wc1;
+                break;
+            case "q145s2":
+                idNode = R.id.q145s2;
+                break;
+            case "q145s3":
+                idNode = R.id.q145s3;
+                break;
+            case "q145rg2":
+                idNode = R.id.q145rg2;
+                break;
+            case "q145rg1":
+                idNode = R.id.q145rg1;
+                break;
+            case "q145ema7":
+                idNode = R.id.q145ema7;
+                break;
+            case "q145ea5":
+                idNode = R.id.q145ea5;
+                break;
+            case "q145u1":
+                idNode = R.id.q145u1;
+                break;
+            case "q145a5":
+                idNode = R.id.q145a5;
+                break;
+            case "q145em1":
+                idNode = R.id.q145em1;
+                break;
+            case "q145emg1":
+                idNode = R.id.q145emg1;
+                break;
+            case "q145emg2":
+                idNode = R.id.q145emg2;
+                break;
+            case "q145u2":
+                idNode = R.id.q145u2;
+                break;
+            case "q145u3":
+                idNode = R.id.q145u3;
+                break;
+            case "q145ram":
+                idNode = R.id.q145ram;
+                break;
+            case "q145a3":
+                idNode = R.id.q145a3;
+                break;
+            case "q145ema3":
+                idNode = R.id.q145ema3;
+                break;
+
+            case "q150dicea1": //TODO: da sostituire con db
+                idNode = R.id.q150dicea1;
+                break;
+            case "q150g1":
+                idNode = R.id.q150g1;
+                break;
+            case "q150dicea":
+                idNode = R.id.q150dicea;
+                break;
+            case "q150strade":
+                idNode = R.id.q150strade;
+                break;
+            case "q150em1":
+                idNode = R.id.q150em1;
+                break;
+            case "q150wc1":
+                idNode = R.id.q150wc1;
+                break;
+            case "q150ram":
+                idNode = R.id.q150ram;
+                break;
+            case "q150g1g2":
+                idNode = R.id.q150g1g2;
+                break;
+            case "q150g2":
+                idNode = R.id.q150g2;
+                break;
+            case "q150r2":
+                idNode = R.id.q150r2;
+                break;
+            case "q150s1":
+                idNode = R.id.q150s1;
+                break;
+            case "q150r1":
+                idNode = R.id.q150r1;
+                break;
+            case "q150rl":
+                idNode = R.id.q150rl;
+                break;
+            case "q150a7":
+                idNode = R.id.q150a7;
+                break;
+            case "q150a5":
+                idNode = R.id.q150a5;
+                break;
+            case "q150a3":
+                idNode = R.id.q150a3;
+                break;
+            case "q150bib":
+                idNode = R.id.q150bib;
+                break;
+            case "q150emrl":
+                idNode = R.id.q150emrl;
+                break;
+            case "q150emr1":
+                idNode = R.id.q150emr1;
+                break;
+
+            case "q155dicea": //TODO: da sostituire con db
+                idNode = R.id.q155dicea;
+                break;
+            case "q155r567":
+                idNode = R.id.q155r567;
+                break;
+            case "q155r4":
+                idNode = R.id.q155r4;
+                break;
+            case "q155r4d3":
+                idNode = R.id.q155r4d3;
+                break;
+            case "q155r23d2":
+                idNode = R.id.q155r23d2;
+                break;
+            case "q155rd1":
+                idNode = R.id.q155rd1;
+                break;
+            case "q155wc1":
+                idNode = R.id.q155wc1;
+                break;
+            case "q155u1":
+                idNode = R.id.q155u1;
+                break;
+            case "q155ecdl":
+                idNode = R.id.q155ecdl;
+                break;
+            case "q155s1":
+                idNode = R.id.q155s1;
+                break;
+            case "q155wc2":
+                idNode = R.id.q155wc2;
+                break;
+            case "q155em2":
+                idNode = R.id.q155em2;
+                break;
+            case "q155acq":
+                idNode = R.id.q155acq;
+                break;
+            case "q155em3":
+                idNode = R.id.q155em3;
+                break;
+            case "q155up":
+                idNode = R.id.q155up;
+                break;
+            case "q155cesmi":
+                idNode = R.id.q155cesmi;
+                break;
+            case "q155bar":
+                idNode = R.id.q155bar;
+                break;
+            case "q155a7":
+                idNode = R.id.q155a7;
+                break;
+            case "q155a5":
+                idNode = R.id.q155a5;
+                break;
+            case "q155a3":
+                idNode = R.id.q155a3;
+                break;
+            case "q155em1":
+                idNode = R.id.q155em1;
+                break;
+        }
+        return idNode;
+    }
 }
