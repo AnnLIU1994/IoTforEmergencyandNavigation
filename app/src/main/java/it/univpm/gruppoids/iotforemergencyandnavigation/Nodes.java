@@ -279,7 +279,7 @@ public class Nodes {
         return coordsPercent;
     }
 
-    private static int[] getPosition(int id) {
+    public static int[] getPosition(int id) {
         int[] position = {0, 0};
         int x;
         int y;
