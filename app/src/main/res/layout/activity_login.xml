@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:layout_marginTop="56dp"
-        android:hint="@string/username"
+        android:hint="username"
         android:textColorHint="#ffffff"
         android:textColor="#ffffff"
         android:layout_below="@+id/Auth"

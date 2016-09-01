@@ -1,5 +1,8 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
+/**
+ * Created by hew dv67090el on 01/09/2016.
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,7 +23,7 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ChangePlanProg
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CheckUpdatesProgressFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.TerminateNavigationDialogFragment;
 
-public class NavigationActivity extends AppCompatActivity implements TerminateNavigationDialogFragment.AlertDialogListener {
+public class NavigationChangeActivity extends AppCompatActivity implements TerminateNavigationDialogFragment.AlertDialogListener {
 
     private static final String TERMINATE_NAV_DIALOG_TAG = "TERMINATE_NAV_DIALOG";
 
@@ -109,7 +112,6 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     private static final long WAIT_INTERVAL_ROUTE = 1500L;
     private static final long WAIT_INTERVAL_CHANGE = 2000L;
 
-    private CalculateRouteProgressFragment progressCalculateRoute;
     private ChangePlanProgressFragment progressChangePlan;
 
     private Handler mHandler = new Handler() { // Permette la gestione dell'activity
@@ -118,18 +120,10 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
-                case ROUTE_CALCULATE_WHAT:
-                    long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
-                    if (elapsedTime >= WAIT_INTERVAL_ROUTE) {
-                        progressCalculateRoute.dismiss();
-                    }
-                    break;
                 case CHANGE_WHAT:
                     long elapsedTimeChange = SystemClock.uptimeMillis() - mStartTime;
                     if (elapsedTimeChange >= WAIT_INTERVAL_CHANGE) {
                         progressChangePlan.dismiss();
-
-                        Intent changeIntent = new Intent(this, NavigationChangeActivity.class);
                         initNode.setVisibility(View.INVISIBLE);
                         switch (finalFloor) {
                             case 145:
@@ -211,13 +205,10 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
+        setContentView(R.layout.activity_navigation_change);
 
-        mStartTime = SystemClock.uptimeMillis();
-        progressCalculateRoute = new CalculateRouteProgressFragment();
-        progressCalculateRoute.show(getSupportFragmentManager(), CALCULATE_ROUTE_PROGRESS_TAG);
-        final Message goMainMessage = mHandler.obtainMessage(ROUTE_CALCULATE_WHAT);
-        mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_ROUTE);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         Intent inputIntent = getIntent();
         initPos = inputIntent.getStringExtra("initPos");
