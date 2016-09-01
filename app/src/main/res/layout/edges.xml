@@ -9,121 +9,121 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145ema7-dicea"
+        android:id="@+id/q145ema7_dicea"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145dicea-s1"
+        android:id="@+id/q145dicea_s1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145s1-rg1"
+        android:id="@+id/q145s1_rg1"
         android:visibility="gone"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145s1-em1"
+        android:id="@+id/q145s1_em1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145s1-r3"
+        android:id="@+id/q145s1_r3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145r3-r1"
+        android:id="@+id/q145r3_r1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145r1-wc1"
+        android:id="@+id/q145r1_wc1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145wc1-u3"
+        android:id="@+id/q145wc1_u3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145wc1-ram"
+        android:id="@+id/q145wc1_ram"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145wc1-s2"
+        android:id="@+id/q145wc1_s2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145s2-s3"
+        android:id="@+id/q145s2_s3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145s3-a3"
+        android:id="@+id/q145s3_a3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145a3-ema3"
+        android:id="@+id/q145a3_ema3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145s2-rg2"
+        android:id="@+id/q145s2_rg2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145rg2-u2"
+        android:id="@+id/q145rg2_u2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145rg2-emg2"
+        android:id="@+id/q145rg2_emg2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145rg1-emg1"
+        android:id="@+id/q145rg1_emg1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145rg1-u1"
+        android:id="@+id/q145rg1_u1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145rg1-a5"
+        android:id="@+id/q145rg1_a5"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145a5-ea5"
+        android:id="@+id/q145a5_ea5"
         android:visibility="gone" />
 
     <!--          QUOTA   150        -->
@@ -131,115 +131,115 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150a7-dicea1"
+        android:id="@+id/q150a7_dicea1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150dicea1-g1"
+        android:id="@+id/q150dicea1_g1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150g1-dicea"
+        android:id="@+id/q150g1_dicea"
         android:visibility="gone"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150dicea-a5"
+        android:id="@+id/q150dicea_a5"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150g1-strade"
+        android:id="@+id/q150g1_strade"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150strade-em1"
+        android:id="@+id/q150strade_em1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150em1-wc1"
+        android:id="@+id/q150em1_wc1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150wc1-ram"
+        android:id="@+id/q150wc1_ram"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150wc1-r2"
+        android:id="@+id/q150wc1_r2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150ram-bib"
+        android:id="@+id/q150ram_bib"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150g1-g1g2"
+        android:id="@+id/q150g1_g1g2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150g1g2-g2"
+        android:id="@+id/q150g1g2_g2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150g2-r2"
+        android:id="@+id/q150g2_r2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150r2-a3"
+        android:id="@+id/q150r2_a3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150a3-s1"
+        android:id="@+id/q150a3_s1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150s1-r1"
+        android:id="@+id/q150s1_r1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150r1-rl"
+        android:id="@+id/q150r1_rl"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150rl-emrl"
+        android:id="@+id/q150rl_emrl"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q150r1-emr1"
+        android:id="@+id/q150r1_emr1"
         android:visibility="gone" />
 
     <!--          QUOTA   155        -->
@@ -247,133 +247,133 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155a7-dicea"
+        android:id="@+id/q155a7_dicea"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155dicea-r567"
+        android:id="@+id/q155dicea_r567"
         android:visibility="gone"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155r567-a5"
+        android:id="@+id/q155r567_a5"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155r567-r4"
+        android:id="@+id/q155r567_r4"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155r4-em1"
+        android:id="@+id/q155r4_em1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155r4-r4d3"
+        android:id="@+id/q155r4_r4d3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155r4d3-r23d2"
+        android:id="@+id/q155r4d3_r23d2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155r23d2-rd1"
+        android:id="@+id/q155r23d2_rd1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155rd1-wc1"
+        android:id="@+id/q155rd1_wc1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155wc1-u1"
+        android:id="@+id/q155wc1_u1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155wc1-ecdl"
+        android:id="@+id/q155wc1_ecdl"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155u1-s1"
+        android:id="@+id/q155u1_s1"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155ecdl-wc2"
+        android:id="@+id/q155ecdl_wc2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155s1-wc2"
+        android:id="@+id/q155s1_wc2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155wc2-a3"
+        android:id="@+id/q155wc2_a3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155s1-em2"
+        android:id="@+id/q155s1_em2"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155em2-acq"
+        android:id="@+id/q155em2_acq"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155acq-em3"
+        android:id="@+id/q155acq_em3"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155em3-up"
+        android:id="@+id/q155em3_up"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155acq-cesmi"
+        android:id="@+id/q155acq_cesmi"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155wc2-cesmi"
+        android:id="@+id/q155wc2_cesmi"
         android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q155cesmi-bar"
+        android:id="@+id/q155cesmi_bar"
         android:visibility="gone" />
 
 </FrameLayout>

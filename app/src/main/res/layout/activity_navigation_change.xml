@@ -19,4 +19,5 @@
         android:layout_gravity="center_horizontal"/>
 
     <include layout="@layout/nodes"/>
+    <include layout="@layout/edges"/>
 </FrameLayout>

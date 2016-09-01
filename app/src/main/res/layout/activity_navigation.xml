@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/emerg_activity"
+    android:id="@+id/navigation_activity"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,10 +18,12 @@
         android:id="@+id/navi_map"
         android:layout_gravity="center_horizontal"/>
 
+    <!-- TODO: eliminare imageView -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/edge"/>
 
     <include layout="@layout/nodes"/>
+    <include layout="@layout/edges"/>
 </FrameLayout>

@@ -372,8 +372,8 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
 
                 Bitmap bmp = Bitmap.createBitmap(Resources.getSystem().getDisplayMetrics().widthPixels, Resources.getSystem().getDisplayMetrics().heightPixels, Bitmap.Config.ARGB_8888);
 
-                Canvas canvas = new Canvas(bmp);
-                canvas.drawLine(Nodes.getPosition(initNode.getId())[0], Nodes.getPosition(initNode.getId())[1], Nodes.getPosition(finalNode.getId())[0], Nodes.getPosition(finalNode.getId())[1], paint);
+                Canvas canvas = new Canvas(bmp);//TODO: sistemare posizionamento linea
+                canvas.drawLine(Nodes.getPosition(initNode.getId())[0] + 37, Nodes.getPosition(initNode.getId())[1] + 237, Nodes.getPosition(finalNode.getId())[0] + 37, Nodes.getPosition(finalNode.getId())[1] + 237, paint);
 
                 ImageView edge = (ImageView) findViewById(R.id.edge);
                 edge.setImageBitmap(bmp);
