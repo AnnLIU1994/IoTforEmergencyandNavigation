@@ -59,4 +59,6 @@
     <string name="exit">Exit</string>
 
     <string name="calcRoute">Route calculating&#8230;</string>
+
+    <string name="changePlan">&#8230;</string>
 </resources>

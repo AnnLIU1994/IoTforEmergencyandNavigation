@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CalculateRouteProgressFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ChangePlanProgressFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CheckUpdatesProgressFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.TerminateNavigationDialogFragment;
 
@@ -24,6 +25,8 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     private static final String TERMINATE_NAV_DIALOG_TAG = "TERMINATE_NAV_DIALOG";
 
     private static final String CALCULATE_ROUTE_PROGRESS_TAG = "CALCULATE_ROUTE_PROGRESS";
+
+    private static final String CHANGE_PLAN_PROGRESS_TAG = "CHANGE_PLAN_PROGRESS";
 
     public static String initPos, finalPos;
     int initFloor, finalFloor;
@@ -96,14 +99,18 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
 
     private ImageView initNode;
     private ImageView finalNode;
+    private ImageView stairNode;
 
     private String nodeSelected;
 
     private long mStartTime;
     private static final int ROUTE_CALCULATE_WHAT = 0;
+    private static final int CHANGE_WHAT = 1;
     private static final long WAIT_INTERVAL_ROUTE = 1500L;
+    private static final long WAIT_INTERVAL_CHANGE = 2000L;
 
     private CalculateRouteProgressFragment progressCalculateRoute;
+    private ChangePlanProgressFragment progressChangePlan;
 
     private Handler mHandler = new Handler() { // Permette la gestione dell'activity
 
@@ -117,6 +124,84 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                         progressCalculateRoute.dismiss();
                     }
                     break;
+                case CHANGE_WHAT:
+                    long elapsedTimeChange = SystemClock.uptimeMillis() - mStartTime;
+                    if (elapsedTimeChange >= WAIT_INTERVAL_CHANGE) {
+                        progressChangePlan.dismiss();
+                        initNode.setVisibility(View.INVISIBLE);
+                        switch (finalFloor) {
+                            case 145:
+                                navMap.setImageResource(R.drawable.q145);
+                                switch (stairNode.getId()) {
+                                    case R.id.q155a3:
+                                    case R.id.q150a3:
+                                        initNode = (ImageView) findViewById(R.id.q145a3);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                    case R.id.q155a5:
+                                    case R.id.q150a5:
+                                        initNode = (ImageView) findViewById(R.id.q145a5);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                    case R.id.q155a7:
+                                    case R.id.q150a7:
+                                        initNode = (ImageView) findViewById(R.id.q145ema7);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                }
+                                stairNode.setVisibility(View.INVISIBLE);
+                                finalNode = (ImageView) findViewById(Nodes.getNodeByName(finalPos));
+                                Nodes.positioningNodeNav(finalNode);
+                                break;
+                            case 150:
+                                navMap.setImageResource(R.drawable.q150);
+                                switch (stairNode.getId()) {
+                                    case R.id.q155a3:
+                                    case R.id.q145a3:
+                                        initNode = (ImageView) findViewById(R.id.q150a3);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                    case R.id.q155a5:
+                                    case R.id.q145a5:
+                                        initNode = (ImageView) findViewById(R.id.q150a5);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                    case R.id.q155a7:
+                                    case R.id.q145ema7:
+                                        initNode = (ImageView) findViewById(R.id.q150a7);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                }
+                                stairNode.setVisibility(View.INVISIBLE);
+                                finalNode = (ImageView) findViewById(Nodes.getNodeByName(finalPos));
+                                Nodes.positioningNodeNav(finalNode);
+                                break;
+                            case 155:
+                                navMap.setImageResource(R.drawable.q155);
+                                switch (stairNode.getId()) {
+                                    case R.id.q145a3:
+                                    case R.id.q150a3:
+                                        initNode = (ImageView) findViewById(R.id.q155a3);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                    case R.id.q145a5:
+                                    case R.id.q150a5:
+                                        initNode = (ImageView) findViewById(R.id.q155a5);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                    case R.id.q145ema7:
+                                    case R.id.q150a7:
+                                        initNode = (ImageView) findViewById(R.id.q155a7);
+                                        Nodes.positioningNodeNav(initNode);
+                                        break;
+                                }
+                                stairNode.setVisibility(View.INVISIBLE);
+                                finalNode = (ImageView) findViewById(Nodes.getNodeByName(finalPos));
+                                Nodes.positioningNodeNav(finalNode);
+                                break;
+                        }
+                    }
+                    break;
             }
         }
     };
@@ -125,9 +210,6 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
 
         mStartTime = SystemClock.uptimeMillis();
         progressCalculateRoute = new CalculateRouteProgressFragment();
@@ -245,87 +327,99 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                 } else {
                     switch (initPos) {
                         case "q145dicea": //TODO: da sostituire con db
-                            finalNode = (ImageView) findViewById(R.id.q145ema7);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145ema7);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145s1":
-                            finalNode = (ImageView) findViewById(R.id.q145a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145r3":
-                            finalNode = (ImageView) findViewById(R.id.q145ema7);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145ema7);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145r1":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145wc1":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145s2":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145s3":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145rg2":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145rg1":
-                            finalNode = (ImageView) findViewById(R.id.q145a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145ema7":
                             //TODO:
                             break;
                         case "q145ea5":
-                            finalNode = (ImageView) findViewById(R.id.q145a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145u1":
-                            finalNode = (ImageView) findViewById(R.id.q145a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145a5":
                             //TODO:
                             break;
                         case "q145em1":
-                            finalNode = (ImageView) findViewById(R.id.q145ema7);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145ema7);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145emg1":
-                            finalNode = (ImageView) findViewById(R.id.q145a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145emg2":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145u2":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145u3":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145ram":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q145a3":
                             //TODO:
                             break;
                         case "q145ema3":
-                            finalNode = (ImageView) findViewById(R.id.q145a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q145a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                     }
+
+                    stairNode.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            mStartTime = SystemClock.uptimeMillis();
+                            progressChangePlan = new ChangePlanProgressFragment();
+                            progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
+                            final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
+                            mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
+                            return false;
+                        }
+                    });
                 }
 
                 /*q145ema7.setOnTouchListener(new View.OnTouchListener() {
@@ -1111,56 +1205,56 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                 } else {
                     switch (initPos) {
                         case "q150dicea1": //TODO: da sostituire con db
-                            finalNode = (ImageView) findViewById(R.id.q150a7);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a7);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150g1":
-                            finalNode = (ImageView) findViewById(R.id.q150a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150dicea":
-                            finalNode = (ImageView) findViewById(R.id.q150a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150strade":
-                            finalNode = (ImageView) findViewById(R.id.q150a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150em1":
-                            finalNode = (ImageView) findViewById(R.id.q150a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150wc1":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150ram":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150g1g2":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150g2":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150r2":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150s1":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150r1":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150rl":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150a7":
                             //TODO:
@@ -1172,18 +1266,30 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                             //TODO:
                             break;
                         case "q150bib":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150emrl":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q150emr1":
-                            finalNode = (ImageView) findViewById(R.id.q150a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q150a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                     }
+
+                    stairNode.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            mStartTime = SystemClock.uptimeMillis();
+                            progressChangePlan = new ChangePlanProgressFragment();
+                            progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
+                            final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
+                            mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
+                            return false;
+                        }
+                    });
                 }
 
                 /*q150dicea1.setOnTouchListener(new View.OnTouchListener() {
@@ -1873,72 +1979,72 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                 } else {
                     switch (initPos) {
                         case "q155dicea": //TODO: da sostituire con db
-                            finalNode = (ImageView) findViewById(R.id.q155a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155r567":
-                            finalNode = (ImageView) findViewById(R.id.q155a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155r4":
-                            finalNode = (ImageView) findViewById(R.id.q155a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155r4d3":
-                            finalNode = (ImageView) findViewById(R.id.q155a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155r23d2":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155rd1":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155wc1":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155u1":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155ecdl":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155s1":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155wc2":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155em2":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155acq":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155em3":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155up":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155cesmi":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155bar":
-                            finalNode = (ImageView) findViewById(R.id.q155a3);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a3);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                         case "q155a7":
                             //TODO:
@@ -1950,10 +2056,23 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                             //TODO
                             break;
                         case "q155em1":
-                            finalNode = (ImageView) findViewById(R.id.q155a5);
-                            Nodes.positioningNodeNav(finalNode);
+                            stairNode = (ImageView) findViewById(R.id.q155a5);
+                            Nodes.positioningNodeNav(stairNode);
                             break;
                     }
+
+                    stairNode.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            //TODO: al touch il nodo diventa l'indicatore e gli altri no
+                            mStartTime = SystemClock.uptimeMillis();
+                            progressChangePlan = new ChangePlanProgressFragment();
+                            progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
+                            final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
+                            mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
+                            return false;
+                        }
+                    });
                 }
 
                 /*q155dicea.setOnTouchListener(new View.OnTouchListener() {
@@ -2652,6 +2771,13 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                 break;
         }
     }
+
+    /*@Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        TerminateNavigationDialogFragment alertDialog = new TerminateNavigationDialogFragment();
+        alertDialog.show(getSupportFragmentManager(), TERMINATE_NAV_DIALOG_TAG);
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
