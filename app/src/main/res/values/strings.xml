@@ -59,5 +59,8 @@
 
     <string name="calcRoute">Route calculating&#8230;</string>
 
-    <string name="changePlan">&#8230;</string>
+    <string name="changePlanGoUp">go up for</string>
+    <string name="changePlanGoDown">go down for</string>
+    <string name="changePlanFloor">floor</string>
+    <string name="changePlanFloors">floors</string>
 </resources>

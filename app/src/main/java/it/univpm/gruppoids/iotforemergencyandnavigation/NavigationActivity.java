@@ -5,19 +5,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CalculateRouteProgressFragment;
-import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ChangePlanProgressFragment;
-import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.CheckUpdatesProgressFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ChangeUpPlanProgressFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.TerminateNavigationDialogFragment;
 
 public class NavigationActivity extends AppCompatActivity implements TerminateNavigationDialogFragment.AlertDialogListener {
@@ -29,7 +26,8 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     private static final String CHANGE_PLAN_PROGRESS_TAG = "CHANGE_PLAN_PROGRESS";
 
     public static String initPos, finalPos;
-    int initFloor, finalFloor;
+    static int initFloor;
+    static int finalFloor;
     ImageView navMap;
     MenuItem updatePos;
 
@@ -110,7 +108,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     private static final long WAIT_INTERVAL_CHANGE = 1500L;
 
     private CalculateRouteProgressFragment progressCalculateRoute;
-    private ChangePlanProgressFragment progressChangePlan;
+    private ChangeUpPlanProgressFragment progressChangePlan;
 
     private Handler mHandler = new Handler() { // Permette la gestione dell'activity
 
@@ -352,7 +350,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
                             mStartTime = SystemClock.uptimeMillis();
-                            progressChangePlan = new ChangePlanProgressFragment();
+                            progressChangePlan = new ChangeUpPlanProgressFragment();
                             progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                             final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                             mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -1222,7 +1220,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
                             mStartTime = SystemClock.uptimeMillis();
-                            progressChangePlan = new ChangePlanProgressFragment();
+                            progressChangePlan = new ChangeUpPlanProgressFragment();
                             progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                             final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                             mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -2005,7 +2003,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                         public boolean onTouch(View v, MotionEvent event) {
                             //TODO: al touch il nodo diventa l'indicatore e gli altri no
                             mStartTime = SystemClock.uptimeMillis();
-                            progressChangePlan = new ChangePlanProgressFragment();
+                            progressChangePlan = new ChangeUpPlanProgressFragment();
                             progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                             final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                             mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -2751,6 +2749,23 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public static String differencePlan() {
+        int difference;
+        if ((initFloor == 145 & finalFloor == 155) | (finalFloor == 145 & initFloor == 155))
+            difference = 2;
+        else
+            difference = 1;
+        return Integer.toString(difference);
+    }
+
+    public static boolean isGoUp() {
+        boolean goUp;
+        if ((initFloor == 145 & (finalFloor == 150 | finalFloor == 155)) | (initFloor == 150 & finalFloor == 155))
+            return goUp = true;
+        else
+            return goUp = false;
     }
 
     private void goInitPos() {

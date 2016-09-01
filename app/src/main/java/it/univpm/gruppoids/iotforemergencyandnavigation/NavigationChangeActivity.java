@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ChangePlanProgressFragment;
+import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ChangeDownPlanProgressFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.TerminateNavigationDialogFragment;
 
 public class NavigationChangeActivity extends AppCompatActivity implements TerminateNavigationDialogFragment.AlertDialogListener {
@@ -105,7 +105,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
     private static final int CHANGE_WHAT = 1;
     private static final long WAIT_INTERVAL_CHANGE = 1500L;
 
-    private ChangePlanProgressFragment progressChangePlan;
+    private ChangeDownPlanProgressFragment progressChangePlan;
 
     private Handler mHandler = new Handler() { // Permette la gestione dell'activity
 
@@ -258,7 +258,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
                         mStartTime = SystemClock.uptimeMillis();
-                        progressChangePlan = new ChangePlanProgressFragment();
+                        progressChangePlan = new ChangeDownPlanProgressFragment();
                         progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                         final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                         mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -1064,7 +1064,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         mStartTime = SystemClock.uptimeMillis();
-                        progressChangePlan = new ChangePlanProgressFragment();
+                        progressChangePlan = new ChangeDownPlanProgressFragment();
                         progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                         final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                         mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -1773,7 +1773,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         mStartTime = SystemClock.uptimeMillis();
-                        progressChangePlan = new ChangePlanProgressFragment();
+                        progressChangePlan = new ChangeDownPlanProgressFragment();
                         progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                         final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                         mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -2481,7 +2481,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
     @Override
     public void onBackPressed() {
         mStartTime = SystemClock.uptimeMillis();
-        progressChangePlan = new ChangePlanProgressFragment();
+        progressChangePlan = new ChangeDownPlanProgressFragment();
         progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
         final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
         mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
@@ -2510,7 +2510,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
         switch (itemId) {
             case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
                 mStartTime = SystemClock.uptimeMillis();
-                progressChangePlan = new ChangePlanProgressFragment();
+                progressChangePlan = new ChangeDownPlanProgressFragment();
                 progressChangePlan.show(getSupportFragmentManager(), CHANGE_PLAN_PROGRESS_TAG);
                 final Message goMainMessage = mHandler.obtainMessage(CHANGE_WHAT);
                 mHandler.sendMessageAtTime(goMainMessage, mStartTime + WAIT_INTERVAL_CHANGE);
