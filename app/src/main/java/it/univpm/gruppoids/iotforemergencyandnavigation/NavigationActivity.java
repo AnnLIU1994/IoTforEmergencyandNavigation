@@ -107,7 +107,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
     private static final int ROUTE_CALCULATE_WHAT = 0;
     private static final int CHANGE_WHAT = 1;
     private static final long WAIT_INTERVAL_ROUTE = 1500L;
-    private static final long WAIT_INTERVAL_CHANGE = 2000L;
+    private static final long WAIT_INTERVAL_CHANGE = 1500L;
 
     private CalculateRouteProgressFragment progressCalculateRoute;
     private ChangePlanProgressFragment progressChangePlan;
@@ -129,79 +129,11 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                     if (elapsedTimeChange >= WAIT_INTERVAL_CHANGE) {
                         progressChangePlan.dismiss();
 
-                        Intent changeIntent = new Intent(this, NavigationChangeActivity.class);
-                        initNode.setVisibility(View.INVISIBLE);
-                        switch (finalFloor) {
-                            case 145:
-                                navMap.setImageResource(R.drawable.q145);
-                                switch (stairNode.getId()) {
-                                    case R.id.q155a3:
-                                    case R.id.q150a3:
-                                        initNode = (ImageView) findViewById(R.id.q145a3);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                    case R.id.q155a5:
-                                    case R.id.q150a5:
-                                        initNode = (ImageView) findViewById(R.id.q145a5);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                    case R.id.q155a7:
-                                    case R.id.q150a7:
-                                        initNode = (ImageView) findViewById(R.id.q145ema7);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                }
-                                stairNode.setVisibility(View.INVISIBLE);
-                                finalNode = (ImageView) findViewById(Nodes.getNodeByName(finalPos));
-                                Nodes.positioningNodeNav(finalNode);
-                                break;
-                            case 150:
-                                navMap.setImageResource(R.drawable.q150);
-                                switch (stairNode.getId()) {
-                                    case R.id.q155a3:
-                                    case R.id.q145a3:
-                                        initNode = (ImageView) findViewById(R.id.q150a3);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                    case R.id.q155a5:
-                                    case R.id.q145a5:
-                                        initNode = (ImageView) findViewById(R.id.q150a5);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                    case R.id.q155a7:
-                                    case R.id.q145ema7:
-                                        initNode = (ImageView) findViewById(R.id.q150a7);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                }
-                                stairNode.setVisibility(View.INVISIBLE);
-                                finalNode = (ImageView) findViewById(Nodes.getNodeByName(finalPos));
-                                Nodes.positioningNodeNav(finalNode);
-                                break;
-                            case 155:
-                                navMap.setImageResource(R.drawable.q155);
-                                switch (stairNode.getId()) {
-                                    case R.id.q145a3:
-                                    case R.id.q150a3:
-                                        initNode = (ImageView) findViewById(R.id.q155a3);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                    case R.id.q145a5:
-                                    case R.id.q150a5:
-                                        initNode = (ImageView) findViewById(R.id.q155a5);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                    case R.id.q145ema7:
-                                    case R.id.q150a7:
-                                        initNode = (ImageView) findViewById(R.id.q155a7);
-                                        Nodes.positioningNodeNav(initNode);
-                                        break;
-                                }
-                                stairNode.setVisibility(View.INVISIBLE);
-                                finalNode = (ImageView) findViewById(Nodes.getNodeByName(finalPos));
-                                Nodes.positioningNodeNav(finalNode);
-                                break;
-                        }
+                        Intent changeIntent = new Intent(getApplicationContext(), NavigationChangeActivity.class);
+                        changeIntent.putExtra("finalFloor", finalFloor);
+                        changeIntent.putExtra("finalPos", finalPos);
+                        changeIntent.putExtra("stairId", stairNode.getId());
+                        startActivity(changeIntent);
                     }
                     break;
             }
@@ -224,10 +156,15 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
         finalPos = inputIntent.getStringExtra("finalPos");
         initFloor = inputIntent.getIntExtra("initFloor", 0);
         finalFloor = inputIntent.getIntExtra("finalFloor", 0);
+        String floorString = Integer.toString(initFloor);
 
         Toast.makeText(getApplicationContext(), "The initial position is " + initPos + " at " + initFloor + ". The final position is " + finalPos + " at " + finalFloor, Toast.LENGTH_LONG).show();
 
         navMap = (ImageView) findViewById(R.id.navi_map);
+
+        if (initFloor != 0) {
+            getSupportActionBar().setTitle(getResources().getString(R.string.floor_pos) + " " + floorString);
+        }
 
         switch (initFloor) {
             case 145:
@@ -2774,12 +2711,11 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
         }
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
-        super.onBackPressed();
         TerminateNavigationDialogFragment alertDialog = new TerminateNavigationDialogFragment();
         alertDialog.show(getSupportFragmentManager(), TERMINATE_NAV_DIALOG_TAG);
-    }*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

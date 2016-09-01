@@ -62,13 +62,11 @@
         <activity
             android:name=".NavigationActivity"
             android:screenOrientation="portrait"
-            android:label="@string/tapForUpdate"
             android:theme="@style/AppThemeNav" />
         <activity
             android:name=".NavigationChangeActivity"
             android:parentActivityName=".NavigationActivity"
             android:screenOrientation="portrait"
-            android:label="@string/tapForUpdate"
             android:theme="@style/AppThemeNav" />
         <activity
             android:name=".ChooseFinalPlanActivity"
