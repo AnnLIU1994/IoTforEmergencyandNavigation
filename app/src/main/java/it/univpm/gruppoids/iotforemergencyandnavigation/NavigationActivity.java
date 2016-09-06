@@ -366,7 +366,7 @@ public class NavigationActivity extends AppCompatActivity implements TerminateNa
                     });
                 }
 
-                Paint paint = new Paint();
+                Paint paint = new Paint();//rinchiudere in un metodo
                 paint.setColor(getResources().getColor(R.color.colorBlue));
                 paint.setStrokeWidth(25);
                 paint.setStyle(Paint.Style.FILL);
