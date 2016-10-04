@@ -57,6 +57,10 @@ public class SplashActivity extends Activity {
         final Message goMainMessage = mHandler.obtainMessage(OK_REG_WHAT);
         // Invia il messaggio OK_REG_WHAT quando sono passati MAX_WAIT_INTERVAL millisecondi
         mHandler.sendMessageAtTime(goMainMessage, mStartTime + MAX_WAIT_INTERVAL);
+
+        /* TODO: if cursor.nodes == 0 allora .insertNode("q145dicea", 413, 142, 1.8, 0, 0);
+        else non fai niente
+         */
     }
 
     /*@Override
