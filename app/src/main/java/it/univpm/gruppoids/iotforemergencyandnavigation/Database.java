@@ -121,7 +121,7 @@ public class Database {
         node.put(NodesMetaData.Z, z );
         node.put(NodesMetaData.WIDTH, width );
         node.put(NodesMetaData.STAIR, stair );
-        node.put(NodesMetaData.EMERGENCY, stair );
+        node.put(NodesMetaData.EMERGENCY, emergency );
         mDb.insert(NodesMetaData.NODES_TABLE, null, node);
     }
 
