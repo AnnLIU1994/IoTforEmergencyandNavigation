@@ -126,15 +126,11 @@ public class Database {
     }
 
     ///////////////////////////////////////////////////////////--------INSERT EDGES---------//////////////////////////////////////////////////////////////////////////////////////////////
-    public void insertEdge(String id1, String id2, float L, float I, float C, float LOS, float V){
+    public void insertEdge(String id1, String id2, float L){ // Non ho bisogno di inserire i pesi dinamici perche stanno gia sul DBserver
         ContentValues edge = new ContentValues();
         edge.put(EdgesMetaData.ID1, id1);
         edge.put(EdgesMetaData.ID2, id2);
         edge.put(EdgesMetaData.L, L);
-        edge.put(EdgesMetaData.I, I);
-        edge.put(EdgesMetaData.C, C);
-        edge.put(EdgesMetaData.LOS, LOS);
-        edge.put(EdgesMetaData.V, V);
         mDb.insert(EdgesMetaData.EDGES_TABLE, null, edge);
     }
 
