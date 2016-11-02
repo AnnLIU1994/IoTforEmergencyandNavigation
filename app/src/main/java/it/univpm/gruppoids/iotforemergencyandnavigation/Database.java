@@ -29,7 +29,7 @@ public class Database {
 
     ////////////////////////////////////////////////////////////--------USER--------/////////////////////////////////////////////////////////////////////////////////////////////////////
     static class UserMetaData {  // i metadati della tabella, accessibili ovunque
-        static final String USER_TABLE = "user";
+        static final String USER_TABLE = "users";
         static final String NOME = "Nome";
         static final String COGNOME = "Cognome";
         static final String EMAIL = "Email";
@@ -67,7 +67,7 @@ public class Database {
             NodesMetaData.X + " SMALLINT(3) UNSIGNED NOT NULL, " + //SMALLINT può assumere 65536 valori. Ponendolo UNSIGNED non si utilizzano i numeri negativi
             NodesMetaData.Y + " SMALLINT(3) UNSIGNED NOT NULL, " +
             NodesMetaData.Z + " SMALLINT(3) UNSIGNED NOT NULL, " +
-            NodesMetaData.WIDTH + " DECIMAL(1,1) NOT NULL, " + // DECIMAL(1,1) permette di utilizzare numeri con una cifra unitaria e una decimale
+            NodesMetaData.WIDTH + " DECIMAL(2,1) NOT NULL, " + // DECIMAL(2,1) permette di utilizzare numeri con una cifra unitaria e una decimale
             NodesMetaData.STAIR + " TINYINT(1) DEFAULT 0," + // TINYINT(1) al posto del booleano
             NodesMetaData.EMERGENCY + " TINYINT(1) DEFAULT 0);";
 
@@ -90,11 +90,11 @@ public class Database {
     private static final String CREATE_EDGES_TABLE = "CREATE TABLE IF NOT EXISTS " + EdgesMetaData.EDGES_TABLE + " ( " +
             EdgesMetaData.ID1 + " VARCHAR(9) NOT NULL, " +
             EdgesMetaData.ID2 + " VARCHAR(9) NOT NULL, " +
-            EdgesMetaData.L + " DECIMAL(2,1)  NOT NULL, " +
-            EdgesMetaData.I + " DECIMAL(1,1) NOT NULL, " +
-            EdgesMetaData.C + " DECIMAL(1,1)  NOT NULL, " +
-            EdgesMetaData.LOS + " DECIMAL(1,1)  NOT NULL, " +
-            EdgesMetaData.V + " DECIMAL(1,1)  NOT NULL, " +
+            EdgesMetaData.L + " DECIMAL(3,1)  NOT NULL, " +
+            EdgesMetaData.I + " DECIMAL(2,1) NOT NULL, " +
+            EdgesMetaData.C + " DECIMAL(2,1)  NOT NULL, " +
+            EdgesMetaData.LOS + " DECIMAL(2,1)  NOT NULL, " +
+            EdgesMetaData.V + " DECIMAL(2,1)  NOT NULL, " +
             "FOREIGN KEY (" + EdgesMetaData.ID1 + ", " + EdgesMetaData.ID2 + ") REFERENCES " + NodesMetaData.NODES_TABLE + "(" + NodesMetaData.ID + "));";
 
     public Cursor fetchEdges(){
@@ -147,10 +147,21 @@ public class Database {
 
         @Override
         public void onCreate(SQLiteDatabase _db) { //solo quando il db viene creato, creiamo la tabella
+
+            /*ContentValues unaRiga = new ContentValues();
+            unaRiga.put(NodesMetaData.ID, "q145dicea");
+            unaRiga.put(NodesMetaData.X, 413);
+            unaRiga.put(NodesMetaData.Y, 142);
+            unaRiga.put(NodesMetaData.Z, 145);
+            unaRiga.put(NodesMetaData.WIDTH, 1.8);
+            unaRiga.put(NodesMetaData.STAIR, 0);
+            unaRiga.put(NodesMetaData.EMERGENCY, 0);*/
+
             _db.execSQL(CREATE_USER_TABLE);   // Creo tabella user
             _db.execSQL(CREATE_NODES_TABLE);  // Creo tabella nodi
             _db.execSQL(CREATE_EDGES_TABLE);  // Creo tabella archi
-            // TODO: E meglio inserire i dati qui o nella splash??
+            //_db = mDbHelper.getWritableDatabase();
+            //_db.insert(NodesMetaData.NODES_TABLE, null, unaRiga);
         }
 
         @Override
