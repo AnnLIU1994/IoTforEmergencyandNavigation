@@ -1,6 +1,7 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -53,6 +54,19 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             TextView temp = (TextView) view;
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("http")
+                   .authority("192.168.43.4")
+                   .path("server.php")
+                   .appendQueryParameter("name", "Luca")
+                   .appendQueryParameter("surname", "Spalazzi")
+                   .appendQueryParameter("email", "ls.it")
+                   .appendQueryParameter("user", "luca")
+                   .appendQueryParameter("pw", "spalazzi");
+            String url=builder.build().toString();
+            MyAsyncTask task =new MyAsyncTask();
+            task.execute(url);
+            System.out.println(url);
             Toast.makeText(this,temp.getText()+""+i,Toast.LENGTH_SHORT).show();
     }
 }
