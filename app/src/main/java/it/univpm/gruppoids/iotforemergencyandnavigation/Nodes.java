@@ -9,20 +9,78 @@ import com.google.zxing.common.detector.MathUtils;
 public class Nodes {
 
     private static String id;
-    private float x;
-    private float y;
+    private short x;
+    private short y;
+    private short z;
     private float width;
+    private byte stair;
+    private byte emergency;
 
     private static String activityName;
 
-    public Nodes (float x, float y, float width) {
+    public Nodes (short x, short y, short z, float width, byte stair, byte emergency) {
         this.x = x;
         this.y = y;
+        this.z = z;
+        this.width = width;
+        this.stair = stair;
+        this.emergency = emergency;
+    }
+
+    /*public Nodes (String id) {
+        this.id = id;
+    }*/
+
+    public void setX(short x) {
+        this.x = x;
+    }
+
+    public void setY(short y) {
+        this.y = y;
+    }
+
+    public void setZ(short z) {
+        this.z = z;
+    }
+
+    public void setWidth(float width) {
         this.width = width;
     }
 
-    public Nodes (String id) {
-        this.id = id;
+    public void setStair(byte stair) {
+        this.stair = stair;
+    }
+
+    public void setEmergency(byte emergency) {
+        this.emergency = emergency;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public short getX() {
+        return x;
+    }
+
+    public short getY() {
+        return y;
+    }
+
+    public short getZ() {
+        return z;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public byte getStair() {
+        return stair;
+    }
+
+    public byte getEmergency() {
+        return emergency;
     }
 
     private static int[] getCoordsPercent(int id) {

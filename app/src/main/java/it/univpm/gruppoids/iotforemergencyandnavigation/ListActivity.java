@@ -59,8 +59,8 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             TextView temp = (TextView) view;
             Uri.Builder builder = new Uri.Builder();
             builder.scheme("http")
-                   .authority("192.168.43.4")
-                   .path("server.php")
+                   .authority("192.168.43.231") // IP Fabio: 192.168.43.4; IP Simone: 192.168.43.231
+                   .path("server.php")//va a vedere nella cartella C/xampp/htdocs
                    .appendQueryParameter("name", "Luca")
                    .appendQueryParameter("surname", "Spalazzi")
                    .appendQueryParameter("email", "ls.it")

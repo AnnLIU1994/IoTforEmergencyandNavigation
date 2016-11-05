@@ -5,4 +5,5 @@ package it.univpm.gruppoids.iotforemergencyandnavigation.interfaces;
  */
 public interface Const {
     String PKG ="it.univpm.gruppoids.iotforemergencyandnavigation";
+    //TODO: copiarci i nomi delle colonne del db
 }

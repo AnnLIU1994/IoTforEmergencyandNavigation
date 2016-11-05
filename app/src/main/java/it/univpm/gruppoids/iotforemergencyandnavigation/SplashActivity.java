@@ -8,11 +8,11 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.view.View;
 
-import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
 
 public class SplashActivity extends Activity {
 
     private static final String TAG_LOG = SplashActivity.class.getName();
+
 
     private static final long MIN_WAIT_INTERVAL = 1500L;
     private static final long MAX_WAIT_INTERVAL = 3000L;
@@ -50,13 +50,12 @@ public class SplashActivity extends Activity {
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN; // Permette la visualizzazione fullscreen
         decorView.setSystemUiVisibility(uiOptions);
-        Database db = new Database(this);
-        SQLiteStudioService.instance().start(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         mStartTime = SystemClock.uptimeMillis();
         final Message goMainMessage = mHandler.obtainMessage(OK_REG_WHAT);
         // Invia il messaggio OK_REG_WHAT quando sono passati MAX_WAIT_INTERVAL millisecondi
@@ -89,6 +88,5 @@ public class SplashActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         mHandler.removeCallbacksAndMessages(null); // Serve per bloccare la visualizzazione della InitPositionActivity una volta chiusa la splash
-        SQLiteStudioService.instance().stop();
     }
 }
