@@ -56,21 +56,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            TextView temp = (TextView) view;
-            Uri.Builder builder = new Uri.Builder();
-            builder.scheme("http")
-                   .authority("192.168.43.231") // IP Fabio: 192.168.43.4; IP Simone: 192.168.43.231
-                   .path("server.php")//va a vedere nella cartella C/xampp/htdocs
-                   .appendQueryParameter("name", "Luca")
-                   .appendQueryParameter("surname", "Spalazzi")
-                   .appendQueryParameter("email", "ls.it")
-                   .appendQueryParameter("user", "luca")
-                   .appendQueryParameter("pw", "spalazzi");
-            String url=builder.build().toString();
-            MyAsyncTask task =new MyAsyncTask();
-            task.execute(url);
-            System.out.println(url);
-            Toast.makeText(this,temp.getText()+""+i,Toast.LENGTH_SHORT).show();
     }
 }
 
