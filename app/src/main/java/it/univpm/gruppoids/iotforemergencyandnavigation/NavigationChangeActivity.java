@@ -1,5 +1,4 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
-
 /**
  * Created by hew dv67090el on 01/09/2016.
  */
