@@ -16,7 +16,7 @@ public class Graph {
     // TODO: ?? classe per weight ??
 
     public Graph(Nodes node, Edges edge, float weight) {
-        this. node = node;
+        this.node = node;
         this.edge = edge;
         this.weight = weight;
     }

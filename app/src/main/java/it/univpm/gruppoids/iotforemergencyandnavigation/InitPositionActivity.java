@@ -2,6 +2,7 @@ package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,6 +26,7 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ExitDialogFrag
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatedDialogFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdateFailedDialogFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatingDialogFragment;
+import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
 
 public class InitPositionActivity extends AppCompatActivity
         implements ExitDialogFragment.AlertDialogListener, CheckUpdatesProgressFragment.OnProgressDialogListener,
@@ -55,6 +57,8 @@ public class InitPositionActivity extends AppCompatActivity
 
     private Button buttonQr;
 
+    protected DbAdapter dbAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +78,12 @@ public class InitPositionActivity extends AppCompatActivity
                 integrator.initiateScan();
             }
         });
+
+        SQLiteStudioService.instance().start(this);
+        dbAdapter = new DbAdapter(this);
+        dbAdapter.open();
+        Cursor nodes = dbAdapter.fetchNodes();
+        dbAdapter.close();
     }
 
     @Override
@@ -234,6 +244,9 @@ public class InitPositionActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SQLiteStudioService.instance().stop();
+    }
 }

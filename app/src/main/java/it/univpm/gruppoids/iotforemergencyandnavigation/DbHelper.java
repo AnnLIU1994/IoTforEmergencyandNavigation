@@ -31,11 +31,11 @@ public class DbHelper extends SQLiteOpenHelper { // Contiene tutto quello che se
     }
 
     private static final String CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS " + UserMetaData.USER_TABLE + "(" +
-            UserMetaData.NOME + "TEXT, " +
-            UserMetaData.COGNOME + "TEXT, " +
-            UserMetaData.EMAIL + "TEXT NOT NULL, " +
-            UserMetaData.USERNAME + "TEXT NOT NULL, " +
-            UserMetaData.PASSWORD + "TEXT NOT NULL, " +
+            UserMetaData.NOME + " TEXT, " +
+            UserMetaData.COGNOME + " TEXT, " +
+            UserMetaData.EMAIL + " TEXT NOT NULL, " +
+            UserMetaData.USERNAME + " TEXT NOT NULL, " +
+            UserMetaData.PASSWORD + " TEXT NOT NULL, " +
             "PRIMARY KEY (" + UserMetaData.NOME + ", " + UserMetaData.COGNOME + "));";
 
     ////////////////////////////////////////////////////////////--------NODES--------/////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,13 +51,13 @@ public class DbHelper extends SQLiteOpenHelper { // Contiene tutto quello che se
     }
 
     private static final String CREATE_NODES_TABLE = "CREATE TABLE IF NOT EXISTS " + NodesMetaData.NODES_TABLE + "(" +
-            NodesMetaData.ID + "TEXT PRIMARY KEY, " +
-            NodesMetaData.X + "INTEGER NOT NULL, " + //SMALLINT può assumere 65536 valori. Ponendolo UNSIGNED non si utilizzano i numeri negativi
-            NodesMetaData.Y + "INTEGER NOT NULL, " +
-            NodesMetaData.Z + "INTEGER NOT NULL, " +
-            NodesMetaData.WIDTH + "REAL NOT NULL, " + // DECIMAL(2,1) permette di utilizzare numeri con una cifra unitaria e una decimale
-            NodesMetaData.STAIR + "INTEGER, " + // TINYINT(1) al posto del booleano
-            NodesMetaData.EMERGENCY + "INTEGER);";
+            NodesMetaData.ID + " TEXT PRIMARY KEY, " +
+            NodesMetaData.X + " INTEGER NOT NULL, " + //SMALLINT può assumere 65536 valori. Ponendolo UNSIGNED non si utilizzano i numeri negativi
+            NodesMetaData.Y + " INTEGER NOT NULL, " +
+            NodesMetaData.Z + " INTEGER NOT NULL, " +
+            NodesMetaData.WIDTH + " REAL NOT NULL, " + // DECIMAL(2,1) permette di utilizzare numeri con una cifra unitaria e una decimale
+            NodesMetaData.STAIR + " INTEGER, " + // TINYINT(1) al posto del booleano
+            NodesMetaData.EMERGENCY + " INTEGER);";
 
     ////////////////////////////////////////////////////////////--------EDGES--------/////////////////////////////////////////////////////////////////////////////////////////////////////
     static class EdgesMetaData {  // i metadati della tabella, accessibili ovunque
@@ -68,9 +68,9 @@ public class DbHelper extends SQLiteOpenHelper { // Contiene tutto quello che se
     }
 
     private static final String CREATE_EDGES_TABLE = "CREATE TABLE IF NOT EXISTS " + EdgesMetaData.EDGES_TABLE + "(" +
-            EdgesMetaData.ID1 + "TEXT, " +
-            EdgesMetaData.ID2 + "TEXT, " +
-            EdgesMetaData.L + "INTEGER  NOT NULL);";
+            EdgesMetaData.ID1 + " TEXT, " +
+            EdgesMetaData.ID2 + " TEXT, " +
+            EdgesMetaData.L + " INTEGER  NOT NULL);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {

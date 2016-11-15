@@ -7,7 +7,10 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DbAdapter { // Contiene tutto quei metodi utilizzati per interrogare il database (utilizzando il DbHelper)
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class DbAdapter { // Contiene tutti quei metodi utilizzati per interrogare il database (utilizzando il DbHelper)
 
     Context context;
     SQLiteDatabase db;
@@ -72,4 +75,5 @@ public class DbAdapter { // Contiene tutto quei metodi utilizzati per interrogar
         edge.put(DbHelper.EdgesMetaData.L, L);
         db.insert(DbHelper.EdgesMetaData.EDGES_TABLE, null, edge);
     }
+
 }
