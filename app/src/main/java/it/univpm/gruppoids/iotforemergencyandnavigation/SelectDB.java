@@ -49,7 +49,6 @@ ListActivity ma io preferisco gestirmi da me la risposta*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_php);
 
-
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         final TextView textviewDariRicevuti = (TextView) findViewById(R.id.datiRicevuti);
