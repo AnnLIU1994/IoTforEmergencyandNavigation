@@ -3,16 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+    <data>
+        <variable
+            android:name="node"
+            android:type="it.univpm.gruppoids.iotforemergencyandnavigation.Nodes"/>
+    </data>
 
-    <!--         QUOTA 145        -->
+    <!--         QUOTA 145      q145ema7  -->
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/q145ema7"
+        android:id="@{node.id}"
         android:visibility="gone" />
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q145dicea"
@@ -130,11 +135,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q145ea5"
-        android:visibility="gone" />
+        android:visibility="gone" />-->
 
     <!--          QUOTA   150        -->
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q150a7"
@@ -246,11 +251,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q150emr1"
-        android:visibility="gone" />
+        android:visibility="gone" />-->
 
     <!--          QUOTA   155        -->
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q155a7"
@@ -374,6 +379,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q155bar"
-        android:visibility="gone" />
+        android:visibility="gone" />-->
 
 </FrameLayout>

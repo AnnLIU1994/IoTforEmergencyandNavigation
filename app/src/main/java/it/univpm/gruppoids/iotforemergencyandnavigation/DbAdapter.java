@@ -14,7 +14,9 @@ public class DbAdapter { // Contiene tutti quei metodi utilizzati per interrogar
 
     Context context;
     SQLiteDatabase db;
-    DbHelper dbHelper;       //numero di versione del nostro db
+    DbHelper dbHelper;//numero di versione del nostro db
+
+    static DbAdapter instance;
 
     public DbAdapter(Context context) {
         this.context = context;
@@ -24,6 +26,10 @@ public class DbAdapter { // Contiene tutti quei metodi utilizzati per interrogar
         dbHelper = new DbHelper(context);
         db = dbHelper.getWritableDatabase();
         return this;
+    }
+
+    public static DbAdapter getDbAdapter() { // ritorno l'instanza del db adapter
+        return instance;
     }
 
 

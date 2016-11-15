@@ -1,6 +1,7 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -8,17 +9,20 @@ import com.google.zxing.common.detector.MathUtils;
 
 public class Nodes {
 
-    private static String id;
+    private String id;
     private short x;
     private short y;
     private short z;
     private float width;
-    private byte stair;
-    private byte emergency;
+    private boolean stair;
+    private boolean emergency;
 
     private static String activityName;
 
-    public Nodes (short x, short y, short z, float width, byte stair, byte emergency) {
+    static DbAdapter db = DbAdapter.getDbAdapter();
+
+    public Nodes (String id, short x, short y, short z, float width, boolean stair, boolean emergency) {
+        this.id = id;
         this.x = x;
         this.y = y;
         this.z = z;
@@ -47,11 +51,11 @@ public class Nodes {
         this.width = width;
     }
 
-    public void setStair(byte stair) {
+    public void setStair(boolean stair) {
         this.stair = stair;
     }
 
-    public void setEmergency(byte emergency) {
+    public void setEmergency(boolean emergency) {
         this.emergency = emergency;
     }
 
@@ -75,12 +79,54 @@ public class Nodes {
         return width;
     }
 
-    public byte getStair() {
+    public boolean getStair() {
         return stair;
     }
 
-    public byte getEmergency() {
+    public boolean getEmergency() {
         return emergency;
+    }
+
+    private static Nodes[] createNodesObj() {
+        Cursor nodesRows = db.fetchNodes();
+        Nodes nodes[] = new Nodes[nodesRows.getCount()];
+        int idNodeIndex = nodesRows.getColumnIndex("id");
+        int xIndex = nodesRows.getColumnIndex("x");
+        int yIndex = nodesRows.getColumnIndex("y");
+        int zIndex = nodesRows.getColumnIndex("z");
+        int widthIndex = nodesRows.getColumnIndex("width");
+        int stairIndex = nodesRows.getColumnIndex("stair");
+        int emergencyIndex = nodesRows.getColumnIndex("emergency");
+        nodesRows.moveToFirst(); // per puntare il cursor alla prima riga della tabella
+        int i = 0;
+        while (nodesRows.moveToNext()) {
+            String idNode = nodesRows.getString(idNodeIndex);
+            short x = (short) nodesRows.getInt(xIndex);
+            short y = (short) nodesRows.getInt(yIndex);
+            short z = (short) nodesRows.getInt(zIndex);
+            float width = nodesRows.getFloat(widthIndex);
+            int stairInt = nodesRows.getInt(stairIndex);
+            boolean stair;
+            if (stairInt == 0) {
+                stair = false;
+            } else {
+                stair = true;
+            }
+            int emergencyInt = nodesRows.getInt(emergencyIndex);
+
+            boolean emergency;
+            if (emergencyInt == 0) {
+                emergency = false;
+            } else {
+                emergency = true;
+            }
+
+            Nodes node = new Nodes(idNode, x, y, z, width, stair, emergency);
+            nodes[i] = node;
+            i++;
+        }
+
+        return nodes[];
     }
 
     private static int[] getCoordsPercent(int id) {
@@ -676,7 +722,7 @@ public class Nodes {
     public static String getNameOfNode(ImageView vertexTouched) {
         switch (vertexTouched.getId()) {
             case R.id.q145dicea: //TODO: da sostituire con db
-                id = "q145dicea";
+
                 break;
             case R.id.q145s1:
                 id = "q145s1";
