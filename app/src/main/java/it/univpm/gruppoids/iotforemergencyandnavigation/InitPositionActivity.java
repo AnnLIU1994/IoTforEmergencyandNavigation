@@ -82,7 +82,7 @@ public class InitPositionActivity extends AppCompatActivity
         SQLiteStudioService.instance().start(this);
         dbAdapter = new DbAdapter(this);
         dbAdapter.open();
-        Cursor nodes = dbAdapter.fetchNodes();
+        Cursor nodes = DbAdapter.fetchNodes();
         dbAdapter.close();
     }
 

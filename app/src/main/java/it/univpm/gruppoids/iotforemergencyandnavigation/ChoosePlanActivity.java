@@ -1,16 +1,22 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+import java.util.Arrays;
 
 
 public class ChoosePlanActivity extends AppCompatActivity {
+
+    TextView text;
+    Nodes[] nodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,11 @@ public class ChoosePlanActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        text = (TextView) findViewById(R.id.test);
+
+        nodes = Nodes.createNodesObj();
+        text.setText(nodes[1].getId());
     }
 
     @Override

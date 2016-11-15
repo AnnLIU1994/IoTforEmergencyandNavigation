@@ -1,5 +1,7 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
+import android.app.Application;
+import android.content.Context;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.view.View;
@@ -9,7 +11,8 @@ import com.google.zxing.common.detector.MathUtils;
 
 public class Nodes {
 
-    private String id;
+    private static String id;
+    private String idd;
     private short x;
     private short y;
     private short z;
@@ -19,10 +22,10 @@ public class Nodes {
 
     private static String activityName;
 
-    static DbAdapter db = DbAdapter.getDbAdapter();
+    DbAdapter db;
 
     public Nodes (String id, short x, short y, short z, float width, boolean stair, boolean emergency) {
-        this.id = id;
+        this.idd = id;
         this.x = x;
         this.y = y;
         this.z = z;
@@ -60,7 +63,7 @@ public class Nodes {
     }
 
     public String getId() {
-        return id;
+        return idd;
     }
 
     public short getX() {
@@ -87,9 +90,9 @@ public class Nodes {
         return emergency;
     }
 
-    private static Nodes[] createNodesObj() {
-        Cursor nodesRows = db.fetchNodes();
-        Nodes nodes[] = new Nodes[nodesRows.getCount()];
+    public static Nodes[] createNodesObj() {
+        Cursor nodesRows = DbAdapter.fetchNodes();
+        Nodes[] nodes = new Nodes[nodesRows.getCount()];
         int idNodeIndex = nodesRows.getColumnIndex("id");
         int xIndex = nodesRows.getColumnIndex("x");
         int yIndex = nodesRows.getColumnIndex("y");
@@ -121,12 +124,12 @@ public class Nodes {
                 emergency = true;
             }
 
-            Nodes node = new Nodes(idNode, x, y, z, width, stair, emergency);
-            nodes[i] = node;
+            nodes[i] = new Nodes(idNode, x, y, z, width, stair, emergency);
             i++;
         }
+        nodesRows.close();
 
-        return nodes[];
+        return nodes;
     }
 
     private static int[] getCoordsPercent(int id) {

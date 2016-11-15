@@ -13,10 +13,9 @@ import java.io.FileReader;
 public class DbAdapter { // Contiene tutti quei metodi utilizzati per interrogare il database (utilizzando il DbHelper)
 
     Context context;
-    SQLiteDatabase db;
+    static SQLiteDatabase db;
     DbHelper dbHelper;//numero di versione del nostro db
 
-    static DbAdapter instance;
 
     public DbAdapter(Context context) {
         this.context = context;
@@ -28,10 +27,6 @@ public class DbAdapter { // Contiene tutti quei metodi utilizzati per interrogar
         return this;
     }
 
-    public static DbAdapter getDbAdapter() { // ritorno l'instanza del db adapter
-        return instance;
-    }
-
 
     public void close() { //chiudiamo il database su cui agiamo
         dbHelper.close();
@@ -41,7 +36,7 @@ public class DbAdapter { // Contiene tutti quei metodi utilizzati per interrogar
         return db.query(DbHelper.UserMetaData.USER_TABLE, null, null, null, null, null, null);
     }
 
-    public Cursor fetchNodes() {
+    public static Cursor fetchNodes() {
         return db.query(DbHelper.NodesMetaData.NODES_TABLE, null, null, null, null, null, null);
     }
 
