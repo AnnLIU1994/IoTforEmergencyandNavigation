@@ -10,13 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.Arrays;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.DAO;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.cursor.IoTCursorFactory;
 
 
 public class ChoosePlanActivity extends AppCompatActivity {
 
     TextView text;
-    Nodes[] nodes;
+    //Nodes[] nodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,14 @@ public class ChoosePlanActivity extends AppCompatActivity {
 
         text = (TextView) findViewById(R.id.test);
 
-        nodes = Nodes.createNodesObj();
-        text.setText(nodes[1].getId());
+        DAO dao = DAO.get(this);
+        dao.open();
+        Cursor cursor = dao.simpleQuery(null, null);
+        //nodes = Nodes.createNodesObj();
+        text.setText(cursor.getCount());
+        cursor.close();
+        dao.close();
+
     }
 
     @Override

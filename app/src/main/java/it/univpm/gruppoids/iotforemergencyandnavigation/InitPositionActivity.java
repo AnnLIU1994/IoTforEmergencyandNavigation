@@ -57,7 +57,7 @@ public class InitPositionActivity extends AppCompatActivity
 
     private Button buttonQr;
 
-    protected DbAdapter dbAdapter;
+    //protected DbAdapter dbAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,10 +80,9 @@ public class InitPositionActivity extends AppCompatActivity
         });
 
         SQLiteStudioService.instance().start(this);
-        dbAdapter = new DbAdapter(this);
-        dbAdapter.open();
-        Cursor nodes = DbAdapter.fetchNodes();
-        dbAdapter.close();
+        //dbAdapter = new DbAdapter(this);
+        //dbAdapter.open();
+        //dbAdapter.close();
     }
 
     @Override

@@ -1,0 +1,5 @@
+DROP TABLE Users;
+
+DROP TABLE Nodes;
+
+DROP TABLE Edges;

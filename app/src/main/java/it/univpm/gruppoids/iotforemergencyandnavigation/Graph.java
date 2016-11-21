@@ -1,10 +1,5 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
-import org.jgrapht.Graphs;
-import org.jgrapht.UndirectedGraph;
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.SimpleWeightedGraph;
-
 /**
  * Created by simon on 03/11/2016.
  */
