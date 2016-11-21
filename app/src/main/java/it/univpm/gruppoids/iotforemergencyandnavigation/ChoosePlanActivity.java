@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.DAO;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.IoTDB;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.cursor.IoTCursorFactory;
 
 
@@ -33,8 +34,8 @@ public class ChoosePlanActivity extends AppCompatActivity {
         dao.open();
         Cursor cursor = dao.simpleQuery(null, null);
         //nodes = Nodes.createNodesObj();
-        text.setText(cursor.getCount());
-        cursor.close();
+        cursor.moveToFirst();
+        text.setText(cursor.getString(0));
         dao.close();
 
     }

@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
 
 public final class IoTDB {
 
-    public static final String DB_NAME = "IoTDB";
+    public static final String DB_NAME = "IoTDB.db";
 
     public static final int DB_VERSION = 1;
 

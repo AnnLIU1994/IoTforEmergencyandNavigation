@@ -55,8 +55,8 @@ public class DbHelper extends SQLiteOpenHelper {
             db.beginTransaction();
             final String createSQL = ResourceUtils.getRawAsString(mContext, R.raw.create_schemas);
             db.execSQL(createSQL);
-            insertMockDataNodes(db);
-            insertMockDataEdges(db);
+            //insertMockDataNodes(db);
+            //insertMockDataEdges(db);
             db.setTransactionSuccessful();
         } catch (IOException ioe) {
             Log.e(TAG, "Error reading create SQL", ioe);
@@ -103,6 +103,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 rowNode.put(IoTDB.Node.EMERGENCY, Integer.valueOf(data[6]));
                 //db.execSQL(INSERT_NODE, data);
                 db.insert(IoTDB.Node.TABLE_NAME, null, rowNode);
+                rowNode.clear();
             }
             db.setTransactionSuccessful();
         } catch (IOException ioe) {
