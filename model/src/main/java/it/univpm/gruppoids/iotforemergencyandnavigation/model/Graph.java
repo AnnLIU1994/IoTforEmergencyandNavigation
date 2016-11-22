@@ -24,10 +24,6 @@ public class Graph extends SimpleWeightedGraph<Node, Edge> {
 
     private Context context;
 
-    private String q145 = "q145";
-    private String q150 = "q150";
-    private String q155 = "q155";
-
     public Graph(Class<? extends Edge> edgeClass) {
         super(edgeClass);
     }

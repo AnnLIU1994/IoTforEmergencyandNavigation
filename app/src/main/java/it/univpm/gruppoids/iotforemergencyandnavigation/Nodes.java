@@ -1,7 +1,6 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.view.View;
 import android.widget.ImageView;
 

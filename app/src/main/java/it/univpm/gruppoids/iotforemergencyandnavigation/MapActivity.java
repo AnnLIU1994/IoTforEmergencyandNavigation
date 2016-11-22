@@ -1,6 +1,7 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -15,6 +16,7 @@ import org.jgrapht.graph.SimpleWeightedGraph;
 
 import java.util.Set;
 
+import it.univpm.gruppoids.iotforemergencyandnavigation.databinding.NodeBindBinding;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Edge;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Graph;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Node;
@@ -124,7 +126,8 @@ public class MapActivity extends AppCompatActivity {
                 Set<Node> nodeSet = q145Graph.vertexSet();
 
                 for (Node n : nodeSet) {
-
+                    NodeBindBinding binding = DataBindingUtil.setContentView(this, R.layout.node_bind);
+                    binding.setNodeBinding(n);
                 }
 
                 q145ema7 = (ImageView) findViewById(R.id.q145ema7);

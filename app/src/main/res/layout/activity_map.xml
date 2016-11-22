@@ -17,6 +17,6 @@
         android:id="@+id/mapFloor"
         android:layout_gravity="center_horizontal"/>
 
-    <include layout="@layout/nodes"/>
+    <include layout="@layout/node_bind"/>
 
 </FrameLayout>
