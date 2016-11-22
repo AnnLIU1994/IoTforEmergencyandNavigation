@@ -8,13 +8,13 @@
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:id="@+id/node_binding">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@{nodeBinding.nodeId}"
-            android:visibility="gone" />
+            android:id="@{nodeBinding.nodeId}" />
 
     </FrameLayout>
 </layout>

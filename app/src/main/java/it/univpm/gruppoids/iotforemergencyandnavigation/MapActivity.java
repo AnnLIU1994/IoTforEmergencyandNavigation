@@ -1,6 +1,8 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -29,74 +31,11 @@ public class MapActivity extends AppCompatActivity {
     public static MenuItem forward;
     public static MenuItem firstPage;
 
-    private ImageView q145dicea;
-    private ImageView q145s1;
-    private ImageView q145r3;
-    private ImageView q145r1;
-    private ImageView q145wc1;
-    private ImageView q145s2;
-    private ImageView q145s3;
-    private ImageView q145rg2;
-    private ImageView q145rg1;
-    private ImageView q145ema7;
-    private ImageView q145em1;
-    private ImageView q145u1;
-    private ImageView q145ea5;
-    private ImageView q145a5;
-    private ImageView q145emg1;
-    private ImageView q145emg2;
-    private ImageView q145u2;
-    private ImageView q145a3;
-    private ImageView q145ema3;
-    private ImageView q145u3;
-    private ImageView q145ram;
-
-    private ImageView q150dicea1;
-    private ImageView q150g1;
-    private ImageView q150dicea;
-    private ImageView q150strade;
-    private ImageView q150em1;
-    private ImageView q150wc1;
-    private ImageView q150ram;
-    private ImageView q150g1g2;
-    private ImageView q150g2;
-    private ImageView q150r2;
-    private ImageView q150s1;
-    private ImageView q150r1;
-    private ImageView q150rl;
-    private ImageView q150bib;
-    private ImageView q150emrl;
-    private ImageView q150emr1;
-    private ImageView q150a7;
-    private ImageView q150a5;
-    private ImageView q150a3;
-
-    private ImageView q155dicea;
-    private ImageView q155r567;
-    private ImageView q155r4;
-    private ImageView q155r4d3;
-    private ImageView q155r23d2;
-    private ImageView q155rd1;
-    private ImageView q155wc1;
-    private ImageView q155u1;
-    private ImageView q155ecdl;
-    private ImageView q155s1;
-    private ImageView q155wc2;
-    private ImageView q155em2;
-    private ImageView q155acq;
-    private ImageView q155em3;
-    private ImageView q155up;
-    private ImageView q155cesmi;
-    private ImageView q155bar;
-    private ImageView q155em1;
-    private ImageView q155a7;
-    private ImageView q155a5;
-    private ImageView q155a3;
-
     private String nodeSelected;
 
     int initFloorExtra;
 
+    ImageView imageView;
 
 
     @Override
@@ -126,51 +65,14 @@ public class MapActivity extends AppCompatActivity {
                 Set<Node> nodeSet = q145Graph.vertexSet();
 
                 for (Node n : nodeSet) {
+                    imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
                     NodeBindBinding binding = DataBindingUtil.setContentView(this, R.layout.node_bind);
                     binding.setNodeBinding(n);
+
+                    n.getPosition();
+                    Nodes.positioningNode(imageView);
+
                 }
-
-                q145ema7 = (ImageView) findViewById(R.id.q145ema7);
-
-                q145em1 = (ImageView) findViewById(R.id.q145em1);
-
-                q145u1 = (ImageView) findViewById(R.id.q145u1);
-
-                q145emg1 = (ImageView) findViewById(R.id.q145emg1);
-
-                q145emg2 = (ImageView) findViewById(R.id.q145emg2);
-
-                q145u2 = (ImageView) findViewById(R.id.q145u2);
-
-                q145ema3 = (ImageView) findViewById(R.id.q145ema3);
-
-                q145ram = (ImageView) findViewById(R.id.q145ram);
-
-                q145u3 = (ImageView) findViewById(R.id.q145u3);
-
-                q145dicea = (ImageView) findViewById(R.id.q145dicea);
-
-                q145s1 = (ImageView) findViewById(R.id.q145s1);
-
-                q145r3 = (ImageView) findViewById(R.id.q145r3);
-
-                q145r1 = (ImageView) findViewById(R.id.q145r1);
-
-                q145wc1 = (ImageView) findViewById(R.id.q145wc1);
-
-                q145s2 = (ImageView) findViewById(R.id.q145s2);
-
-                q145s3 = (ImageView) findViewById(R.id.q145s3);
-
-                q145rg2 = (ImageView) findViewById(R.id.q145rg2);
-
-                q145rg1 = (ImageView) findViewById(R.id.q145rg1);
-
-                q145ea5 = (ImageView) findViewById(R.id.q145ea5);
-
-                q145a5 = (ImageView) findViewById(R.id.q145a5);
-
-                q145a3 = (ImageView) findViewById(R.id.q145a3);
 
 
                 Nodes.positioningNode(q145ema7);

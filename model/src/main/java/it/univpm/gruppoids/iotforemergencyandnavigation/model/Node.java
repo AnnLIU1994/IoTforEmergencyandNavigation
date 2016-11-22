@@ -2,10 +2,13 @@ package it.univpm.gruppoids.iotforemergencyandnavigation.model;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+
+import com.google.zxing.common.detector.MathUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -110,6 +113,25 @@ public final class Node implements Parcelable /* Serializable */ {
         if (emergencyByte == 1)
             emergency = true;
         else emergency = false;
+    }
+
+    public int[] getPosition() {
+        int[] position = {0, 0};
+        int x;
+        int y;
+        int widthScreen = Resources.getSystem().getDisplayMetrics().widthPixels;
+        int heightScreen = Resources.getSystem().getDisplayMetrics().heightPixels;
+        if (Resources.getSystem().getDisplayMetrics().density == 1.5 & Resources.getSystem().getDisplayMetrics().widthPixels == 480 &
+                Resources.getSystem().getDisplayMetrics().heightPixels == 800) {
+            x = this.x - 8;
+            y = this.y - 28;
+        } else {
+            x = this.x;
+            y = this.y;
+        }
+        position[0] = MathUtils.round((widthScreen * x)/1000);
+        position[1] = MathUtils.round((heightScreen * y)/1000);
+        return position;
     }
 
     /**
