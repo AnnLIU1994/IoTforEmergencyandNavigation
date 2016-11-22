@@ -53,10 +53,14 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         try {
             db.beginTransaction();
-            final String createSQL = ResourceUtils.getRawAsString(mContext, R.raw.create_schemas);
-            db.execSQL(createSQL);
-            //insertMockDataNodes(db);
-            //insertMockDataEdges(db);
+            final String createNodeSQL = ResourceUtils.getRawAsString(mContext, R.raw.create_nodes_schema);
+            db.execSQL(createNodeSQL);
+            final String createEdgeSQL = ResourceUtils.getRawAsString(mContext, R.raw.create_edges_schema);
+            db.execSQL(createEdgeSQL);
+            final String createUserSQL = ResourceUtils.getRawAsString(mContext, R.raw.create_users_schema);
+            db.execSQL(createUserSQL);
+            insertMockDataNodes(db);
+            insertMockDataEdges(db);
             db.setTransactionSuccessful();
         } catch (IOException ioe) {
             Log.e(TAG, "Error reading create SQL", ioe);
@@ -91,19 +95,9 @@ public class DbHelper extends SQLiteOpenHelper {
             final String dataAsText = ResourceUtils.getRawAsString(mContext, R.raw.mock_data_nodes);
             final BufferedReader reader = new BufferedReader(new StringReader(dataAsText));
             String currentLine;
-            ContentValues rowNode = new ContentValues();
             while ((currentLine = reader.readLine()) != null) {
                 String[] data = currentLine.split(";");
-                rowNode.put(IoTDB.Node.NODE_ID, data[0]);
-                rowNode.put(IoTDB.Node.X, Integer.valueOf(data[1]));
-                rowNode.put(IoTDB.Node.Y, Integer.valueOf(data[2]));
-                rowNode.put(IoTDB.Node.Z, Integer.valueOf(data[3]));
-                rowNode.put(IoTDB.Node.WIDTH, Float.valueOf(data[4]));
-                rowNode.put(IoTDB.Node.STAIR, Integer.valueOf(data[5]));
-                rowNode.put(IoTDB.Node.EMERGENCY, Integer.valueOf(data[6]));
-                //db.execSQL(INSERT_NODE, data);
-                db.insert(IoTDB.Node.TABLE_NAME, null, rowNode);
-                rowNode.clear();
+                db.execSQL(INSERT_NODE, data);
             }
             db.setTransactionSuccessful();
         } catch (IOException ioe) {

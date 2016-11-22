@@ -11,6 +11,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.jgrapht.graph.SimpleWeightedGraph;
+
+import java.util.Set;
+
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.Edge;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.Graph;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.Node;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.IoTDB;
+
 public class MapActivity extends AppCompatActivity {
 
 
@@ -100,6 +109,8 @@ public class MapActivity extends AppCompatActivity {
         initFloorExtra = inputIntent.getIntExtra("initFloor", 0);
         String floorString = Integer.toString(initFloorExtra);
 
+        Graph graph = null;
+
         mapImage = (ImageView) findViewById(R.id.mapFloor);
 
         if (initFloorExtra != 0) {
@@ -108,6 +119,13 @@ public class MapActivity extends AppCompatActivity {
         switch (initFloorExtra) {
             case 145:
                 mapImage.setImageResource(R.drawable.q145);
+
+                SimpleWeightedGraph<Node, Edge> q145Graph = graph.createGraph(floorString);
+                Set<Node> nodeSet = q145Graph.vertexSet();
+
+                for (Node n : nodeSet) {
+
+                }
 
                 q145ema7 = (ImageView) findViewById(R.id.q145ema7);
 

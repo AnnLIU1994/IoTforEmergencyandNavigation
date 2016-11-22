@@ -35,7 +35,7 @@ public class ChoosePlanActivity extends AppCompatActivity {
         Cursor cursor = dao.simpleQuery(null, null);
         //nodes = Nodes.createNodesObj();
         cursor.moveToFirst();
-        text.setText(cursor.getString(0));
+        text.setText(cursor.getString(1));
         dao.close();
 
     }

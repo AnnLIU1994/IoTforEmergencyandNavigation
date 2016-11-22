@@ -128,11 +128,26 @@ public class DAO {
      * @param whereArgs The arguments for the where clause
      * @return The Cursor implementations with the result
      */
-    public IoTCursorFactory.NodesCursor customQuery(final String where, final String[] whereArgs) {
+    public IoTCursorFactory.NodesCursor customNodeQuery(final String where, final String[] whereArgs) {
         IoTCursorFactory.NodesCursor cursor = null;
         // We execute the query
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         cursor = (IoTCursorFactory.NodesCursor) db.query(IoTDB.Node.TABLE_NAME, null, where, whereArgs, null, null, null);
+        return cursor;
+    }
+
+    /**
+     * The simpler version of query method. It returns the Cursor that should be managed by the caller object
+     *
+     * @param where     The where clause
+     * @param whereArgs The arguments for the where clause
+     * @return The Cursor implementations with the result
+     */
+    public IoTCursorFactory.EdgesCursor customEdgeQuery(final String where, final String[] whereArgs) {
+        IoTCursorFactory.EdgesCursor cursor = null;
+        // We execute the query
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        cursor = (IoTCursorFactory.EdgesCursor) db.query(IoTDB.Edge.TABLE_NAME, null, where, whereArgs, null, null, null);
         return cursor;
     }
 
