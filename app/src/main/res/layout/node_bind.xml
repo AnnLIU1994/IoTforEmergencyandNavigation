@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="nodeBinding"
+            name="node"
             type="it.univpm.gruppoids.iotforemergencyandnavigation.model.Node"/>
+        <variable
+            name="nodeClick"
+            type="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity"/>
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/node_binding">
@@ -14,7 +17,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@{nodeBinding.nodeId}" />
+            android:id="@{node.nodeId}"
+            android:onClick="@{nodeClick.onClick}"/>
 
     </FrameLayout>
 </layout>

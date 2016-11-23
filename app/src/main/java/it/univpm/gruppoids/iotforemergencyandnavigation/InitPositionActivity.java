@@ -26,7 +26,6 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.ExitDialogFrag
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatedDialogFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdateFailedDialogFragment;
 import it.univpm.gruppoids.iotforemergencyandnavigation.fragments.UpdatingDialogFragment;
-import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
 
 public class InitPositionActivity extends AppCompatActivity
         implements ExitDialogFragment.AlertDialogListener, CheckUpdatesProgressFragment.OnProgressDialogListener,
@@ -57,7 +56,6 @@ public class InitPositionActivity extends AppCompatActivity
 
     private Button buttonQr;
 
-    //protected DbAdapter dbAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,11 +76,6 @@ public class InitPositionActivity extends AppCompatActivity
                 integrator.initiateScan();
             }
         });
-
-        SQLiteStudioService.instance().start(this);
-        //dbAdapter = new DbAdapter(this);
-        //dbAdapter.open();
-        //dbAdapter.close();
     }
 
     @Override
@@ -246,6 +239,5 @@ public class InitPositionActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SQLiteStudioService.instance().stop();
     }
 }

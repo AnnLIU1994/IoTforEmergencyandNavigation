@@ -18,6 +18,5 @@
         android:id="@+id/navi_map"
         android:layout_gravity="center_horizontal"/>
 
-    <include layout="@layout/nodes"/>
-    <include layout="@layout/edges"/>
+    <include layout="@layout/node_bind"/>
 </FrameLayout>

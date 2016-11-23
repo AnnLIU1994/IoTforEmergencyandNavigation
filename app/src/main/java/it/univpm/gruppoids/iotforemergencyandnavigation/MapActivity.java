@@ -1,8 +1,7 @@
 package it.univpm.gruppoids.iotforemergencyandnavigation;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
+import android.databinding.Bindable;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -10,9 +9,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.jgrapht.graph.SimpleWeightedGraph;
 
@@ -22,9 +21,10 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.databinding.NodeBindBind
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Edge;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Graph;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Node;
-import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.IoTDB;
+import it.univpm.gruppoids.iotforemergencyandnavigation.ui.ControllerUI;
 
-public class MapActivity extends AppCompatActivity {
+
+public class MapActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     public static ImageView mapImage;
@@ -41,7 +41,7 @@ public class MapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        NodeBindBinding binding = DataBindingUtil.setContentView(this, R.layout.node_bind);
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -62,63 +62,96 @@ public class MapActivity extends AppCompatActivity {
                 mapImage.setImageResource(R.drawable.q145);
 
                 SimpleWeightedGraph<Node, Edge> q145Graph = graph.createGraph(floorString);
-                Set<Node> nodeSet = q145Graph.vertexSet();
+                Set<Node> node145Set = q145Graph.vertexSet();
 
-                for (Node n : nodeSet) {
-                    imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
-                    NodeBindBinding binding = DataBindingUtil.setContentView(this, R.layout.node_bind);
-                    binding.setNodeBinding(n);
+                for (Node n : node145Set) {
+                    //imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
+                    binding.setNode(n);
+                    //binding.setVariable(it.univpm.gruppoids.iotforemergencyandnavigation.BR.node, n); // per impostare l'oggetto nodo al binding nell'xml
+                    binding.setNodeClick(this); // usato per utilizzare l'onClick
 
-                    n.getPosition();
-                    Nodes.positioningNode(imageView);
+                    //ControllerUI.positioningNode(imageView, n.getPosition()[0], n.getPosition()[1]);
 
                 }
+                break;
+            case 150:
+                mapImage.setImageResource(R.drawable.q150);
+
+                SimpleWeightedGraph<Node, Edge> q150Graph = graph.createGraph(floorString);
+                Set<Node> node150Set = q150Graph.vertexSet();
+
+                for (Node n : node150Set) {
+                    //imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
+
+                    binding.setNode(n);
+                    //binding.setVariable(it.univpm.gruppoids.iotforemergencyandnavigation.BR.node, n); // per impostare l'oggetto nodo al binding nell'xml
+                    binding.setNodeClick(this); // usato per utilizzare l'onClick
+
+                    //ControllerUI.positioningNode(imageView, n.getPosition()[0], n.getPosition()[1]);
+
+                }
+                break;
+
+            case 155:
+                mapImage.setImageResource(R.drawable.q155);
+
+                SimpleWeightedGraph<Node, Edge> q155Graph = graph.createGraph(floorString);
+                Set<Node> node155Set = q155Graph.vertexSet();
+
+                for (Node n : node155Set) {
+                    //imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
+                    binding.setNode(n);
+                    //binding.setVariable(it.univpm.gruppoids.iotforemergencyandnavigation.BR.node, n); // per impostare l'oggetto nodo al binding nell'xml
+                    binding.setNodeClick(this); // usato per utilizzare l'onClick
+
+                    //ControllerUI.positioningNode(imageView, n.getPosition()[0], n.getPosition()[1]);
+
+                }
+                break;
+        }
+    }
+
+    @Bindable
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(this, "yeah!", Toast.LENGTH_LONG).show();
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        firstPage = menu.findItem(R.id.firstPage);
+        forward = menu.findItem(R.id.forward);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.firstPage:
+                Intent intent = new Intent(this, InitPositionActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                MapActivity.this.finish();
+                break;
+            case R.id.forward:
+                Intent nextPage = new Intent(this, ModActivity.class);
+                nextPage.putExtra("initPos", nodeSelected); //TODO: invece degli intent scrivere su db
+                nextPage.putExtra("initFloor", initFloorExtra);
+                startActivity(nextPage);
+                break;
+            case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
 
 
-                Nodes.positioningNode(q145ema7);
 
-                Nodes.positioningNode(q145em1);
-
-                Nodes.positioningNode(q145u1);
-
-                Nodes.positioningNode(q145emg1);
-
-                Nodes.positioningNode(q145emg2);
-
-                Nodes.positioningNode(q145u2);
-
-                Nodes.positioningNode(q145ema3);
-
-                Nodes.positioningNode(q145u3);
-
-                Nodes.positioningNode(q145ram);
-
-                Nodes.positioningNode(q145dicea);
-
-                Nodes.positioningNode(q145s1);
-
-                Nodes.positioningNode(q145r3);
-
-                Nodes.positioningNode(q145r1);
-
-                Nodes.positioningNode(q145wc1);
-
-                Nodes.positioningNode(q145s2);
-
-                Nodes.positioningNode(q145s3);
-
-                Nodes.positioningNode(q145rg2);
-
-                Nodes.positioningNode(q145rg1);
-
-                Nodes.positioningNode(q145ea5);
-
-                Nodes.positioningNode(q145a5);
-
-                Nodes.positioningNode(q145a3);
-
-
-                q145ema7.setOnTouchListener(new View.OnTouchListener() {
+                /*q145ema7.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -2261,36 +2294,4 @@ public class MapActivity extends AppCompatActivity {
                 });
                 break;
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        firstPage = menu.findItem(R.id.firstPage);
-        forward = menu.findItem(R.id.forward);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-        switch (itemId) {
-            case R.id.firstPage:
-                Intent intent = new Intent(this, InitPositionActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                MapActivity.this.finish();
-                break;
-            case R.id.forward:
-                Intent nextPage = new Intent(this, ModActivity.class);
-                nextPage.putExtra("initPos", nodeSelected); //TODO: invece degli intent scrivere su db
-                nextPage.putExtra("initFloor", initFloorExtra);
-                startActivity(nextPage);
-                break;
-            case android.R.id.home: // Id relativo alla freccia in alto a sinistra, per tornare alla schermata precedente
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-}
+    }*/

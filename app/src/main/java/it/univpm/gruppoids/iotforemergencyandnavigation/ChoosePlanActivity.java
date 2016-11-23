@@ -18,7 +18,6 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.cursor.IoT
 public class ChoosePlanActivity extends AppCompatActivity {
 
     TextView text;
-    //Nodes[] nodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,6 @@ public class ChoosePlanActivity extends AppCompatActivity {
         DAO dao = DAO.get(this);
         dao.open();
         Cursor cursor = dao.simpleQuery(null, null);
-        //nodes = Nodes.createNodesObj();
         cursor.moveToFirst();
         text.setText(cursor.getString(1));
         dao.close();
