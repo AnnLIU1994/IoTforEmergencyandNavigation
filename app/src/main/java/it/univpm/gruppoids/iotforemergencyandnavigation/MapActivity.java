@@ -21,7 +21,6 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.databinding.NodeBindBind
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Edge;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Graph;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Node;
-import it.univpm.gruppoids.iotforemergencyandnavigation.ui.ControllerUI;
 
 
 public class MapActivity extends AppCompatActivity implements View.OnClickListener {
