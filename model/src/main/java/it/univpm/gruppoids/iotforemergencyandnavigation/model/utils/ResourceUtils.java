@@ -1,4 +1,4 @@
-package it.univpm.gruppoids.iotforemergencyandnavigation.model.util;
+package it.univpm.gruppoids.iotforemergencyandnavigation.model.utils;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package it.univpm.gruppoids.iotforemergencyandnavigation.model.util;
+package it.univpm.gruppoids.iotforemergencyandnavigation.model.utils;
 
 import java.io.Closeable;
 import java.io.IOException;

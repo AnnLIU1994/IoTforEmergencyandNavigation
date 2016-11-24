@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.cursor.IoTCursorFactory;
-import it.univpm.gruppoids.iotforemergencyandnavigation.model.util.IOUtils;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.utils.IOUtils;
 
 /**
  * This is a class that manages updates for the current DB file. The constant CURRENT_DB_VERSION

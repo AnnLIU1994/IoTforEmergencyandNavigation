@@ -12,7 +12,7 @@ import java.io.StringReader;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.R;
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.cursor.IoTCursorFactory;
-import it.univpm.gruppoids.iotforemergencyandnavigation.model.util.ResourceUtils;
+import it.univpm.gruppoids.iotforemergencyandnavigation.model.utils.ResourceUtils;
 
 /**
  * Created by simon on 18/11/2016.
