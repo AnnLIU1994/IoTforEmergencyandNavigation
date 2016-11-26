@@ -1,32 +1,8 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.android.databinding'
-//apply plugin: 'android-apt'
-//apply plugin: 'me.tatarka.retrolambda'
-
-// Android Annotations
-//def AAVersion = '4.1.0'
-
-/*buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
-        //classpath 'me.tatarka:gradle-retrolambda:3.4.0'
-    }
-}*/
-
-/*apt {
-    arguments {
-        androidManifestFile variant.outputs[0].processResources.manifestFile
-        resourcePackageName 'it.univpm.gruppoids.iotforemergencyandnavigation'
-        library "true"
-    }
-}*/
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         minSdkVersion 16
@@ -34,20 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
-
-    /*dexOptions {
-        preDexLibraries true
-        javaMaxHeapSize "3g"
-        dexInProcess = true
-    }*/
-
-    /*compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }*/
 
     buildTypes {
         release {
@@ -55,90 +18,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    /*sourceSets {
-        main {
-            jniLibs.srcDir 'libs'
-        }
-    }*/
-
-    /*dataBinding {
-        enabled true
-    }*/
-
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    //compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     compile 'org.javabits.jgrapht:jgrapht-core:0.9.3'
-    //compile 'com.android.databinding:dataBinder:1.0-rc4'
-
-    // Android Annotations
-    /*annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
-
-    // RX
-    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.1@aar'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'*/
 
     compile 'com.google.zxing:core:3.2.1'
-    testCompile 'junit:junit:4.12'
-
-    // logback for AuditLog processing
-    /*compile ('com.github.tony19:logback-android-classic:1.1.1-3') {
-        exclude module: 'android'
-    }
-    compile ('com.github.tony19:logback-android-core:1.1.1-3')  {
-        exclude module: 'android'
-    }
-    compile 'org.slf4j:slf4j-api:1.7.10'
-
-
-    // android annotations
-    apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"*/
-}
-
-/*def getSourceSetName(variant) {
-    return new File(variant.dirName).getName();
-}
-
-android.libraryVariants.each { variant ->
-    def aptOutputDir = project.file("build/source/apt")
-    def aptOutput = new File(aptOutputDir, variant.dirName)
-    println "****************************"
-    println "variant: ${variant.name}"
-    println "manifest:  ${variant.processResources.manifestFile}"
-    println "aptOutput:  ${aptOutput}"
-    println "****************************"
-
-    android.sourceSets[getSourceSetName(variant)].java.srcDirs += aptOutput.getPath()
-
-    variant.javaCompile.options.compilerArgs += [
-            '-processorpath', configurations.apt.getAsPath(),
-            '-processor', 'org.androidannotations.AndroidAnnotationProcessor',
-            '-AandroidManifestFile=' + variant.processResources.manifestFile,
-            '-s', aptOutput
-    ]
-
-    variant.javaCompile.source = variant.javaCompile.source.filter { p ->
-        return !p.getPath().startsWith(aptOutputDir.getPath())
-    }
-
-    variant.javaCompile.doFirst {
-        aptOutput.mkdirs()
-    }
-
-
-}*/
-
-// add annotation processing options to jack
-android.libraryVariants.all { variant ->
-    variant.variantData.variantConfiguration.javaCompileOptions.annotationProcessorOptions.arguments = ['androidManifestFile': variant.outputs[0]?.processResources?.manifestFile?.absolutePath]
 }
