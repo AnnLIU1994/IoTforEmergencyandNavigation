@@ -4,7 +4,7 @@ import android.content.res.Resources;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.google.zxing.common.detector.MathUtils;
+//import com.google.zxing.common.detector.MathUtils;
 
 import it.univpm.gruppoids.iotforemergencyandnavigation.model.Node;
 

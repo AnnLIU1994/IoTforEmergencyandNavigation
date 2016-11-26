@@ -19,7 +19,7 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.IoTDB;
  * Created by simon on 16/11/2016.
  */
 
-public final class Node /*implements Parcelable  Serializable */ {
+public final class Node implements Parcelable  /*Serializable*/  {
 
     /**
      * Implementation of a CREATOR for the creation of the instance
@@ -34,7 +34,7 @@ public final class Node /*implements Parcelable  Serializable */ {
         }
     };
 
-    /*@Override
+    @Override
     public int describeContents() {
         return 0;
     }
@@ -58,7 +58,7 @@ public final class Node /*implements Parcelable  Serializable */ {
         else emergencyByte = 0;
         dest.writeByte(emergencyByte);
 
-    }*/
+    }
 
     /**
      * Keys for the properties
