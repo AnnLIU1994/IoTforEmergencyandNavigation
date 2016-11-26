@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'com.android.databinding'
-apply plugin: 'android-apt'
+//apply plugin: 'android-apt'
 //apply plugin: 'me.tatarka.retrolambda'
 
 // Android Annotations
-def AAVersion = '4.1.0'
+//def AAVersion = '4.1.0'
 
 /*buildscript {
     repositories {
@@ -16,21 +16,21 @@ def AAVersion = '4.1.0'
     }
 }*/
 
-apt {
+/*apt {
     arguments {
         androidManifestFile variant.outputs[0].processResources.manifestFile
         resourcePackageName 'it.univpm.gruppoids.iotforemergencyandnavigation'
         library "true"
     }
-}
+}*/
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.3'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
@@ -38,16 +38,16 @@ android {
 
     }
 
-    dexOptions {
+    /*dexOptions {
         preDexLibraries true
         javaMaxHeapSize "3g"
         dexInProcess = true
-    }
+    }*/
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+    /*compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }*/
 
     buildTypes {
         release {
@@ -56,15 +56,15 @@ android {
         }
     }
 
-    sourceSets {
+    /*sourceSets {
         main {
             jniLibs.srcDir 'libs'
         }
-    }
+    }*/
 
-    dataBinding {
+    /*dataBinding {
         enabled true
-    }
+    }*/
 
 }
 
@@ -73,25 +73,25 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    //compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     compile 'org.javabits.jgrapht:jgrapht-core:0.9.3'
     //compile 'com.android.databinding:dataBinder:1.0-rc4'
 
     // Android Annotations
-    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    /*annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
 
     // RX
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.1@aar'
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxjava:1.1.6'*/
 
     compile 'com.google.zxing:core:3.2.1'
     testCompile 'junit:junit:4.12'
 
     // logback for AuditLog processing
-    compile ('com.github.tony19:logback-android-classic:1.1.1-3') {
+    /*compile ('com.github.tony19:logback-android-classic:1.1.1-3') {
         exclude module: 'android'
     }
     compile ('com.github.tony19:logback-android-core:1.1.1-3')  {
@@ -102,10 +102,10 @@ dependencies {
 
     // android annotations
     apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"*/
 }
 
-def getSourceSetName(variant) {
+/*def getSourceSetName(variant) {
     return new File(variant.dirName).getName();
 }
 
@@ -134,9 +134,11 @@ android.libraryVariants.each { variant ->
     variant.javaCompile.doFirst {
         aptOutput.mkdirs()
     }
-}
+
+
+}*/
 
 // add annotation processing options to jack
-/*android.libraryVariants.all { variant ->
+android.libraryVariants.all { variant ->
     variant.variantData.variantConfiguration.javaCompileOptions.annotationProcessorOptions.arguments = ['androidManifestFile': variant.outputs[0]?.processResources?.manifestFile?.absolutePath]
-}*/
+}

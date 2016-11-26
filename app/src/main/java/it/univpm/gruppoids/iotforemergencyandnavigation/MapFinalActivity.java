@@ -22,70 +22,6 @@ public class MapFinalActivity extends AppCompatActivity {
     int initFloor;
     int finalFloorExtra;
 
-    private ImageView q145dicea;
-    private ImageView q145s1;
-    private ImageView q145r3;
-    private ImageView q145r1;
-    private ImageView q145wc1;
-    private ImageView q145s2;
-    private ImageView q145s3;
-    private ImageView q145rg2;
-    private ImageView q145rg1;
-    private ImageView q145ema7;
-    private ImageView q145em1;
-    private ImageView q145u1;
-    private ImageView q145ea5;
-    private ImageView q145a5;
-    private ImageView q145emg1;
-    private ImageView q145emg2;
-    private ImageView q145u2;
-    private ImageView q145a3;
-    private ImageView q145ema3;
-    private ImageView q145u3;
-    private ImageView q145ram;
-
-    private ImageView q150dicea1;
-    private ImageView q150g1;
-    private ImageView q150dicea;
-    private ImageView q150strade;
-    private ImageView q150em1;
-    private ImageView q150wc1;
-    private ImageView q150ram;
-    private ImageView q150g1g2;
-    private ImageView q150g2;
-    private ImageView q150r2;
-    private ImageView q150s1;
-    private ImageView q150r1;
-    private ImageView q150rl;
-    private ImageView q150bib;
-    private ImageView q150emrl;
-    private ImageView q150emr1;
-    private ImageView q150a7;
-    private ImageView q150a5;
-    private ImageView q150a3;
-
-    private ImageView q155dicea;
-    private ImageView q155r567;
-    private ImageView q155r4;
-    private ImageView q155r4d3;
-    private ImageView q155r23d2;
-    private ImageView q155rd1;
-    private ImageView q155wc1;
-    private ImageView q155u1;
-    private ImageView q155ecdl;
-    private ImageView q155s1;
-    private ImageView q155wc2;
-    private ImageView q155em2;
-    private ImageView q155acq;
-    private ImageView q155em3;
-    private ImageView q155up;
-    private ImageView q155cesmi;
-    private ImageView q155bar;
-    private ImageView q155em1;
-    private ImageView q155a7;
-    private ImageView q155a5;
-    private ImageView q155a3;
-
     private String nodeSelected;
 
 
@@ -110,7 +46,7 @@ public class MapFinalActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(getResources().getString(R.string.floor_pos) + " " + floorString);
         }
 
-        switch (finalFloorExtra) {
+        /*switch (finalFloorExtra) {
             case 145:
                 mapImage.setImageResource(R.drawable.q145);
 
@@ -2342,7 +2278,7 @@ public class MapFinalActivity extends AppCompatActivity {
                     }
                 });
                 break;
-        }
+        }*/
     }
 
     @Override

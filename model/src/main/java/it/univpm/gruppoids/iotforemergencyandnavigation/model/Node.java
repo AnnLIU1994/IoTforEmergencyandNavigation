@@ -4,8 +4,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -21,7 +19,7 @@ import it.univpm.gruppoids.iotforemergencyandnavigation.model.content.IoTDB;
  * Created by simon on 16/11/2016.
  */
 
-public final class Node extends BaseObservable implements Parcelable /* Serializable */ {
+public final class Node /*implements Parcelable  Serializable */ {
 
     /**
      * Implementation of a CREATOR for the creation of the instance
@@ -36,7 +34,7 @@ public final class Node extends BaseObservable implements Parcelable /* Serializ
         }
     };
 
-    @Override
+    /*@Override
     public int describeContents() {
         return 0;
     }
@@ -60,7 +58,7 @@ public final class Node extends BaseObservable implements Parcelable /* Serializ
         else emergencyByte = 0;
         dest.writeByte(emergencyByte);
 
-    }
+    }*/
 
     /**
      * Keys for the properties
@@ -117,7 +115,6 @@ public final class Node extends BaseObservable implements Parcelable /* Serializ
         else emergency = false;
     }
 
-    @Bindable
     public int[] getPosition() {
         int[] position = {0, 0};
         int x;

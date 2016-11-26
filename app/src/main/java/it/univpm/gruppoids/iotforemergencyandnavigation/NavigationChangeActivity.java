@@ -142,7 +142,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
             getSupportActionBar().setTitle(getResources().getString(R.string.floor_pos) + " " + floorString);
         }
 
-        switch (finalFloor) {
+        /*switch (finalFloor) {
             case 145:
                 navMap.setImageResource(R.drawable.q145);
 
@@ -229,7 +229,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
 
                 Nodes.positioningNodeNavRouting(q145a5);
 
-                Nodes.positioningNodeNavRouting(q145a3);*/
+                Nodes.positioningNodeNavRouting(q145a3);
 
                 switch (stairId) {
                     case R.id.q155a3:
@@ -265,7 +265,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                     });
 
 
-                /*q145ema7.setOnTouchListener(new View.OnTouchListener() {
+                q145ema7.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -956,12 +956,12 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                         }
                         return false;
                     }
-                });*/
+                });
                 break;
             case 150:
                 navMap.setImageResource(R.drawable.q150);
 
-                /*q150dicea1 = (ImageView) findViewById(R.id.q150dicea1);
+                q150dicea1 = (ImageView) findViewById(R.id.q150dicea1);
 
                 q150g1 = (ImageView) findViewById(R.id.q150g1);
 
@@ -1035,7 +1035,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
 
                 Nodes.positioningNodeNavRouting(q150a5);
 
-                Nodes.positioningNodeNavRouting(q150a3);*/
+                Nodes.positioningNodeNavRouting(q150a3);
 
                 switch (stairId) {
                     case R.id.q145a3:
@@ -1070,7 +1070,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                     }
                 });
 
-                /*q150dicea1.setOnTouchListener(new View.OnTouchListener() {
+                q150dicea1.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -1657,12 +1657,12 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                         }
                         return false;
                     }
-                });*/
+                });
                 break;
             case 155:
                 navMap.setImageResource(R.drawable.q155);
 
-                /*q155dicea = (ImageView) findViewById(R.id.q155dicea);
+                q155dicea = (ImageView) findViewById(R.id.q155dicea);
 
                 q155r567 = (ImageView) findViewById(R.id.q155r567);
 
@@ -1744,7 +1744,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
 
                 Nodes.positioningNodeNavRouting(q155a5);
 
-                Nodes.positioningNodeNavRouting(q155a3);*/
+                Nodes.positioningNodeNavRouting(q155a3);
 
                 switch (stairId) {
                     case R.id.q145a3:
@@ -1779,7 +1779,7 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                     }
                 });
 
-                /*q155dicea.setOnTouchListener(new View.OnTouchListener() {
+                q155dicea.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -2471,9 +2471,9 @@ public class NavigationChangeActivity extends AppCompatActivity implements Termi
                         }
                         return false;
                     }
-                });*/
+                });
                 break;
-        }
+        }*/
     }
 
     @Override

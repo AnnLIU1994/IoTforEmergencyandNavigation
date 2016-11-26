@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
-    <data class=".IncludeBinding">
-        <variable name="node" type="it.univpm.gruppoids.iotforemergencyandnavigation.model.Node"/>
-    </data>
-    <FrameLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/mapactivity"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:background="@drawable/background_sfumato"
-        tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mapactivity"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_sfumato"
+    tools:context="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mapFloor"
-            android:layout_gravity="center_horizontal"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapFloor"
+        android:layout_gravity="center_horizontal"/>
 
-        <include layout="@layout/node_bind"
-            bind:node="@{node}"/>
+    <!--<include layout="@layout/node_bind"
+        bind:node="@{node}"/>-->
 
-    </FrameLayout>
-</layout>
+</FrameLayout>

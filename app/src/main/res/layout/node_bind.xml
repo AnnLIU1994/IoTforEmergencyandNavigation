@@ -5,9 +5,9 @@
         <variable
             name="node"
             type="it.univpm.gruppoids.iotforemergencyandnavigation.model.Node"/>
-        <variable
+        <!--<variable
             name="nodeClick"
-            type="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity"/>
+            type="it.univpm.gruppoids.iotforemergencyandnavigation.MapActivity"/>-->
     </data>
 
     <FrameLayout
@@ -18,8 +18,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@{node.nodeId}"
-            android:onClick="@{nodeClick.onClick}"/>
+            android:id="@{node.nodeId}" />
 
     </FrameLayout>
 </layout>

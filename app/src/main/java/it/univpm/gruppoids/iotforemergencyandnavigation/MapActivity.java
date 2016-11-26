@@ -40,7 +40,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        NodeBindBinding binding = DataBindingUtil.setContentView(this, R.layout.node_bind);
+
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -60,20 +60,28 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
             case 145:
                 mapImage.setImageResource(R.drawable.q145);
 
-                SimpleWeightedGraph<Node, Edge> q145Graph = graph.createGraph(floorString);
-                Set<Node> node145Set = q145Graph.vertexSet();
+                //SimpleWeightedGraph<Node, Edge> q145Graph = graph.createGraph(floorString);
+                //Set<Node> node145Set = q145Graph.vertexSet();
 
-                for (Node n : node145Set) {
+                NodeBindBinding binding = DataBindingUtil.setContentView(this, R.layout.node_bind);
+
+                //for (Node n : node145Set) {
                     //imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
-                    binding.setNode(n);
+
+                final Node node = Node.Builder.create("provanodo")
+                        .withPosition((short) 105, (short) 105, (short) 145)
+                        .withWidth(1.8f)
+                        .withStairAndEmergency(false, true)
+                        .build();
+                    binding.setNode(node);
                     //binding.setVariable(it.univpm.gruppoids.iotforemergencyandnavigation.BR.node, n); // per impostare l'oggetto nodo al binding nell'xml
-                    binding.setNodeClick(this); // usato per utilizzare l'onClick
+                    //binding.setNodeClick(this); // usato per utilizzare l'onClick
 
                     //ControllerUI.positioningNode(imageView, n.getPosition()[0], n.getPosition()[1]);
 
-                }
+                //}
                 break;
-            case 150:
+            /*case 150:
                 mapImage.setImageResource(R.drawable.q150);
 
                 SimpleWeightedGraph<Node, Edge> q150Graph = graph.createGraph(floorString);
@@ -84,7 +92,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
 
                     binding.setNode(n);
                     //binding.setVariable(it.univpm.gruppoids.iotforemergencyandnavigation.BR.node, n); // per impostare l'oggetto nodo al binding nell'xml
-                    binding.setNodeClick(this); // usato per utilizzare l'onClick
+                    //binding.setNodeClick(this); // usato per utilizzare l'onClick
 
                     //ControllerUI.positioningNode(imageView, n.getPosition()[0], n.getPosition()[1]);
 
@@ -101,16 +109,16 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
                     //imageView = (ImageView) findViewById(getResources().getIdentifier(n.nodeId, "layout", getPackageName()));
                     binding.setNode(n);
                     //binding.setVariable(it.univpm.gruppoids.iotforemergencyandnavigation.BR.node, n); // per impostare l'oggetto nodo al binding nell'xml
-                    binding.setNodeClick(this); // usato per utilizzare l'onClick
+                    //binding.setNodeClick(this); // usato per utilizzare l'onClick
 
                     //ControllerUI.positioningNode(imageView, n.getPosition()[0], n.getPosition()[1]);
 
                 }
-                break;
+                break;*/
         }
     }
 
-    @Bindable
+    //@Bindable
     @Override
     public void onClick(View v) {
         Toast.makeText(this, "yeah!", Toast.LENGTH_LONG).show();
